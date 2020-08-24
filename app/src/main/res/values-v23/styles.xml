@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme.Base" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:windowBackground">@color/colorBackground</item>
+        <!-- Primary color of the app. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorOnPrimary">@color/colorOnPrimary</item>
+        <!-- Status bar. -->
+        <item name="colorPrimaryDark">@color/colorStatusBar</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <!-- Secondary color of the app. -->
+        <item name="colorSecondary">@color/colorSecondary</item>
+    </style>
+</resources>

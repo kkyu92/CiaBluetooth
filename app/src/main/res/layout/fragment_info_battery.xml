@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="view"
+            type="com.example.ciabluetooth.fragment.info.InfoBatteryFragment" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/background_gray">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/battery_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/battery_bg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/battery_gage"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.mikhaellopez.circularprogressbar.CircularProgressBar
+                    android:id="@+id/battery_progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="55dp"
+                    android:layout_marginBottom="50dp"
+                    android:background="@drawable/progress_back_100"
+                    app:cpb_background_progressbar_color="@color/pink_10"
+                    app:cpb_background_progressbar_width="15dp"
+                    app:cpb_progress_direction="to_left"
+                    app:cpb_progressbar_color="@color/pink"
+                    app:cpb_progressbar_width="15dp"
+                    app:cpb_round_border="true"
+                    app:layout_constraintBottom_toBottomOf="@+id/battery_container"
+                    app:layout_constraintEnd_toEndOf="@+id/battery_container"
+                    app:layout_constraintStart_toStartOf="@+id/battery_container"
+                    app:layout_constraintTop_toTopOf="@+id/battery_container" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_icon_battery_charge"
+                    app:layout_constraintBottom_toBottomOf="@+id/battery_container"
+                    app:layout_constraintEnd_toEndOf="@+id/battery_container"
+                    app:layout_constraintStart_toStartOf="@+id/battery_container"
+                    app:layout_constraintTop_toTopOf="@+id/battery_container" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="30dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/battery_container">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/serial_title"
+                    android:textColor="@color/text_title_50"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="   FFQD000001"
+                    android:textColor="@color/text_title_50"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

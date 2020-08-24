@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!--    <declare-styleable name="CustomStepContainer">-->
+<!--        <attr name="bg" format="reference|integer" />-->
+<!--        <attr name="img" format="reference|integer" />-->
+<!--        <attr name="step" format="reference|string" />-->
+<!--        <attr name="stepColor" format="reference|integer" />-->
+<!--        <attr name="contents" format="reference|integer" />-->
+<!--        <attr name="contentsColor" format="reference|integer" />-->
+<!--    </declare-styleable>-->
+
+    <declare-styleable name="StepContainer">
+        <attr name="img" format="reference|integer" />
+        <attr name="step" format="reference|string" />
+        <attr name="contents" format="reference|integer" />
+    </declare-styleable>
+</resources>
