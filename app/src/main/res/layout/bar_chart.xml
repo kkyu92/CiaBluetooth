@@ -51,9 +51,9 @@
         <ImageView
             android:id="@+id/change_head_img"
             android:layout_width="15dp"
-            android:layout_height="2dp"
+            android:layout_height="15dp"
             android:layout_marginEnd="10dp"
-            android:background="@color/reddish"
+            android:background="@drawable/ic_icon_notice"
             app:layout_constraintBottom_toBottomOf="@+id/change_head_txt"
             app:layout_constraintEnd_toStartOf="@id/change_head_txt"
             app:layout_constraintTop_toTopOf="@+id/change_head_txt" />
@@ -259,6 +259,7 @@
             android:layout_height="1dp"
             android:layout_marginStart="5dp"
             android:background="@color/reddish"
+            android:visibility="gone"
             app:layout_constraintEnd_toEndOf="@id/fifth_quiz"
             app:layout_constraintStart_toEndOf="@id/hundred"
             app:layout_constraintTop_toTopOf="@id/hundred_line" />

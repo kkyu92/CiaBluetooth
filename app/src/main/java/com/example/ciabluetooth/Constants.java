@@ -9,11 +9,13 @@ public class Constants {
     public static final int EXPANDABLE_CHILD = 1;
 
     // sharedPreferences
-    public static final String ALL = "all";
-    public static final String BRUSH = "brush";
-    public static final String COOLER = "cooler";
-    public static final String PUFF = "puff";
-    public static final String SILICON = "silicon";
+    public static final String YEAR = "year";
+    public static final String MONTH = "month";
+    public static final String DEVICE_SN = "deviceSN";
+    public static final String BRUSH_SN = "brushSN";
+    public static final String COOLER_SN = "coolerSN";
+    public static final String PUFF_SN = "puffSN";
+    public static final String SILICON_SN = "siliconSN";
 //    public static final String LAST_DATE = "last_date";
 //
 //    public static final String LAST_BRUSH = "last_brush";

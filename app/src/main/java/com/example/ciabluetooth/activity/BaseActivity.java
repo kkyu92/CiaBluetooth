@@ -43,11 +43,13 @@ public class BaseActivity extends AppCompatActivity {
     public static String INIT = "";
     public PermissionListener mListener = null;
 
-    public int brushCount;
-    public int coolerCount;
-    public int puffCount;
-    public int siliconCount;
-    public int allCount;
+    public int brushCnt, brushRun;
+    public int coolerCnt, coolerRun;
+    public int puffCnt, puffRun;
+    public int siliconCnt, siliconRun;
+    public int allCnt, allRun;
+    public int head;
+    public int battery;
 
     public String connectedName, connectedMac;
 
@@ -55,34 +57,6 @@ public class BaseActivity extends AppCompatActivity {
         void onPermissionGranted();
 
         void onPermissionDenied();
-    }
-
-    public void saveData(int brushCount, int coolerCount, int puffCount, int siliconCount) {
-        brushCount = 100;
-        coolerCount = 200;
-        puffCount = 300;
-        siliconCount = 400;
-        allCount = brushCount + coolerCount + puffCount + siliconCount;
-
-        int lastBrush = SharedPreferencesPackage.getBrushLastMonth(this);
-        int lastCooler = SharedPreferencesPackage.getCoolerLastMonth(this);
-        int lastPuff = SharedPreferencesPackage.getPuffLastMonth(this);
-        int lastSilicon = SharedPreferencesPackage.getSiliconLastMonth(this);
-        int lastAll = SharedPreferencesPackage.getAllLastMonth(this);
-
-        // 공통
-        // 이번달 count 저장 [ getData - lastMonth ]
-        SharedPreferencesPackage.setBrushThisMonth(this, brushCount - lastBrush);
-        SharedPreferencesPackage.setCoolerThisMonth(this, coolerCount - lastCooler);
-        SharedPreferencesPackage.setPuffThisMonth(this, puffCount - lastPuff);
-        SharedPreferencesPackage.setSiliconThisMonth(this, siliconCount - lastSilicon);
-        SharedPreferencesPackage.setAllThisMonth(this, allCount - lastAll);
-
-//        Log.e(TAG, "thisBrush ::: " + SharedPreferencesPackage.getBrushThisMonth(this));
-//        Log.e(TAG, "thisCooler ::: " + SharedPreferencesPackage.getCoolerThisMonth(this));
-//        Log.e(TAG, "thisPuff ::: " + SharedPreferencesPackage.getPuffThisMonth(this));
-//        Log.e(TAG, "thisSilicon ::: " + SharedPreferencesPackage.getSiliconThisMonth(this));
-//        Log.e(TAG, "all ::: " + SharedPreferencesPackage.getAllThisMonth(this));
     }
 
     @Override
@@ -255,5 +229,23 @@ public class BaseActivity extends AppCompatActivity {
         filter = new IntentFilter(BluetoothDevice.ACTION_ACL_DISCONNECTED);
         registerReceiver(bluetoothReceiver, filter);
         return bluetoothReceiver;
+    }
+
+    // hour 계산
+    public String changeHour(int headRun) {
+        String changeHour = "0";
+        if (headRun <= 360) {
+            changeHour = "0.1";
+        } else if (headRun < 3600) {
+            double changeDouble = (double) headRun / 3600;
+            changeHour = String.format("%.1f", changeDouble);
+        } else if (headRun == 3600) {
+            changeHour = "1";
+        } else {
+            changeHour = String.valueOf(headRun / 3600);
+        }
+        Log.e(TAG, "headRun :: "+ headRun);
+        Log.e(TAG, "changeHour :: "+ changeHour);
+        return changeHour;
     }
 }

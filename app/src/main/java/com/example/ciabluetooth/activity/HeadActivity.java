@@ -1,6 +1,7 @@
 package com.example.ciabluetooth.activity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -14,11 +15,13 @@ import androidx.databinding.DataBindingUtil;
 import com.example.ciabluetooth.R;
 import com.example.ciabluetooth.databinding.ActivityHeadBinding;
 import com.example.ciabluetooth.util.Common;
+import com.example.ciabluetooth.util.SharedPreferencesPackage;
 
 public class HeadActivity extends BaseActivity {
     private String TAG = this.getClass().getSimpleName();
     private ActivityHeadBinding mBinding;
     private String headName;
+    private int headRun, headCnt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +31,10 @@ public class HeadActivity extends BaseActivity {
 
         Intent getIntent = getIntent();
         headName = getIntent.getStringExtra("name");
+        headRun = getIntent.getIntExtra("headRun", 0);
+        headCnt = getIntent.getIntExtra("headCnt", 0);
+        allRun = getIntent.getIntExtra("allRun", 0);
+        allCnt = getIntent.getIntExtra("allCnt", 0);
         // activity, guide title
         mBinding.title.setText(headName);
         mBinding.guideTitle.setText(headName+getString(R.string.guide_head));
@@ -51,7 +58,7 @@ public class HeadActivity extends BaseActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        setGraph(100, 100, 100);
+        setGraph();
     }
 
     public void onClick(View view) {
@@ -60,37 +67,35 @@ public class HeadActivity extends BaseActivity {
                 onBackPressed();
                 break;
             case R.id.ad:
-                Toast.makeText(this, "광고", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.hosiden.co.kr/"));
+                startActivity(intent);
                 break;
         }
     }
 
+    private void setBarPercent(int allCnt, int allRun, int headCnt, int headRun) {
+        int cntPer = headCnt * 100 / allCnt;
+        int runPer = headRun * 100 / allRun;
+        mBinding.percentProgress.setProgressWithAnimation(cntPer, 2000L); // =2 sec
+        mBinding.percentText.setText(String.valueOf(cntPer));
+
+        mBinding.totalProgress.setProgressWithAnimation(runPer, 2000L);
+        // hour change
+        mBinding.totalText.setText(changeHour(headRun));
+
+        setBar(allCnt, headCnt, headCnt+"회");
+    }
+
     // 그래프 그려주기
-    private void setGraph(int usePercent, int useTimePercent, int useCountPercent) {
+    private void setGraph() {
         // 전체 헤드 대비 사용율 % || 전체 헤드 대비 사용시간 % || 전체 헤드 대비 사용횟수 % || step 별 이미지, 설명 text 4ea
+        setBarPercent(allCnt, allRun, headCnt, headRun);
         switch (headName) {
             case "Brush":
-                // [ 사용율 ] 기준이 뭐냐
-                mBinding.percentProgress.setProgressWithAnimation(45, 2000L); // =3 sec
-                mBinding.percentText.setText("45");
-
-                // 전체 사용시간 248 || brush 헤드의 사용시간 [ 사용시간 ]
-//TODO                int time = brushTime * 100 / allTime;
-                mBinding.totalProgress.setProgressWithAnimation(50, 2000L);
-                mBinding.totalText.setText("124");
-
-                // 전체 256 기준 133 [ 사용횟수 ]
-                setBar(256, 133, "133회");
+                mBinding.ad.setText("Brush 광고");
+                mBinding.headNum.setText("   " + SharedPreferencesPackage.getBrushID(this));
                 break;
             case "Cooler":
-                mBinding.percentProgress.setProgressWithAnimation(10, 2000L);
-                mBinding.percentText.setText("10");
-                mBinding.totalProgress.setProgressWithAnimation(14, 2000L);
-//                14 * 248 / 100
-                mBinding.totalText.setText("35");
-                // 전체 256 기준 23
-                setBar(256, 23, "23회");
-
                 // step img, text change
                 mBinding.headImg.setBackgroundResource(R.drawable.img_head_cooler_big);
                 mBinding.step1Img.setBackgroundResource(R.drawable.ic_img_cooler_step1);
@@ -98,14 +103,10 @@ public class HeadActivity extends BaseActivity {
                 mBinding.step3Img.setBackgroundResource(R.drawable.img_brush_guide3);
                 mBinding.step4Img.setBackgroundResource(R.drawable.ic_img_cooler_step4);
                 setGuideText(getString(R.string.cooler_step1), getString(R.string.cooler_step2), getString(R.string.cooler_step3), getString(R.string.cooler_step4));
+                mBinding.ad.setText("Cooler 광고");
+                mBinding.headNum.setText("   " + SharedPreferencesPackage.getCoolerID(this));
                 break;
             case "Puff":
-                mBinding.percentProgress.setProgressWithAnimation(30, 2000L);
-                mBinding.percentText.setText("30");
-                mBinding.totalProgress.setProgressWithAnimation(12, 2000L);
-                mBinding.totalText.setText("30");
-                setBar(256, 41, "41회");
-
                 // step img, text change
                 mBinding.headImg.setBackgroundResource(R.drawable.img_head_puff_big);
                 mBinding.step1Img.setBackgroundResource(R.drawable.ic_img_cooler_step1);
@@ -113,14 +114,10 @@ public class HeadActivity extends BaseActivity {
                 mBinding.step3Img.setBackgroundResource(R.drawable.img_brush_guide3);
                 mBinding.step4Img.setBackgroundResource(R.drawable.ic_img_cooler_step1);
                 setGuideText(getString(R.string.puff_step1), getString(R.string.puff_step2), getString(R.string.puff_step3), getString(R.string.puff_step4));
+                mBinding.ad.setText("Puff 광고");
+                mBinding.headNum.setText("   " + SharedPreferencesPackage.getPuffID(this));
                 break;
             case "Silicon":
-                mBinding.percentProgress.setProgressWithAnimation(15, 2000L);
-                mBinding.percentText.setText("15");
-                mBinding.totalProgress.setProgressWithAnimation(24, 2000L);
-                mBinding.totalText.setText("59");
-                setBar(256, 59, "59회");
-
                 // step img, text change
                 mBinding.headImg.setBackgroundResource(R.drawable.img_head_silicon_big);
                 mBinding.step1Img.setBackgroundResource(R.drawable.img_brush_guide1);
@@ -128,6 +125,8 @@ public class HeadActivity extends BaseActivity {
                 mBinding.step3Img.setBackgroundResource(R.drawable.img_silicon_guide3);
                 mBinding.step4Img.setBackgroundResource(R.drawable.img_brush_guide4);
                 setGuideText(getString(R.string.silicon_step1), getString(R.string.silicon_step2), getString(R.string.silicon_step3), getString(R.string.silicon_step4));
+                mBinding.ad.setText("Silicon 광고");
+                mBinding.headNum.setText("   " + SharedPreferencesPackage.getSiliconID(this));
                 break;
         }
     }
@@ -136,11 +135,6 @@ public class HeadActivity extends BaseActivity {
     public void onBackPressed() {
         super.onBackPressed();
         finish();
-    }
-
-    // per 계산
-    private void calculateData() {
-
     }
 
     // guide setting

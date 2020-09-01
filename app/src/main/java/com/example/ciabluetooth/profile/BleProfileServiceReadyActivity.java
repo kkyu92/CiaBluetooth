@@ -366,8 +366,8 @@ public abstract class BleProfileServiceReadyActivity<E extends BleProfileService
 	 * Called after the view and the toolbar has been created.
 	 */
 	protected final void setUpView() {
-//		connectButton = findViewById(R.id.btn_connect);
-		connectButton = findViewById(R.id.action_connect);
+		connectButton = findViewById(R.id.btn_connect);
+//		connectButton = findViewById(R.id.action_connect);
 //		deviceNameView = findViewById(R.id.device_name);
 	}
 

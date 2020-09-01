@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -22,6 +23,8 @@ import com.example.ciabluetooth.databinding.FragmentPatternTimeBinding;
 import com.example.ciabluetooth.fragment.BaseFragment;
 import com.example.ciabluetooth.util.ChartBar;
 import com.example.ciabluetooth.util.Common;
+import com.example.ciabluetooth.util.CustomDialog;
+import com.example.ciabluetooth.util.SharedPreferencesPackage;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,6 +34,8 @@ public class PatternTimeFragment extends BaseFragment {
     private FragmentPatternTimeBinding mBinding;
     private boolean isCreateView, isResume = false;
     private String time;
+
+    private CustomDialog customDialog;
 
     public static PatternTimeFragment getInstance(String time) {
         PatternTimeFragment patternTimeFragment = new PatternTimeFragment();
@@ -53,8 +58,25 @@ public class PatternTimeFragment extends BaseFragment {
         mBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_pattern_time, container, false);
         isCreateView = true;
 
+//        customDialog = new CustomDialog(getContext(), positiveListener, negativeListener);
+        customDialog = new CustomDialog(getContext());
+
         return mBinding.getRoot();
     }
+
+//    private View.OnClickListener positiveListener = new View.OnClickListener() {
+//        public void onClick(View v) {
+//            Toast.makeText(getContext(), "확인버튼이 눌렸습니다.",Toast.LENGTH_SHORT).show();
+//            customDialog.dismiss();
+//        }
+//    };
+//
+//    private View.OnClickListener negativeListener = new View.OnClickListener() {
+//        public void onClick(View v) {
+//            Toast.makeText(getContext(), "취소버튼이 눌렸습니다.",Toast.LENGTH_SHORT).show();
+//            customDialog.dismiss();
+//        }
+//    };
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
@@ -70,6 +92,8 @@ public class PatternTimeFragment extends BaseFragment {
     public void onResume() {
         super.onResume();
         Log.e(TAG, "onResume");
+        mBinding.chart.changeHeadImg.setOnClickListener(v -> customDialog.show());
+        mBinding.chart.changeHeadTxt.setOnClickListener(v -> customDialog.show());
     }
 
     @Override
@@ -82,15 +106,14 @@ public class PatternTimeFragment extends BaseFragment {
 
     private void setChart() {
         mBinding.setView(PatternTimeFragment.this);
+        int brushRun = SharedPreferencesPackage.getBrushRunTotal(getContext());
+        int coolerRun = SharedPreferencesPackage.getCoolerRunTotal(getContext());
+        int puffRun = SharedPreferencesPackage.getPuffRunTotal(getContext());
+        int siliconRun = SharedPreferencesPackage.getSiliconRunTotal(getContext());
         // 받는 값 초단위 || 헤드교체 시기 고정값
-        int brush = 446440, cooler = 126000, puff = 230400, silicon = 39600;
-        int changeHead = 120;
-        
-        if (brush == 0 && cooler == 0 && puff == 0 && silicon == 0) {
-            new ChartBar(getContext(), mBinding.chart, 20, 20, 20, 20, changeHead);
-        } else {
-            new ChartBar(getContext(), mBinding.chart, brush, cooler, puff, silicon, changeHead);
-        }
+//        int brush = 446440, cooler = 126000, puff = 230400, silicon = 39600;
+        Log.e("GET TOTAL", brushRun+"\n"+coolerRun+"\n"+puffRun+"\n"+siliconRun);
+        new ChartBar(getContext(), mBinding.chart, brushRun, coolerRun, puffRun, siliconRun);
     }
 
 //    private Handler mHandler = new Handler(Looper.getMainLooper()) {

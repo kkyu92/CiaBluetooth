@@ -14,6 +14,7 @@ import com.example.ciabluetooth.R;
 import com.example.ciabluetooth.databinding.FragmentPatternMonthlyBinding;
 import com.example.ciabluetooth.fragment.BaseFragment;
 import com.example.ciabluetooth.util.ChartBarMonthly;
+import com.example.ciabluetooth.util.SharedPreferencesPackage;
 
 public class PatternMonthlyFragment extends BaseFragment {
     private String TAG = this.getClass().getSimpleName();
@@ -62,12 +63,14 @@ public class PatternMonthlyFragment extends BaseFragment {
 
     private void setChart() {
         mBinding.setView(PatternMonthlyFragment.this);
-        int lastBrush = 0, thisBrush = 0, lastCooler = 0, thisCooler = 0,
-                lastPuff = 0, thisPuff = 0, lastSilicon = 0, thisSilicon = 0;
-        if (lastBrush == 0 && thisBrush == 0 && lastCooler == 0 && thisCooler == 0 && lastPuff == 0 && thisPuff == 0 && lastSilicon == 0 && thisSilicon == 0) {
-            new ChartBarMonthly(getContext(), mBinding.chart, 20, 10, 30, 20, 50, 40, 10, 60);
-        } else {
-            new ChartBarMonthly(getContext(), mBinding.chart, lastBrush, thisBrush, lastCooler, thisCooler, lastPuff, thisPuff, lastSilicon, thisSilicon);
-        }
+        int lastBrush = SharedPreferencesPackage.getBrushCntLastMonth(getContext());
+        int thisBrush = SharedPreferencesPackage.getBrushCntThisMonth(getContext());
+        int lastCooler = SharedPreferencesPackage.getCoolerCntLastMonth(getContext());
+        int thisCooler = SharedPreferencesPackage.getCoolerCntThisMonth(getContext());
+        int lastPuff = SharedPreferencesPackage.getPuffCntLastMonth(getContext());
+        int thisPuff = SharedPreferencesPackage.getPuffCntThisMonth(getContext());
+        int lastSilicon = SharedPreferencesPackage.getSiliconCntLastMonth(getContext());
+        int thisSilicon = SharedPreferencesPackage.getSiliconCntThisMonth(getContext());
+        new ChartBarMonthly(getContext(), mBinding.chart, lastBrush, thisBrush, lastCooler, thisCooler, lastPuff, thisPuff, lastSilicon, thisSilicon);
     }
 }

@@ -180,6 +180,7 @@ Blinky가 광고 중이고 여기에 표시되지 않는 경우 아래 버튼을
         \n\nㆍ 소비자의 과실로 고장이 난 경우 교환이나 환불이 불가합니다.</string>
 
     // nordic
+<!--    <string name="cia_id">CIA_IOT</string>-->
     <string name="cia_id">K5</string>
     <string name="scanner_action_scan">찾기</string>
     <string name="scanner_action_cancel">중지</string>
@@ -276,6 +277,10 @@ Blinky가 광고 중이고 여기에 표시되지 않는 경우 아래 버튼을
     <string name="bluetooth_show_list">블루투스 기기목록</string>
 
     <string name="get_info">"{\"GET\":\"info\"}"</string>
+    <string name="head_change_txt">"ㆍ Brush Head : 6개월
+        \nㆍ Cooler Head : 1년
+        \nㆍ Puff Head : 3개월
+        \nㆍ Silicon Head : 3개월"</string>
 
 
 </resources>

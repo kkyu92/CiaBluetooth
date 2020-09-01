@@ -53,6 +53,8 @@ import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import com.example.ciabluetooth.R;
 import com.example.ciabluetooth.profile.BleProfileService;
 
+import java.util.Arrays;
+
 import no.nordicsemi.android.log.ILogSession;
 import no.nordicsemi.android.log.LogContract;
 
@@ -241,7 +243,7 @@ public class UARTLogFragment extends ListFragment implements LoaderManager.Loade
 		final boolean scrolledToBottom = position == LOG_SCROLLED_TO_BOTTOM || (list.getCount() > 0 && list.getLastVisiblePosition() == list.getCount() - 1);
 
 		logAdapter.swapCursor(data);
-
+//		data.getStringValue(0);
 		if (position > LOG_SCROLL_NULL) {
 			list.setSelectionFromTop(position, 0);
 		} else {

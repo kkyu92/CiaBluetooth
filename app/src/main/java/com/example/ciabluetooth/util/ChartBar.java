@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
+import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 
@@ -18,17 +19,15 @@ public class ChartBar {
     private int cooler;
     private int puff;
     private int silicon;
-    private int changeHead;
 
     private BarChartBinding mBinding;
 
-    public ChartBar(Context context, BarChartBinding binding, int brush, int cooler, int puff, int silicon, int changeHead) {
+    public ChartBar(Context context, BarChartBinding binding, int brush, int cooler, int puff, int silicon) {
         mContext = context;
         this.brush = brush;
         this.cooler = cooler;
         this.puff = puff;
         this.silicon = silicon;
-        this.changeHead = changeHead;
 
         mBinding = binding;
 
@@ -36,7 +35,16 @@ public class ChartBar {
     }
 
     private void setBarView() {
-        Log.i("AvgBarFragment", "setBarView: " + changeHead);
+        int highest = Math.max(brush, cooler);
+        highest = Math.max(highest, puff);
+        highest = Math.max(highest, silicon);
+
+        int hundred = highest * 100 / 80;
+        int brushPer = (int) Math.round((double) (brush * 100 / hundred));
+        int coolerPer = (int) Math.round((double) cooler * 100 / hundred);
+        int puffPer = (int) Math.round((double) puff * 100 / hundred);
+        int siliconPer = (int) Math.round((double) silicon * 100 / hundred);
+//        int changeCoolerPer = highest * 100 / hundred;
 //        mBinding.unit.setText(R.string.time);
 //        mBinding.hundred.setText(R.string.hundred);
 //        mBinding.eighty.setText(R.string.eighty);
@@ -44,38 +52,30 @@ public class ChartBar {
 //        mBinding.forty.setText(R.string.forty);
 //        mBinding.twenty.setText(R.string.twenty);
 
-        // 그래프 %
-        int brushPer, coolerPer, puffPer, siliconPer;
         // 교체시기 = 고정 || percent 로 변환
         int changeHead = 120, changeHeadPer, max = 0;
-        // 시간으로 변환
-        brush = changeHour(brush);
-        cooler = changeHour(cooler);
-        puff = changeHour(puff);
-        silicon = changeHour(silicon);
 //        brush = 30;
 //        cooler = 24;
 //        puff = 17;
 //        silicon = 8;
 
         // 100% 의 시간 || percent
-        int hundred = changeHead * 100 / 80;
-        brushPer = brush * 100 / hundred;
-        coolerPer = cooler * 100 / hundred;
-        puffPer = puff * 100 / hundred;
-        siliconPer = silicon * 100 / hundred;
-        changeHeadPer = changeHead * 100 / hundred;
+//        brushPer = brush * 100 / hundred;
+//        coolerPer = cooler * 100 / hundred;
+//        puffPer = puff * 100 / hundred;
+//        siliconPer = silicon * 100 / hundred;
+//        changeHeadPer = changeHead * 100 / hundred;
         // setText hour
-        mBinding.brushHour.setText(brush + "H");
-        mBinding.coolerHour.setText(cooler + "H");
-        mBinding.puffHour.setText(puff + "H");
-        mBinding.siliconHour.setText(silicon + "H");
-
+        mBinding.brushHour.setText(changeHour(brush) + "H");
+        mBinding.coolerHour.setText(changeHour(cooler) + "H");
+        mBinding.puffHour.setText(changeHour(puff) + "H");
+        mBinding.siliconHour.setText(changeHour(silicon) + "H");
+        Log.e("per", brushPer+"\n"+coolerPer+"\n"+puffPer+"\n"+siliconPer+"\n"+hundred);
         // averageBar
         double height = (double) mBinding.averageBar.getHeight() / 100;
-        ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) mBinding.average.getLayoutParams();
-        marginLayoutParams.topMargin = (int) (height * (100 - changeHeadPer) + Common.getAddLinear(mContext, changeHeadPer, 0.3f));
-        mBinding.average.setLayoutParams(marginLayoutParams);
+//        ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) mBinding.average.getLayoutParams();
+//        marginLayoutParams.topMargin = (int) (height * (100 - changeCoolerPer) + Common.getAddLinear(mContext, changeCoolerPer, 0.3f));
+//        mBinding.average.setLayoutParams(marginLayoutParams);
 
         // Question Number Bar
         ViewGroup.LayoutParams params = mBinding.brushBar.getLayoutParams();
@@ -117,15 +117,20 @@ public class ChartBar {
         }
     };
 
-
-    private int changeHour(int time) {
-        int hour, min, sec;
-
-        min = time / 60;
-        hour = min / 60;
-        sec = time % 60;
-        min = min % 60;
-        return hour;
+    // hour 계산
+    private String changeHour(int headRun) {
+        String changeHour = "0";
+        if (headRun <= 360) {
+            changeHour = "0.1";
+        } else if (headRun < 3600) {
+            double changeDouble = (double) headRun / 3600;
+            changeHour = String.format("%.1f", changeDouble);
+        } else if (headRun == 3600) {
+            changeHour = "1";
+        } else {
+            changeHour = String.valueOf(headRun / 3600);
+        }
+        return changeHour;
     }
 
     private int getMax(int brush, int cooler, int puff, int silicon) {

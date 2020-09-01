@@ -124,6 +124,14 @@ public class SplashScreenActivity extends BleProfileServiceReadyActivity<UARTSer
         mBinding.btnCancel.setOnClickListener(mOnClickListener);
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (mBinding.btnConnect.getText().toString().equals(getString(R.string.action_disconnect))) {
+            startIntroView();
+        }
+    }
+
     private View.OnClickListener mOnClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -164,6 +172,12 @@ public class SplashScreenActivity extends BleProfileServiceReadyActivity<UARTSer
                 mBinding.img.startAnimation(startAnimation);
             }
         });
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                send(getString(R.string.get_info));
+            }
+        }, 1000);
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {

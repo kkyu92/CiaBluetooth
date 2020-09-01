@@ -65,4 +65,22 @@ public class BaseFragment extends Fragment {
                     .show();
         }
     }
+
+    // hour 계산
+    public String changeHour(int headRun) {
+        String changeHour = "0";
+        if (headRun <= 360) {
+            changeHour = "0.1";
+        } else if (headRun < 3600) {
+            double changeDouble = (double) headRun / 3600;
+            changeHour = String.format("%.1f", changeDouble);
+        } else if (headRun == 3600) {
+            changeHour = "1";
+        } else {
+            changeHour = String.valueOf(headRun / 3600);
+        }
+        Log.e(TAG, "headRun :: "+ headRun);
+        Log.e(TAG, "changeHour :: "+ changeHour);
+        return changeHour;
+    }
 }

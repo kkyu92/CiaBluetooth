@@ -50,43 +50,64 @@ public class ChartBarMonthly {
 //        mBinding.sixty.setText(R.string.sixty);
 //        mBinding.forty.setText(R.string.forty);
 //        mBinding.twenty.setText(R.string.twenty);
+        int lastAll = lastBrush + lastCooler + lastPuff + lastSilicon;
+        int thisAll = thisBrush + thisCooler + thisPuff + thisSilicon;
+
+        int lastBrushPer = (int) Math.round((double) (lastBrush * 100 / lastAll));
+        int lastCoolerPer = (int) Math.round((double) lastCooler * 100 / lastAll);
+        int lastPuffPer = (int) Math.round((double) lastPuff * 100 / lastAll);
+        int lastSiliconPer = (int) Math.round((double) lastSilicon * 100 / lastAll);
+
+        int thisBrushPer = (int) Math.round((double) thisBrush * 100 / thisAll);
+        int thisCoolerPer = (int) Math.round((double) thisCooler * 100 / thisAll);
+        int thisPuffPer = (int) Math.round((double) thisPuff * 100 / thisAll);
+        int thisSiliconPer = (int) Math.round((double) thisSilicon * 100 / thisAll);
 
         // setText percent
-        mBinding.brushPer.setText(lastBrush + "%");
-        mBinding.coolerPer.setText(lastCooler + "%");
-        mBinding.puffPer.setText(lastPuff + "%");
-        mBinding.siliconPer.setText(lastSilicon + "%");
+        mBinding.brushPer.setText(thisBrushPer + "%");
+        mBinding.coolerPer.setText(thisCoolerPer + "%");
+        mBinding.puffPer.setText(thisPuffPer + "%");
+        mBinding.siliconPer.setText(thisSiliconPer + "%");
+
+        if (lastBrushPer == 0) { lastBrushPer = 1; }
+        if (lastCoolerPer == 0) { lastCoolerPer = 1; }
+        if (lastPuffPer == 0) { lastPuffPer = 1; }
+        if (lastSiliconPer == 0) { lastSiliconPer = 1; }
+        if (thisBrushPer == 0) { thisBrushPer = 1; }
+        if (thisCoolerPer == 0) { thisCoolerPer = 1; }
+        if (thisPuffPer == 0) { thisPuffPer = 1; }
+        if (thisSiliconPer == 0) { thisSiliconPer = 1; }
 
         // averageBar
         double height = (double) mBinding.averageBar.getHeight() / 100;
 
         // Question Number Bar
         ViewGroup.LayoutParams params = mBinding.lastBrushBar.getLayoutParams();
-        params.height = (int) (height * (lastBrush) + Common.getAddLinear(mContext, lastBrush, 0.3f));
+        params.height = (int) (height * (lastBrushPer) + Common.getAddLinear(mContext, lastBrushPer, 0.3f));
         mBinding.lastBrushBar.setLayoutParams(params);
         params = mBinding.thisBrushBar.getLayoutParams();
-        params.height = (int) (height * (thisBrush) + Common.getAddLinear(mContext, thisBrush, 0.3f));
+        params.height = (int) (height * (thisBrushPer) + Common.getAddLinear(mContext, thisBrushPer, 0.3f));
         mBinding.thisBrushBar.setLayoutParams(params);
 
         params = mBinding.lastCoolerBar.getLayoutParams();
-        params.height = (int) (height * (lastCooler) + Common.getAddLinear(mContext, lastCooler, 0.3f));
+        params.height = (int) (height * (lastCoolerPer) + Common.getAddLinear(mContext, lastCoolerPer, 0.3f));
         mBinding.lastCoolerBar.setLayoutParams(params);
         params = mBinding.thisCoolerBar.getLayoutParams();
-        params.height = (int) (height * (thisCooler) + Common.getAddLinear(mContext, thisCooler, 0.3f));
+        params.height = (int) (height * (thisCoolerPer) + Common.getAddLinear(mContext, thisCoolerPer, 0.3f));
         mBinding.thisCoolerBar.setLayoutParams(params);
 
         params = mBinding.lastPuffBar.getLayoutParams();
-        params.height = (int) (height * (lastPuff) + Common.getAddLinear(mContext, lastPuff, 0.3f));
+        params.height = (int) (height * (lastPuffPer) + Common.getAddLinear(mContext, lastPuffPer, 0.3f));
         mBinding.lastPuffBar.setLayoutParams(params);
         params = mBinding.thisPuffBar.getLayoutParams();
-        params.height = (int) (height * (thisPuff) + Common.getAddLinear(mContext, thisPuff, 0.3f));
+        params.height = (int) (height * (thisPuffPer) + Common.getAddLinear(mContext, thisPuffPer, 0.3f));
         mBinding.thisPuffBar.setLayoutParams(params);
 
         params = mBinding.lastSiliconBar.getLayoutParams();
-        params.height = (int) (height * (lastSilicon) + Common.getAddLinear(mContext, lastSilicon, 0.3f));
+        params.height = (int) (height * (lastSiliconPer) + Common.getAddLinear(mContext, lastSiliconPer, 0.3f));
         mBinding.lastSiliconBar.setLayoutParams(params);
         params = mBinding.thisSiliconBar.getLayoutParams();
-        params.height = (int) (height * (thisSilicon) + Common.getAddLinear(mContext, thisSilicon, 0.3f));
+        params.height = (int) (height * (thisSiliconPer) + Common.getAddLinear(mContext, thisSiliconPer, 0.3f));
         mBinding.thisSiliconBar.setLayoutParams(params);
     }
 
@@ -97,7 +118,7 @@ public class ChartBarMonthly {
             try {
                 mBinding.averageBar.getViewTreeObserver().addOnGlobalLayoutListener(mOnGlobalLayoutListener);
             } catch (Exception e) {
-                mBinding.averageBar.getViewTreeObserver().addOnGlobalLayoutListener(mOnGlobalLayoutListener);
+                Log.e("treeObserver", ""+e);
             }
 
             return null;
