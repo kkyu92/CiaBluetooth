@@ -270,7 +270,7 @@
             android:layout_height="1dp"
             android:layout_marginStart="5dp"
             android:alpha="0.2"
-            android:background="@color/light_grey"
+            android:background="@color/transparent"
             app:layout_constraintBottom_toBottomOf="@id/hundred"
             app:layout_constraintEnd_toEndOf="@id/fifth_quiz"
             app:layout_constraintStart_toEndOf="@id/hundred"
@@ -281,7 +281,7 @@
             android:layout_height="1dp"
             android:layout_marginStart="5dp"
             android:alpha="0.2"
-            android:background="@color/light_grey"
+            android:background="@color/transparent"
             app:layout_constraintBottom_toBottomOf="@id/eighty"
             app:layout_constraintEnd_toEndOf="@id/fifth_quiz"
             app:layout_constraintStart_toEndOf="@id/eighty"
@@ -292,7 +292,7 @@
             android:layout_height="1dp"
             android:layout_marginStart="5dp"
             android:alpha="0.2"
-            android:background="@color/light_grey"
+            android:background="@color/transparent"
             app:layout_constraintBottom_toBottomOf="@id/sixty"
             app:layout_constraintEnd_toEndOf="@id/fifth_quiz"
             app:layout_constraintStart_toEndOf="@id/sixty"
@@ -303,7 +303,7 @@
             android:layout_height="1dp"
             android:layout_marginStart="5dp"
             android:alpha="0.2"
-            android:background="@color/light_grey"
+            android:background="@color/transparent"
             app:layout_constraintBottom_toBottomOf="@id/forty"
             app:layout_constraintEnd_toEndOf="@id/fifth_quiz"
             app:layout_constraintStart_toEndOf="@id/forty"
@@ -314,7 +314,7 @@
             android:layout_height="1dp"
             android:layout_marginStart="5dp"
             android:alpha="0.2"
-            android:background="@color/light_grey"
+            android:background="@color/transparent"
             app:layout_constraintBottom_toBottomOf="@id/twenty"
             app:layout_constraintEnd_toEndOf="@id/fifth_quiz"
             app:layout_constraintStart_toEndOf="@id/twenty"
@@ -362,25 +362,25 @@
             android:id="@+id/brush_img"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:background="@drawable/img_head_brush"
             app:layout_constraintEnd_toEndOf="@id/zero_line"
             app:layout_constraintHorizontal_bias="0.025"
             app:layout_constraintStart_toStartOf="@id/zero_line"
-            app:layout_constraintTop_toBottomOf="@id/zero" />
+            app:layout_constraintTop_toBottomOf="@+id/first_quiz" />
 
         <TextView
             android:id="@+id/first_quiz"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="0.7dp"
+            android:layout_marginTop="5dp"
             android:gravity="center"
             android:text="@string/brush"
             android:textColor="@color/text_color"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="@+id/brush_img"
             app:layout_constraintStart_toStartOf="@+id/brush_img"
-            app:layout_constraintTop_toBottomOf="@id/brush_img" />
+            app:layout_constraintTop_toBottomOf="@+id/zero" />
 
         <TextView
             android:id="@+id/brush_per"
@@ -389,18 +389,18 @@
             android:textColor="@color/text_color"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="@+id/brush_img"
-            app:layout_constraintEnd_toEndOf="@id/brush_img"
-            app:layout_constraintTop_toBottomOf="@id/first_quiz"/>
+            app:layout_constraintEnd_toEndOf="@+id/brush_img"
+            app:layout_constraintTop_toBottomOf="@+id/brush_img"/>
 
         <ImageView
             android:id="@+id/cooler_img"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/img_head_cooler"
-            app:layout_constraintEnd_toEndOf="@id/zero_line"
+            app:layout_constraintEnd_toEndOf="@+id/zero_line"
             app:layout_constraintHorizontal_bias="0.35"
-            app:layout_constraintStart_toStartOf="@id/zero_line"
-            app:layout_constraintTop_toTopOf="@id/brush_img" />
+            app:layout_constraintStart_toStartOf="@+id/zero_line"
+            app:layout_constraintTop_toTopOf="@+id/brush_img" />
 
         <TextView
             android:id="@+id/second_quiz"
@@ -412,7 +412,7 @@
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="@+id/cooler_img"
             app:layout_constraintStart_toStartOf="@+id/cooler_img"
-            app:layout_constraintTop_toBottomOf="@+id/cooler_img" />
+            app:layout_constraintTop_toTopOf="@+id/first_quiz" />
 
         <TextView
             android:id="@+id/cooler_per"
@@ -421,17 +421,17 @@
             android:textColor="@color/text_color"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="@+id/cooler_img"
-            app:layout_constraintEnd_toEndOf="@id/cooler_img"
-            app:layout_constraintTop_toBottomOf="@id/second_quiz"/>
+            app:layout_constraintEnd_toEndOf="@+id/cooler_img"
+            app:layout_constraintTop_toBottomOf="@+id/cooler_img"/>
 
         <ImageView
             android:id="@+id/puff_img"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/img_head_puff"
-            app:layout_constraintEnd_toEndOf="@id/zero_line"
+            app:layout_constraintEnd_toEndOf="@+id/zero_line"
             app:layout_constraintHorizontal_bias="0.65"
-            app:layout_constraintStart_toStartOf="@id/zero_line"
+            app:layout_constraintStart_toStartOf="@+id/zero_line"
             app:layout_constraintTop_toTopOf="@+id/cooler_img" />
 
         <TextView
@@ -444,7 +444,7 @@
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="@+id/puff_img"
             app:layout_constraintStart_toStartOf="@+id/puff_img"
-            app:layout_constraintTop_toBottomOf="@+id/puff_img" />
+            app:layout_constraintTop_toTopOf="@+id/first_quiz" />
 
         <TextView
             android:id="@+id/puff_per"
@@ -453,8 +453,8 @@
             android:textColor="@color/text_color"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="@+id/puff_img"
-            app:layout_constraintEnd_toEndOf="@id/puff_img"
-            app:layout_constraintTop_toBottomOf="@id/third_quiz"/>
+            app:layout_constraintEnd_toEndOf="@+id/puff_img"
+            app:layout_constraintTop_toBottomOf="@+id/puff_img"/>
 
         <ImageView
             android:id="@+id/silicon_img"
@@ -462,8 +462,8 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="10dp"
             android:background="@drawable/img_head_sillicon"
-            app:layout_constraintEnd_toEndOf="@id/zero_line"
-            app:layout_constraintStart_toStartOf="@id/zero_line"
+            app:layout_constraintEnd_toEndOf="@+id/zero_line"
+            app:layout_constraintStart_toStartOf="@+id/zero_line"
             app:layout_constraintHorizontal_bias="0.975"
             app:layout_constraintTop_toTopOf="@+id/puff_img" />
 
@@ -475,9 +475,9 @@
             android:text="@string/silicon"
             android:textColor="@color/text_color"
             android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="@id/silicon_img"
+            app:layout_constraintEnd_toEndOf="@+id/silicon_img"
             app:layout_constraintStart_toStartOf="@+id/silicon_img"
-            app:layout_constraintTop_toBottomOf="@id/silicon_img" />
+            app:layout_constraintTop_toTopOf="@+id/first_quiz" />
 
         <TextView
             android:id="@+id/silicon_per"
@@ -486,8 +486,8 @@
             android:textColor="@color/text_color"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="@+id/silicon_img"
-            app:layout_constraintEnd_toEndOf="@id/silicon_img"
-            app:layout_constraintTop_toBottomOf="@id/fourth_quiz"/>
+            app:layout_constraintEnd_toEndOf="@+id/silicon_img"
+            app:layout_constraintTop_toBottomOf="@+id/silicon_img"/>
 
         <TextView
             android:id="@+id/fifth_quiz"

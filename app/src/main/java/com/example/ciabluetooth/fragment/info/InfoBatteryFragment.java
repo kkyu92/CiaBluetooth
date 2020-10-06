@@ -14,6 +14,7 @@ import androidx.databinding.DataBindingUtil;
 import com.example.ciabluetooth.R;
 import com.example.ciabluetooth.databinding.FragmentInfoBatteryBinding;
 import com.example.ciabluetooth.fragment.BaseFragment;
+import com.example.ciabluetooth.util.SharedPreferencesPackage;
 import com.mikhaellopez.circularprogressbar.CircularProgressBar;
 
 public class InfoBatteryFragment extends BaseFragment {
@@ -43,6 +44,7 @@ public class InfoBatteryFragment extends BaseFragment {
         mBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_info_battery, container, false);
         isCreateView = true;
 
+        mBinding.deviceNum.setText(SharedPreferencesPackage.getDeviceID(getContext()));
         makeCircleBattery(battery);
         return mBinding.getRoot();
     }

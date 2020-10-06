@@ -19,8 +19,7 @@ public class BaseFragment extends Fragment {
     public static String INIT = "";
     public String TAG = "BaseFragment";
 
-    public void onFragmentResume()
-    {
+    public void onFragmentResume() {
         checkInternetState();
         if (INIT == null) {
             Intent intent = new Intent(getContext(), SplashScreenActivity.class);
@@ -29,8 +28,7 @@ public class BaseFragment extends Fragment {
         }
     }
 
-    public void stopFragment()
-    {
+    public void stopFragment() {
 
     }
 
@@ -40,8 +38,7 @@ public class BaseFragment extends Fragment {
     }
 
     protected void finishFragment() {
-        if (getFragmentManager() != null)
-        {
+        if (getFragmentManager() != null) {
             getFragmentManager().popBackStack();
         }
     }
@@ -68,19 +65,36 @@ public class BaseFragment extends Fragment {
 
     // hour 계산
     public String changeHour(int headRun) {
-        String changeHour = "0";
-        if (headRun <= 360) {
-            changeHour = "0.1";
-        } else if (headRun < 3600) {
-            double changeDouble = (double) headRun / 3600;
-            changeHour = String.format("%.1f", changeDouble);
-        } else if (headRun == 3600) {
-            changeHour = "1";
+        int day = headRun / (60 * 60 * 24);
+        int hour = (headRun - day * 60 * 60 * 24) / (60 * 60);
+        int min = (headRun - day * 60 * 60 * 24 - hour * 3600) / 60;
+        int sec = headRun % 60;
+        String changeHour;
+
+        if (headRun >= 86400) {
+            changeHour = day + "일";
+        } else if (headRun > 3600) {
+            changeHour = hour + "시";
+        } else if (headRun > 60) {
+            changeHour = min + "분";
         } else {
-            changeHour = String.valueOf(headRun / 3600);
+            changeHour = sec + "초";
         }
-        Log.e(TAG, "headRun :: "+ headRun);
-        Log.e(TAG, "changeHour :: "+ changeHour);
         return changeHour;
+
+//        String changeHour = "0";
+//        if (headRun <= 360) {
+//            changeHour = "0.1";
+//        } else if (headRun < 3600) {
+//            double changeDouble = (double) headRun / 3600;
+//            changeHour = String.format("%.1f", changeDouble);
+//        } else if (headRun == 3600) {
+//            changeHour = "1";
+//        } else {
+//            changeHour = String.valueOf(headRun / 3600);
+//        }
+//        Log.e(TAG, "headRun :: "+ headRun);
+//        Log.e(TAG, "changeHour :: "+ changeHour);
+//        return changeHour;
     }
 }

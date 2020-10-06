@@ -371,7 +371,7 @@ public abstract class BleProfileActivity extends AppCompatActivity implements Bl
 	 */
 	private void showDeviceScanningDialog(final UUID filter) {
 		runOnUiThread(() -> {
-			final ScannerFragment dialog = ScannerFragment.getInstance(filter);
+			final ScannerFragment dialog = ScannerFragment.getInstance(filter,"");
 			dialog.show(getSupportFragmentManager(), "scan_fragment");
 		});
 	}

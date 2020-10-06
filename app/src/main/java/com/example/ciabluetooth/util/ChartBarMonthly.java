@@ -50,8 +50,11 @@ public class ChartBarMonthly {
 //        mBinding.sixty.setText(R.string.sixty);
 //        mBinding.forty.setText(R.string.forty);
 //        mBinding.twenty.setText(R.string.twenty);
+
         int lastAll = lastBrush + lastCooler + lastPuff + lastSilicon;
+        if (lastAll == 0) { lastAll = 1;}
         int thisAll = thisBrush + thisCooler + thisPuff + thisSilicon;
+        if (thisAll == 0) { thisAll = 1;}
 
         int lastBrushPer = (int) Math.round((double) (lastBrush * 100 / lastAll));
         int lastCoolerPer = (int) Math.round((double) lastCooler * 100 / lastAll);

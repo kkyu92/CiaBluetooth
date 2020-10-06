@@ -20,42 +20,50 @@
   ~ ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE
   ~ USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   -->
-<LinearLayout
-	style="?android:attr/buttonBarStyle"
+<androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent"
+	android:layout_height="match_parent"
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:tools="http://schemas.android.com/tools"
-	android:layout_width="match_parent"
-	android:layout_height="match_parent"
-	android:animateLayoutChanges="true"
-	android:orientation="vertical"
-	android:paddingTop="10dp">
+	xmlns:app="http://schemas.android.com/apk/res-auto">
 
-	<TextView
-		android:id="@+id/permission_rationale"
-		android:layout_width="match_parent"
+	<LinearLayout
+		android:id="@+id/device_list_container"
+		style="?android:attr/buttonBarStyle"
+		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:layout_marginBottom="8dp"
-		android:paddingEnd="26dp"
-		android:paddingStart="26dp"
-		android:text="@string/scanner_permission_rationale"
-		android:visibility="gone"/>
+		android:animateLayoutChanges="true"
+		android:orientation="vertical"
+		android:paddingTop="10dp"
+		app:layout_constraintTop_toTopOf="parent"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintEnd_toEndOf="parent">
 
-	<ListView
-		android:id="@android:id/list"
-		android:layout_width="match_parent"
-		android:layout_height="0dp"
-		android:layout_weight="1"
-		android:paddingEnd="26dp"
-		android:paddingStart="26dp"
-		android:scrollbarStyle="outsideOverlay"
-		tools:listitem="@layout/device_list_row"/>
+		<TextView
+			android:id="@+id/permission_rationale"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="8dp"
+			android:paddingEnd="26dp"
+			android:paddingStart="26dp"
+			android:text="@string/scanner_permission_rationale"
+			android:visibility="gone"/>
 
-	<com.google.android.material.button.MaterialButton
-		style="@style/Widget.MaterialComponents.Button.TextButton"
-		android:id="@+id/action_cancel"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:textColor="@color/pink"
-		android:text="@string/scanner_action_scan"/>
+		<ListView
+			android:id="@android:id/list"
+			android:layout_width="match_parent"
+			android:layout_height="0dp"
+			android:layout_weight="1"
+			android:paddingEnd="26dp"
+			android:paddingStart="26dp"
+			android:scrollbarStyle="outsideOverlay"
+			tools:listitem="@layout/device_list_row"/>
 
-</LinearLayout>
+		<com.google.android.material.button.MaterialButton
+			style="@style/Widget.MaterialComponents.Button.TextButton"
+			android:id="@+id/action_cancel"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:textColor="@color/pink"
+			android:text="@string/scanner_action_scan"/>
+	</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

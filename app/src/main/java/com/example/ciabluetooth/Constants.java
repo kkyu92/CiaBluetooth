@@ -12,6 +12,7 @@ public class Constants {
     public static final String YEAR = "year";
     public static final String MONTH = "month";
     public static final String DEVICE_SN = "deviceSN";
+    public static final String DEVICE_ADDRESS = "deviceAddress";
     public static final String BRUSH_SN = "brushSN";
     public static final String COOLER_SN = "coolerSN";
     public static final String PUFF_SN = "puffSN";
@@ -40,6 +41,23 @@ public class Constants {
     public static final int MANUAL_START = 6;
     public static final int MANUAL_USAGE = 7;
     public static final int MANUAL_HEAD = 8;
+    public static final int MESSAGE_SCAN_SHOW_LIST = 9;
+    public static final int MESSAGE_SCAN_START_MAIN = 10;
+    public static final int MESSAGE_SCAN_MAIN = 11;
+    public static final int MESSAGE_SCAN_MAIN_UNCONN = 12;
+
+    // dialog
+    public static final String APP_FINISH_DIALOG = "app_finish_dialog";
+    public static final String GRAPH_DIALOG = "graph_dialog";
+    public static final int DIALOG_APP_FINISH = 100;
+    public static final int DIALOG_GRAPH = 101;
+
+    // Intent request
+    public static final int INTENT_REQUEST_HEAD = 0;
+    public static final int INTENT_REQUEST_INFO = 1;
+    public static final int INTENT_REQUEST_MANUAL = 2;
+    public static final int INTENT_REQUEST_PATTERN = 3;
+
 
     // handler
     public static final int MESSAGE_CONNECT = 0;

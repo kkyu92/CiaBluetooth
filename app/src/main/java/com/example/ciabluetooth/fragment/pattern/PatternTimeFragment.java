@@ -35,7 +35,7 @@ public class PatternTimeFragment extends BaseFragment {
     private boolean isCreateView, isResume = false;
     private String time;
 
-    private CustomDialog customDialog;
+    private CustomDialog dialog;
 
     public static PatternTimeFragment getInstance(String time) {
         PatternTimeFragment patternTimeFragment = new PatternTimeFragment();
@@ -58,25 +58,8 @@ public class PatternTimeFragment extends BaseFragment {
         mBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_pattern_time, container, false);
         isCreateView = true;
 
-//        customDialog = new CustomDialog(getContext(), positiveListener, negativeListener);
-        customDialog = new CustomDialog(getContext());
-
         return mBinding.getRoot();
     }
-
-//    private View.OnClickListener positiveListener = new View.OnClickListener() {
-//        public void onClick(View v) {
-//            Toast.makeText(getContext(), "확인버튼이 눌렸습니다.",Toast.LENGTH_SHORT).show();
-//            customDialog.dismiss();
-//        }
-//    };
-//
-//    private View.OnClickListener negativeListener = new View.OnClickListener() {
-//        public void onClick(View v) {
-//            Toast.makeText(getContext(), "취소버튼이 눌렸습니다.",Toast.LENGTH_SHORT).show();
-//            customDialog.dismiss();
-//        }
-//    };
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
@@ -92,8 +75,8 @@ public class PatternTimeFragment extends BaseFragment {
     public void onResume() {
         super.onResume();
         Log.e(TAG, "onResume");
-        mBinding.chart.changeHeadImg.setOnClickListener(v -> customDialog.show());
-        mBinding.chart.changeHeadTxt.setOnClickListener(v -> customDialog.show());
+        mBinding.chart.changeHeadImg.setOnClickListener(v -> show());
+        mBinding.chart.changeHeadTxt.setOnClickListener(v -> show());
     }
 
     @Override
@@ -114,6 +97,13 @@ public class PatternTimeFragment extends BaseFragment {
 //        int brush = 446440, cooler = 126000, puff = 230400, silicon = 39600;
         Log.e("GET TOTAL", brushRun+"\n"+coolerRun+"\n"+puffRun+"\n"+siliconRun);
         new ChartBar(getContext(), mBinding.chart, brushRun, coolerRun, puffRun, siliconRun);
+    }
+
+    private void show() {
+        dialog = new CustomDialog();
+        dialog.setNoticeType(getActivity(), Constants.DIALOG_GRAPH);
+//        dialog.setCancelable(false);
+        dialog.show(getActivity().getSupportFragmentManager(), Constants.GRAPH_DIALOG);
     }
 
 //    private Handler mHandler = new Handler(Looper.getMainLooper()) {

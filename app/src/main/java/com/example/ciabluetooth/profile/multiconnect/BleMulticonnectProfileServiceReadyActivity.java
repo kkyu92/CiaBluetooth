@@ -498,7 +498,7 @@ public abstract class BleMulticonnectProfileServiceReadyActivity<E extends BleMu
 	 * @see #getFilterUUID()
 	 */
 	private void showDeviceScanningDialog(final UUID filter) {
-		final ScannerFragment dialog = ScannerFragment.getInstance(filter);
+		final ScannerFragment dialog = ScannerFragment.getInstance(filter,"");
 		dialog.show(getSupportFragmentManager(), "scan_fragment");
 	}
 

@@ -21,7 +21,7 @@
   -->
 
 <resources>
-    <string name="app_name">Cia Cleansing</string>
+    <string name="app_name">mine</string>
     <string name="feature_name">CIA</string>
 
     <string name="menu_filter">Filter</string>
@@ -130,24 +130,52 @@ Blinky가 광고 중이고 여기에 표시되지 않는 경우 아래 버튼을
     <string name="last_week">지난달</string>
     <string name="this_week">이번달</string>
 
-    <string name="how_to_use"><b>1. 클렌징 모드</b>\n(브러시 헤드는 딥클렌징에 효과적입니다.)
-        \n① 얼굴에 적당한 물기가 있는 상태에서 클렌징 제품으로 거품을 내줍니다.
-        \n② 피부 컨디션에 맞게 브러시/실리콘 헤드를 본체에 장착해줍니다.
-        \n③ 전원 버튼을 길게 눌러 전원을 켜고, 앞면의 LED를 통해 원하는 프로그램 단계를 확인합니다.
-        \n④ 거품이 충분히 생길 수 있도록 얼굴 구석구석을 클렌징해줍니다 ⑤ 관리가 끝나면 전원 버튼을 길게 눌러 전원을 끕니다.
-        \n\n<b>2. 쿨러 모드</b>
-        \n① 얼굴 피부에 미온수나 화장수를 충분히 발라줍니다.
-        \n② 본체에 냉장보관한 쿨러 헤드를 장착해줍니다.
-        \n③ 전원 버튼을 길게 눌러 전원을 켜고, 앞면의 LED를 통해 원하는 프로그램 단계를 확인합니다.
-        \n④ 쿨러를 얼굴 피부에 두고 붓기가 빠질 때까지 천천히 밀면서 마사지합니다.
-        \n⑤ 2-3분 후 관리가 끝나면 전원 버튼을 길게 눌러 전원을 끕니다.
-        \n\n<b>3. 메이크업 모드</b>
-        \n① 세안을 한 뒤 메이크업 제품을 얼굴에 도포합니다.
-        \n② 본체에 퍼프 헤드를 장착해줍니다.
-        \n③ 전원 버튼을 길게 눌러 전원을 켜고, 앞면의 LED를 통해 원하는 프로그램 단계를 확인합니다.
-        \n④ 진동을 통해 메이크업 제품이 얼굴에 골고루 퍼 발라질 수 있도록 얼굴 전체에 걸쳐 사용해 줍니다.
-        \n⑤ 관리가 끝나면 전원 버튼을 길게 눌러 전원을 끕니다.
-        \n\n<b>※ 타이머 기능</b>
+<!--    <string name="how_to_use"><b>1. 클렌징 모드</b>\n(브러시 헤드는 딥클렌징에 효과적입니다.)-->
+<!--        \n① 얼굴에 적당한 물기가 있는 상태에서 클렌징 제품으로 거품을 내줍니다.-->
+<!--        \n② 피부 컨디션에 맞게 브러시/실리콘 헤드를 본체에 장착해줍니다.-->
+<!--        \n③ 전원 버튼을 길게 눌러 전원을 켜고, 앞면의 LED를 통해 원하는 프로그램 단계를 확인합니다.-->
+<!--        \n④ 거품이 충분히 생길 수 있도록 얼굴 구석구석을 클렌징해줍니다.-->
+<!--        \n⑤ 관리가 끝나면 전원 버튼을 길게 눌러 전원을 끕니다.-->
+<!--        \n\n<b>2. 쿨러 모드</b>-->
+<!--        \n① 얼굴 피부에 미온수나 화장수를 충분히 발라줍니다.-->
+<!--        \n② 본체에 냉장보관한 쿨러 헤드를 장착해줍니다.-->
+<!--        \n③ 전원 버튼을 길게 눌러 전원을 켜고, 앞면의 LED를 통해 원하는 프로그램 단계를 확인합니다.-->
+<!--        \n④ 쿨러를 얼굴 피부에 두고 붓기가 빠질 때까지 천천히 밀면서 마사지합니다.-->
+<!--        \n⑤ 2-3분 후 관리가 끝나면 전원 버튼을 길게 눌러 전원을 끕니다.-->
+<!--        \n\n<b>3. 메이크업 모드</b>-->
+<!--        \n① 세안을 한 뒤 메이크업 제품을 얼굴에 도포합니다.-->
+<!--        \n② 본체에 퍼프 헤드를 장착해줍니다.-->
+<!--        \n③ 전원 버튼을 길게 눌러 전원을 켜고, 앞면의 LED를 통해 원하는 프로그램 단계를 확인합니다.-->
+<!--        \n④ 진동을 통해 메이크업 제품이 얼굴에 골고루 퍼 발라질 수 있도록 얼굴 전체에 걸쳐 사용해 줍니다.-->
+<!--        \n⑤ 관리가 끝나면 전원 버튼을 길게 눌러 전원을 끕니다.-->
+<!--        \n\n<b>※ 타이머 기능</b>-->
+<!--        \n사용 기본 시간 7분-->
+<!--        \n(7분이 경과할 경우 자동으로 전원이 종료됩니다.)-->
+<!--        \n모든 모드에서 원하는 프로그램 3단계가 조절 가능합니다.</string>-->
+    <string name="num1">① </string>
+    <string name="num2">② </string>
+    <string name="num3">③ </string>
+    <string name="num4">④ </string>
+    <string name="num5">⑤ </string>
+    <string name="how_to_use1"><b>1. 클렌징 모드</b>\n(브러시 헤드는 딥클렌징에 효과적입니다.)</string>
+    <string name="how_to_use1_1">얼굴에 적당한 물기가 있는 상태에서 클렌징 제품으로 거품을 내줍니다.</string>
+    <string name="how_to_use1_2">피부 컨디션에 맞게 브러시/실리콘 헤드를 본체에 장착해줍니다.</string>
+    <string name="how_to_use1_3">전원 버튼을 길게 눌러 전원을 켜고, 앞면의 LED를 통해 원하는 프로그램 단계를 확인합니다.</string>
+    <string name="how_to_use1_4">거품이 충분히 생길 수 있도록 얼굴 구석구석을 클렌징해줍니다</string>
+    <string name="how_to_use1_5">관리가 끝나면 전원 버튼을 길게 눌러 전원을 끕니다.</string>
+    <string name="how_to_use2">\n\n<b>2. 쿨러 모드</b></string>
+    <string name="how_to_use2_1">얼굴 피부에 미온수나 화장수를 충분히 발라줍니다.</string>
+    <string name="how_to_use2_2">본체에 냉장보관한 쿨러 헤드를 장착해줍니다.</string>
+    <string name="how_to_use2_3">전원 버튼을 길게 눌러 전원을 켜고, 앞면의 LED를 통해 원하는 프로그램 단계를 확인합니다.</string>
+    <string name="how_to_use2_4">쿨러를 얼굴 피부에 두고 붓기가 빠질 때까지 천천히 밀면서 마사지합니다.</string>
+    <string name="how_to_use2_5">2-3분 후 관리가 끝나면 전원 버튼을 길게 눌러 전원을 끕니다.</string>
+    <string name="how_to_use3">\n\n<b>3. 메이크업 모드</b></string>
+    <string name="how_to_use3_1">세안을 한 뒤 메이크업 제품을 얼굴에 도포합니다.</string>
+    <string name="how_to_use3_2">본체에 퍼프 헤드를 장착해줍니다.</string>
+    <string name="how_to_use3_3">전원 버튼을 길게 눌러 전원을 켜고, 앞면의 LED를 통해 원하는 프로그램 단계를 확인합니다.</string>
+    <string name="how_to_use3_4">진동을 통해 메이크업 제품이 얼굴에 골고루 퍼 발라질 수 있도록 얼굴 전체에 걸쳐 사용해 줍니다.</string>
+    <string name="how_to_use3_5">관리가 끝나면 전원 버튼을 길게 눌러 전원을 끕니다.</string>
+    <string name="how_to_use4">\n\n<b>※ 타이머 기능</b>
         \n사용 기본 시간 7분
         \n(7분이 경과할 경우 자동으로 전원이 종료됩니다.)
         \n모든 모드에서 원하는 프로그램 3단계가 조절 가능합니다.</string>
@@ -178,9 +206,15 @@ Blinky가 광고 중이고 여기에 표시되지 않는 경우 아래 버튼을
         \n\nㆍ 어린이의 손이 닿지 않는 곳에 보관하여 주십시오.
         \n\nㆍ 타사의 소모품은 사용하지 마십시오.
         \n\nㆍ 소비자의 과실로 고장이 난 경우 교환이나 환불이 불가합니다.</string>
+    <string name="as">시제품의 문제가 발생한 경우, 본 보증서와 보증 규정 내용을 확인한 후 고객서비스 센터로 연락하여 주십시오.
+        \n고객서비스 센터 070-0000-0000
+        \n\n<b>[무상 서비스]</b>
+        \n구입 후 1년[보증기간]이내에 정상적인 사용 상태에서 발생한 고장의 경우
+    </string>
 
     // nordic
-<!--    <string name="cia_id">CIA_IOT</string>-->
+<!--    mine 로 최종변경 해야함 -->
+<!--    <string name="cia_id">mine</string>-->
     <string name="cia_id">K5</string>
     <string name="scanner_action_scan">찾기</string>
     <string name="scanner_action_cancel">중지</string>
@@ -196,7 +230,7 @@ Blinky가 광고 중이고 여기에 표시되지 않는 경우 아래 버튼을
 
     <string name="not_available">n/a</string>
     <string name="scanner_empty">찾을 수 있는 디바이스가 없습니다.</string>
-    <string name="scanner_title">Cia 디바이스를 연결해주세요.</string>
+    <string name="scanner_title">mine 디바이스를 연결해주세요.</string>
     <string name="no_required_permission">Permission denied.</string>
     <string name="scanner_permission_rationale">Since Android 6.0 Marshmallow system requires granting access to device\'s location in order to scan for Bluetooth LE devices. Bluetooth beacons may be used to determine the phone\'s and user\'s location.</string>
     <string name="not_supported">The device does not have required services.</string>
@@ -265,7 +299,7 @@ Blinky가 광고 중이고 여기에 표시되지 않는 경우 아래 버튼을
     <string name="warranty_text">보증기간</string>
     <string name="warranty_contents_txt">구입일로부터 1년</string>
     <string name="precautions_txt">주의사항</string>
-    <string name="precautions_contents_txt">사용시간, 충전시간 및 베터리 잔량은\n실제 사용 환경과 제품사용시간에 따라\n달라질 수 있습니다.</string>
+    <string name="precautions_contents_txt">사용시간, 충전시간 및 베터리 잔량은\n실제 사용 환경과 제품사용시간에\n따라 달라질 수 있습니다.</string>
     <string name="block_usage_title">기기 총 사용시간</string>
     <string name="head_usage_time">헤드 사용시간</string>
     <string name="head1_title">1.헤드 교체</string>
@@ -281,6 +315,6 @@ Blinky가 광고 중이고 여기에 표시되지 않는 경우 아래 버튼을
         \nㆍ Cooler Head : 1년
         \nㆍ Puff Head : 3개월
         \nㆍ Silicon Head : 3개월"</string>
-
+    <string name="get_data">데이터를 불러오는중입니다....</string>
 
 </resources>

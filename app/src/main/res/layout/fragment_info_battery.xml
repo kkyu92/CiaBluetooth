@@ -73,6 +73,7 @@
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="30dp"
                 android:orientation="vertical"
+                android:gravity="center"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -86,9 +87,9 @@
                     android:textSize="14sp" />
 
                 <TextView
+                    android:id="@+id/device_num"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="   FFQD000001"
                     android:textColor="@color/text_title_50"
                     android:textSize="14sp"
                     android:textStyle="bold" />

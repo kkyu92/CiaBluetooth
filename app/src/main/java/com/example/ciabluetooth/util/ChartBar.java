@@ -40,6 +40,7 @@ public class ChartBar {
         highest = Math.max(highest, silicon);
 
         int hundred = highest * 100 / 80;
+        hundred = hundred == 0 ? 1 : hundred;
         int brushPer = (int) Math.round((double) (brush * 100 / hundred));
         int coolerPer = (int) Math.round((double) cooler * 100 / hundred);
         int puffPer = (int) Math.round((double) puff * 100 / hundred);
@@ -65,11 +66,16 @@ public class ChartBar {
 //        puffPer = puff * 100 / hundred;
 //        siliconPer = silicon * 100 / hundred;
 //        changeHeadPer = changeHead * 100 / hundred;
+        
+//        mBinding.brushHour.setText(changeHour(75300));
+//        mBinding.coolerHour.setText(changeHour(59889));
+//        mBinding.puffHour.setText(changeHour(3500));
+//        mBinding.siliconHour.setText(changeHour(59));
         // setText hour
-        mBinding.brushHour.setText(changeHour(brush) + "H");
-        mBinding.coolerHour.setText(changeHour(cooler) + "H");
-        mBinding.puffHour.setText(changeHour(puff) + "H");
-        mBinding.siliconHour.setText(changeHour(silicon) + "H");
+        mBinding.brushHour.setText(changeHour(brush));
+        mBinding.coolerHour.setText(changeHour(cooler));
+        mBinding.puffHour.setText(changeHour(puff));
+        mBinding.siliconHour.setText(changeHour(silicon));
         Log.e("per", brushPer+"\n"+coolerPer+"\n"+puffPer+"\n"+siliconPer+"\n"+hundred);
         // averageBar
         double height = (double) mBinding.averageBar.getHeight() / 100;
@@ -119,18 +125,36 @@ public class ChartBar {
 
     // hour 계산
     private String changeHour(int headRun) {
-        String changeHour = "0";
-        if (headRun <= 360) {
-            changeHour = "0.1";
-        } else if (headRun < 3600) {
-            double changeDouble = (double) headRun / 3600;
-            changeHour = String.format("%.1f", changeDouble);
-        } else if (headRun == 3600) {
-            changeHour = "1";
+        int day = headRun / (60 * 60 * 24);
+        int hour = (headRun - day * 60 * 60 * 24) / (60 * 60);
+        int min = (headRun - day * 60 * 60 * 24 - hour * 3600) / 60;
+        int sec = headRun % 60;
+        String changeHour;
+
+        if (headRun >= 86400) {
+            changeHour = day + "일";
+        } else if (headRun > 3600) {
+            changeHour = hour + "시";
+        } else if (headRun > 60) {
+            changeHour = min + "분";
         } else {
-            changeHour = String.valueOf(headRun / 3600);
+            changeHour = sec + "초";
         }
         return changeHour;
+//        String changeHour = "0";
+//        if (headRun == 0) {
+//            changeHour = "0";
+//        } else if (headRun <= 360) {
+//            changeHour = "0.1";
+//        } else if (headRun < 3600) {
+//            double changeDouble = (double) headRun / 3600;
+//            changeHour = String.format("%.1f", changeDouble);
+//        } else if (headRun == 3600) {
+//            changeHour = "1";
+//        } else {
+//            changeHour = String.format("%.1f", (double) headRun / 3600);
+//        }
+//        return changeHour;
     }
 
     private int getMax(int brush, int cooler, int puff, int silicon) {

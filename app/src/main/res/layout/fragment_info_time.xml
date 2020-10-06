@@ -70,7 +70,7 @@
                         android:id="@+id/block_usage_time_txt"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="201"
+                        android:text="23초"
                         android:textColor="@color/text_color"
                         android:textSize="47sp"
                         app:layout_constraintBottom_toBottomOf="@id/block_usage_img"
@@ -82,7 +82,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="20dp"
-                        android:text="@string/hour"
+                        android:visibility="invisible"
                         android:textColor="@color/text_color"
                         android:textSize="29sp"
                         app:layout_constraintBottom_toBottomOf="@id/block_usage_time_txt"
@@ -301,6 +301,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="30dp"
                 android:orientation="vertical"
+                android:gravity="center"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -314,9 +315,9 @@
                     android:textSize="14sp" />
 
                 <TextView
+                    android:id="@+id/device_num"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="   FFQD000001"
                     android:textColor="@color/text_title_50"
                     android:textSize="14sp"
                     android:textStyle="bold" />

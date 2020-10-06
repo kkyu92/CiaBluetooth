@@ -158,6 +158,9 @@ public class UARTActivity extends BleProfileServiceReadyActivity<UARTService.UAR
 	}
 
 	@Override
+	public void onUnConnected() {}
+
+	@Override
 	public void onBackPressed() {
 		super.onBackPressed();
 	}

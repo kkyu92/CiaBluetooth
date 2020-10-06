@@ -40,6 +40,7 @@ import com.example.ciabluetooth.uart.UARTInterface;
 import com.example.ciabluetooth.uart.UARTLocalLogContentProvider;
 import com.example.ciabluetooth.uart.UARTLogFragment;
 import com.example.ciabluetooth.uart.UARTService;
+import com.example.ciabluetooth.util.SharedPreferencesPackage;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -69,6 +70,8 @@ public class SplashScreenActivity extends BleProfileServiceReadyActivity<UARTSer
 //        super.onCreate(savedInstanceState);
         mBinding = DataBindingUtil.setContentView(SplashScreenActivity.this, R.layout.activity_splash_screen);
 
+//        Log.e(TAG, SharedPreferencesPackage.getDeviceAddress(this) + "\n" + SharedPreferencesPackage.getDeviceID(this));
+        SharedPreferencesPackage.setNowActivityName(this, TAG);
         ArrayList<Permission> data = new ArrayList<>();
         Permission item = new Permission();
         item.type = Constants.EXPANDABLE_PARENT;
@@ -127,8 +130,8 @@ public class SplashScreenActivity extends BleProfileServiceReadyActivity<UARTSer
     @Override
     protected void onResume() {
         super.onResume();
-        if (mBinding.btnConnect.getText().toString().equals(getString(R.string.action_disconnect))) {
-            startIntroView();
+        if (mBinding.btnConnect.getText().toString().equals(getString(R.string.action_disconnect)) || mBinding.btnConnect.getText().toString().equals(getString(R.string.action_connect))) {
+            startIntroView(1);
         }
     }
 
@@ -162,14 +165,21 @@ public class SplashScreenActivity extends BleProfileServiceReadyActivity<UARTSer
         }
     };
 
-    private void startIntroView() {
+    private void startIntroView(int splash) {
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                mBinding.permissionView.setVisibility(View.GONE);
-                Animation startAnimation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.start_animation);
-                mBinding.title.startAnimation(startAnimation);
-                mBinding.img.startAnimation(startAnimation);
+                if (splash == 1) {
+                    mBinding.permissionView.setVisibility(View.GONE);
+                    Animation startAnimation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.start_animation);
+                    mBinding.title.startAnimation(startAnimation);
+                    mBinding.img.startAnimation(startAnimation);
+                } else {
+                    mBinding.introView.setVisibility(View.GONE);
+                    mBinding.permitContainer.setVisibility(View.GONE);
+                    Animation startAnimation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.start_animation);
+                    mBinding.permissionView.startAnimation(startAnimation);
+                }
             }
         });
         new Handler().postDelayed(new Runnable() {
@@ -202,8 +212,15 @@ public class SplashScreenActivity extends BleProfileServiceReadyActivity<UARTSer
             case REQUEST_ENABLE_BT: // 25번 줄에서 requestCode 값 1
                 if (resultCode == RESULT_OK) {
                     // 블루투스 기능을 켰을 때
-                    mBinding.btnConnect.setText(R.string.bluetooth_show_list);
-                    Toast.makeText(this, "블루투스 기기를 연결해 주세요.", Toast.LENGTH_LONG).show();
+                    if (isConnected()) {
+                        startIntroView(1);
+                    } else {
+                        mBinding.btnConnect.setText(R.string.bluetooth_show_list);
+                        onConnectClicked(mBinding.btnConnect);
+                        if (SharedPreferencesPackage.getDeviceID(this).equals("")) {
+                            Toast.makeText(this, "블루투스 기기를 연결해 주세요.", Toast.LENGTH_LONG).show();
+                        }
+                    }
                 } else {
                     Toast.makeText(this, "블루투스 거부.", Toast.LENGTH_SHORT).show();
                 }
@@ -288,12 +305,33 @@ public class SplashScreenActivity extends BleProfileServiceReadyActivity<UARTSer
         // The super method starts the service
         super.onDeviceSelected(device, name);
         if (name != null && name.contains(getString(R.string.cia_id))) {
-            startIntroView();
-            Toast.makeText(this, device + " + " + name, Toast.LENGTH_LONG).show();
+            if (name.contains(SharedPreferencesPackage.getDeviceID(this))) {
+                SharedPreferencesPackage.setDeviceAddress(this, device.getAddress());
+                startIntroView(2);
+                Toast.makeText(this, device + " + " + name + " + " + device.getAddress(), Toast.LENGTH_LONG).show();
+            } else {
+                startIntroView(2);
+                Toast.makeText(this, "새로운 기기 연결", Toast.LENGTH_SHORT).show();
+            }
         } else {
-            Toast.makeText(this, " Cia 디바이스를 연결해주세요. ", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, " mine 디바이스를 연결해주세요. ", Toast.LENGTH_LONG).show();
         }
         Log.e(TAG, device + " + " + name);
+    }
+
+    @Override
+    public void onUnConnected() {
+        runOnUiThread(() -> {
+            mBinding.introView.setVisibility(View.GONE);
+            mBinding.permitContainer.setVisibility(View.GONE);
+            Animation startAnimation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.start_animation);
+            mBinding.permissionView.startAnimation(startAnimation);
+        });
+        new Handler().postDelayed(() -> {
+            final Intent intent = new Intent(SplashScreenActivity.this, MainActivity.class);
+            SplashScreenActivity.this.startActivity(intent);
+            SplashScreenActivity.this.finish();
+        }, 2500);
     }
 
     @Override

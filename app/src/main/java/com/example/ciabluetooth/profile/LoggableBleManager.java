@@ -2,9 +2,12 @@ package com.example.ciabluetooth.profile;
 
 import android.content.Context;
 import android.util.Log;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+
+import com.example.ciabluetooth.util.SharedPreferencesPackage;
 
 import no.nordicsemi.android.ble.BleManagerCallbacks;
 import no.nordicsemi.android.ble.LegacyBleManager;
@@ -45,5 +48,10 @@ public abstract class LoggableBleManager<T extends BleManagerCallbacks> extends 
 	public void log(final int priority, @NonNull final String message) {
 		Logger.log(logSession, LogContract.Log.Level.fromPriority(priority), message);
 		Log.println(priority, "BleManager", message);
+		if (message.equals("Connection lost")) {
+			SharedPreferencesPackage.setIsConnected(getContext(), false);
+		} else if (message.equals("Connected to " + SharedPreferencesPackage.getDeviceAddress(getContext()))) {
+			SharedPreferencesPackage.setIsConnected(getContext(), true);
+		}
 	}
 }

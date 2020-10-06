@@ -26,31 +26,43 @@
                 android:id="@+id/main_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="60dp"
+                android:layout_marginTop="40dp"
                 android:background="@drawable/logo_mine"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
+                android:id="@+id/plus_btn"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/plus_btn"
+                android:onClick="@{view::onClick}"
+                app:layout_constraintTop_toTopOf="@+id/main_title"
+                app:layout_constraintBottom_toBottomOf="@+id/main_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="30dp"/>
+
+            <ImageView
                 android:id="@+id/img"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="0dp"
                 android:layout_marginTop="30dp"
-                android:background="@drawable/img_splash_device_big"
-                app:layout_constraintEnd_toEndOf="@id/main_title"
-                app:layout_constraintStart_toStartOf="@+id/main_title"
-                app:layout_constraintTop_toBottomOf="@+id/main_title" />
+                android:src="@drawable/img_splash_device_big"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/main_title"
+                app:layout_constraintBottom_toTopOf="@+id/battery_img"/>
 
             <ImageView
                 android:id="@+id/battery_img"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
-                android:layout_marginTop="25dp"
+                android:layout_marginBottom="10dp"
                 android:background="@drawable/ic_icon_battery_lightning"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/img" />
+                app:layout_constraintBottom_toTopOf="@+id/line" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -73,7 +85,7 @@
                 android:background="@drawable/percent_round"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/battery_img" />
+                app:layout_constraintBottom_toTopOf="@+id/percent_number_container" />
 
             <ImageView
                 android:id="@+id/percent_line"
@@ -125,7 +137,7 @@
                 android:weightSum="6"
                 app:layout_constraintEnd_toEndOf="@id/line"
                 app:layout_constraintStart_toStartOf="@id/line"
-                app:layout_constraintTop_toBottomOf="@id/line">
+                app:layout_constraintBottom_toTopOf="@+id/grid_container">
 
                 <TextView
                     android:layout_width="0dp"
@@ -191,9 +203,9 @@
                 android:rowCount="2"
                 android:layout_marginStart="30dp"
                 android:layout_marginEnd="30dp"
+                app:layout_constraintBottom_toTopOf="@+id/bottom_container"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/percent_number_container">
+                app:layout_constraintStart_toStartOf="parent">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/brush_container"
@@ -210,66 +222,66 @@
                     android:elevation="10dp"
                     tools:ignore="ButtonStyle">
 
-                        <ImageView
-                            android:id="@+id/brush_img"
+                    <ImageView
+                        android:id="@+id/brush_img"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="10dp"
+                        android:layout_marginStart="15dp"
+                        android:background="@drawable/img_head_brush"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/card_brush_text_container"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/brush_img"
+                        app:layout_constraintStart_toEndOf="@+id/brush_img"
+                        app:layout_constraintTop_toTopOf="@+id/brush_img">
+
+                        <TextView
+                            android:id="@+id/card_brush_title"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginVertical="10dp"
-                            android:layout_marginStart="15dp"
-                            android:background="@drawable/img_head_brush"
-                            app:layout_constraintBottom_toBottomOf="parent"
+                            android:text="@string/brush"
+                            android:textColor="@color/text_color"
+                            android:textSize="12sp"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
-                        <androidx.constraintlayout.widget.ConstraintLayout
-                            android:id="@+id/card_brush_text_container"
+                        <TextView
+                            android:id="@+id/card_brush_count"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="15dp"
-                            app:layout_constraintBottom_toBottomOf="@+id/brush_img"
-                            app:layout_constraintStart_toEndOf="@+id/brush_img"
-                            app:layout_constraintTop_toTopOf="@+id/brush_img">
+                            android:text="21"
+                            android:textColor="@color/text_gray"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="@+id/card_brush_title"
+                            app:layout_constraintTop_toBottomOf="@+id/card_brush_title" />
 
-                            <TextView
-                                android:id="@+id/card_brush_title"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/brush"
-                                android:textColor="@color/text_color"
-                                android:textSize="12sp"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/count_use"
+                            android:textColor="@color/text_gray"
+                            android:textSize="12sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/card_brush_count"
+                            app:layout_constraintStart_toEndOf="@id/card_brush_count" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
 
-                            <TextView
-                                android:id="@+id/card_brush_count"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="21"
-                                android:textColor="@color/text_gray"
-                                android:textSize="16sp"
-                                android:textStyle="bold"
-                                app:layout_constraintStart_toStartOf="@+id/card_brush_title"
-                                app:layout_constraintTop_toBottomOf="@+id/card_brush_title" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/count_use"
-                                android:textColor="@color/text_gray"
-                                android:textSize="12sp"
-                                app:layout_constraintBottom_toBottomOf="@+id/card_brush_count"
-                                app:layout_constraintStart_toEndOf="@id/card_brush_count" />
-                        </androidx.constraintlayout.widget.ConstraintLayout>
-
-                        <ImageView
-                            android:id="@+id/brush_point"
-                            android:layout_width="10dp"
-                            android:layout_height="10dp"
-                            android:layout_marginTop="13dp"
-                            android:layout_marginEnd="13dp"
-                            android:background="@drawable/pink_round"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
+                    <ImageView
+                        android:id="@+id/brush_point"
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_marginTop="13dp"
+                        android:layout_marginEnd="13dp"
+                        android:background="@drawable/pink_round"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -287,66 +299,66 @@
                     android:background="@drawable/card_background"
                     tools:ignore="ButtonStyle">
 
-                        <ImageView
-                            android:id="@+id/cooler_img"
+                    <ImageView
+                        android:id="@+id/cooler_img"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="10dp"
+                        android:layout_marginStart="20dp"
+                        android:background="@drawable/img_head_cooler"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/card_cooler_text_container"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="23dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/cooler_img"
+                        app:layout_constraintStart_toEndOf="@+id/cooler_img"
+                        app:layout_constraintTop_toTopOf="@+id/cooler_img">
+
+                        <TextView
+                            android:id="@+id/card_cooler_title"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginVertical="10dp"
-                            android:layout_marginStart="20dp"
-                            android:background="@drawable/img_head_cooler"
-                            app:layout_constraintBottom_toBottomOf="parent"
+                            android:text="@string/cooler"
+                            android:textColor="@color/text_color"
+                            android:textSize="12sp"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
-                        <androidx.constraintlayout.widget.ConstraintLayout
-                            android:id="@+id/card_cooler_text_container"
+                        <TextView
+                            android:id="@+id/card_cooler_count"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="23dp"
-                            app:layout_constraintBottom_toBottomOf="@+id/cooler_img"
-                            app:layout_constraintStart_toEndOf="@+id/cooler_img"
-                            app:layout_constraintTop_toTopOf="@+id/cooler_img">
+                            android:text="21"
+                            android:textColor="@color/text_gray"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="@+id/card_cooler_title"
+                            app:layout_constraintTop_toBottomOf="@+id/card_cooler_title" />
 
-                            <TextView
-                                android:id="@+id/card_cooler_title"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/cooler"
-                                android:textColor="@color/text_color"
-                                android:textSize="12sp"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/count_use"
+                            android:textColor="@color/text_gray"
+                            android:textSize="12sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/card_cooler_count"
+                            app:layout_constraintStart_toEndOf="@id/card_cooler_count" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
 
-                            <TextView
-                                android:id="@+id/card_cooler_count"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="21"
-                                android:textColor="@color/text_gray"
-                                android:textSize="16sp"
-                                android:textStyle="bold"
-                                app:layout_constraintStart_toStartOf="@+id/card_cooler_title"
-                                app:layout_constraintTop_toBottomOf="@+id/card_cooler_title" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/count_use"
-                                android:textColor="@color/text_gray"
-                                android:textSize="12sp"
-                                app:layout_constraintBottom_toBottomOf="@+id/card_cooler_count"
-                                app:layout_constraintStart_toEndOf="@id/card_cooler_count" />
-                        </androidx.constraintlayout.widget.ConstraintLayout>
-
-                        <ImageView
-                            android:id="@+id/cooler_point"
-                            android:layout_width="10dp"
-                            android:layout_height="10dp"
-                            android:layout_marginTop="13dp"
-                            android:layout_marginEnd="13dp"
-                            android:background="@drawable/pink_round"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
+                    <ImageView
+                        android:id="@+id/cooler_point"
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_marginTop="13dp"
+                        android:layout_marginEnd="13dp"
+                        android:background="@drawable/pink_round"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -364,66 +376,66 @@
                     android:onClick="@{view::onClick}"
                     tools:ignore="ButtonStyle">
 
-                        <ImageView
-                            android:id="@+id/puff_img"
+                    <ImageView
+                        android:id="@+id/puff_img"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="10dp"
+                        android:layout_marginStart="20dp"
+                        android:background="@drawable/img_head_puff"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/card_puff_text_container"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="23dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/puff_img"
+                        app:layout_constraintStart_toEndOf="@+id/puff_img"
+                        app:layout_constraintTop_toTopOf="@+id/puff_img">
+
+                        <TextView
+                            android:id="@+id/card_puff_title"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginVertical="10dp"
-                            android:layout_marginStart="20dp"
-                            android:background="@drawable/img_head_puff"
-                            app:layout_constraintBottom_toBottomOf="parent"
+                            android:text="@string/puff"
+                            android:textColor="@color/text_color"
+                            android:textSize="12sp"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
-                        <androidx.constraintlayout.widget.ConstraintLayout
-                            android:id="@+id/card_puff_text_container"
+                        <TextView
+                            android:id="@+id/card_puff_count"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="23dp"
-                            app:layout_constraintBottom_toBottomOf="@+id/puff_img"
-                            app:layout_constraintStart_toEndOf="@+id/puff_img"
-                            app:layout_constraintTop_toTopOf="@+id/puff_img">
+                            android:text="21"
+                            android:textColor="@color/text_gray"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="@+id/card_puff_title"
+                            app:layout_constraintTop_toBottomOf="@+id/card_puff_title" />
 
-                            <TextView
-                                android:id="@+id/card_puff_title"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/puff"
-                                android:textColor="@color/text_color"
-                                android:textSize="12sp"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/count_use"
+                            android:textColor="@color/text_gray"
+                            android:textSize="12sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/card_puff_count"
+                            app:layout_constraintStart_toEndOf="@id/card_puff_count" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
 
-                            <TextView
-                                android:id="@+id/card_puff_count"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="21"
-                                android:textColor="@color/text_gray"
-                                android:textSize="16sp"
-                                android:textStyle="bold"
-                                app:layout_constraintStart_toStartOf="@+id/card_puff_title"
-                                app:layout_constraintTop_toBottomOf="@+id/card_puff_title" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/count_use"
-                                android:textColor="@color/text_gray"
-                                android:textSize="12sp"
-                                app:layout_constraintBottom_toBottomOf="@+id/card_puff_count"
-                                app:layout_constraintStart_toEndOf="@id/card_puff_count" />
-                        </androidx.constraintlayout.widget.ConstraintLayout>
-
-                        <ImageView
-                            android:id="@+id/puff_point"
-                            android:layout_width="10dp"
-                            android:layout_height="10dp"
-                            android:layout_marginTop="13dp"
-                            android:layout_marginEnd="13dp"
-                            android:background="@drawable/pink_round"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
+                    <ImageView
+                        android:id="@+id/puff_point"
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_marginTop="13dp"
+                        android:layout_marginEnd="13dp"
+                        android:background="@drawable/pink_round"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -441,66 +453,66 @@
                     android:onClick="@{view::onClick}"
                     tools:ignore="ButtonStyle">
 
-                        <ImageView
-                            android:id="@+id/silicon_img"
+                    <ImageView
+                        android:id="@+id/silicon_img"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="10dp"
+                        android:layout_marginStart="20dp"
+                        android:background="@drawable/img_head_sillicon"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/card_silicon_text_container"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="23dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/silicon_img"
+                        app:layout_constraintStart_toEndOf="@+id/silicon_img"
+                        app:layout_constraintTop_toTopOf="@+id/silicon_img">
+
+                        <TextView
+                            android:id="@+id/card_silicon_title"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginVertical="10dp"
-                            android:layout_marginStart="20dp"
-                            android:background="@drawable/img_head_sillicon"
-                            app:layout_constraintBottom_toBottomOf="parent"
+                            android:text="@string/silicon"
+                            android:textColor="@color/text_color"
+                            android:textSize="12sp"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
-                        <androidx.constraintlayout.widget.ConstraintLayout
-                            android:id="@+id/card_silicon_text_container"
+                        <TextView
+                            android:id="@+id/card_silicon_count"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="23dp"
-                            app:layout_constraintBottom_toBottomOf="@+id/silicon_img"
-                            app:layout_constraintStart_toEndOf="@+id/silicon_img"
-                            app:layout_constraintTop_toTopOf="@+id/silicon_img">
+                            android:text="21"
+                            android:textColor="@color/text_gray"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="@+id/card_silicon_title"
+                            app:layout_constraintTop_toBottomOf="@+id/card_silicon_title" />
 
-                            <TextView
-                                android:id="@+id/card_silicon_title"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/silicon"
-                                android:textColor="@color/text_color"
-                                android:textSize="12sp"
-                                app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="parent" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/count_use"
+                            android:textColor="@color/text_gray"
+                            android:textSize="12sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/card_silicon_count"
+                            app:layout_constraintStart_toEndOf="@id/card_silicon_count" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
 
-                            <TextView
-                                android:id="@+id/card_silicon_count"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="21"
-                                android:textColor="@color/text_gray"
-                                android:textSize="16sp"
-                                android:textStyle="bold"
-                                app:layout_constraintStart_toStartOf="@+id/card_silicon_title"
-                                app:layout_constraintTop_toBottomOf="@+id/card_silicon_title" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/count_use"
-                                android:textColor="@color/text_gray"
-                                android:textSize="12sp"
-                                app:layout_constraintBottom_toBottomOf="@+id/card_silicon_count"
-                                app:layout_constraintStart_toEndOf="@id/card_silicon_count" />
-                        </androidx.constraintlayout.widget.ConstraintLayout>
-
-                        <ImageView
-                            android:id="@+id/silicon_point"
-                            android:layout_width="10dp"
-                            android:layout_height="10dp"
-                            android:layout_marginTop="13dp"
-                            android:layout_marginEnd="13dp"
-                            android:background="@drawable/pink_round"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
+                    <ImageView
+                        android:id="@+id/silicon_point"
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_marginTop="13dp"
+                        android:layout_marginEnd="13dp"
+                        android:background="@drawable/pink_round"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </GridLayout>
 
@@ -516,7 +528,6 @@
                 android:gravity="center"
                 android:orientation="horizontal"
                 android:weightSum="3"
-                app:layout_constraintTop_toBottomOf="@+id/grid_container"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent">
@@ -604,6 +615,25 @@
                         tools:ignore="SmallSp" />
                 </LinearLayout>
             </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/loading"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <ProgressBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </layout>

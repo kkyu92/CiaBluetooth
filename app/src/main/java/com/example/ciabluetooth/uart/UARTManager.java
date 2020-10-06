@@ -83,6 +83,7 @@ public class UARTManager extends LoggableBleManager<UARTManagerCallbacks> {
      * receiving indication, etc.
      */
     private class UARTManagerGattCallback extends BleManager.BleManagerGattCallback {
+        String appendStr = null;
 
         @Override
         protected void initialize() {
@@ -90,50 +91,66 @@ public class UARTManager extends LoggableBleManager<UARTManagerCallbacks> {
                     .with((device, data) -> {
                         try {
                             String str = data.getStringValue(0);
-                            str = str.substring(0, str.length() - 2);
-                            str = str + "}";
-                            JSONObject json = new JSONObject(str);
-                            String deviceSN = json.getString("DID");
-                            int deviceFual = Integer.parseInt(json.getString("Fual"));
-                            int deviceRun = Integer.parseInt(json.getString("D_Run"));
-                            int deviceCnt = Integer.parseInt(json.getString("D_Cnt"));
-                            int headType = Integer.parseInt(json.getString("H_type"));
+                            String lastStr = str.substring(str.length() - 3);
+                            Log.e("str length", "" + str.length());
+                            Log.e("lastStr", lastStr);
+                            if (str.length() == 244 && lastStr.equals("\",}\"")) {
+                                str = str.substring(0, str.length() - 2);
+                                str = str + "}";
+                                JSONObject json = new JSONObject(str);
+                                String deviceSN = json.getString("DID");
+                                int deviceFual = Integer.parseInt(json.getString("Fual"));
+                                String deviceRun = (json.getString("D_Run"));
+                                String deviceCnt = (json.getString("D_Cnt"));
+                                int headType = Integer.parseInt(json.getString("H_type"));
 
-                            String brushSN = (json.getString("H1_SN"));
-                            int brushRun = Integer.parseInt(json.getString("H1_Run"));
-                            int brushCnt = Integer.parseInt(json.getString("H1_Cnt"));
-                            String coolerSN = json.getString("H2_SN");
-                            int coolerRun = Integer.parseInt(json.getString("H2_Run"));
-                            int coolerCnt = Integer.parseInt(json.getString("H2_Cnt"));
-                            String puffSN = json.getString("H3_SN");
-                            int puffRun = Integer.parseInt(json.getString("H3_Run"));
-                            int puffCnt = Integer.parseInt(json.getString("H3_Cnt"));
-                            String siliconSN = json.getString("H4_SN");
-                            int siliconRun = Integer.parseInt(json.getString("H4_Run"));
-                            int siliconCnt = Integer.parseInt(json.getString("H4_Cnt"));
+                                String brushSN = (json.getString("H1_SN"));
+                                String brushRun = (json.getString("H1_Run"));
+                                String brushCnt = (json.getString("H1_Cnt"));
+                                String coolerSN = json.getString("H2_SN");
+                                String coolerRun = (json.getString("H2_Run"));
+                                String coolerCnt = (json.getString("H2_Cnt"));
+                                String puffSN = json.getString("H3_SN");
+                                String puffRun = (json.getString("H3_Run"));
+                                String puffCnt = (json.getString("H3_Cnt"));
+                                String siliconSN = json.getString("H4_SN");
+                                String siliconRun = (json.getString("H4_Run"));
+                                String siliconCnt = (json.getString("H4_Cnt"));
 
-                            Log.e("DID", deviceSN);
-                            Log.e("Faul", "" + deviceFual);
-                            Log.e("D_Run", "" + deviceRun);
-                            Log.e("D_Cnt", "" + deviceCnt);
-                            Log.e("H_type", "" + headType);
-                            Log.e("H1_SN", brushSN);
-                            Log.e("H1_Run", "" + brushRun);
-                            Log.e("H1_Cnt", "" + brushCnt);
-                            Log.e("H2_SN", coolerSN);
-                            Log.e("H2_Run", "" + coolerRun);
-                            Log.e("H2_Cnt", "" + coolerCnt);
-                            Log.e("H3_SN", puffSN);
-                            Log.e("H3_Run", "" + puffRun);
-                            Log.e("H3_Cnt", "" + puffCnt);
-                            Log.e("H4_SN", siliconSN);
-                            Log.e("H4_Run", "" + siliconRun);
-                            Log.e("H4_Cnt", "" + siliconCnt);
+                                Log.e("DID", deviceSN);
+                                Log.e("Faul", "" + deviceFual);
+                                Log.e("D_Run", "" + deviceRun);
+                                Log.e("D_Cnt", "" + deviceCnt);
+                                Log.e("H_type", "" + headType);
+                                Log.e("H1_SN", brushSN);
+                                Log.e("H1_Run", "" + brushRun);
+                                Log.e("H1_Cnt", "" + brushCnt);
+                                Log.e("H2_SN", coolerSN);
+                                Log.e("H2_Run", "" + coolerRun);
+                                Log.e("H2_Cnt", "" + coolerCnt);
+                                Log.e("H3_SN", puffSN);
+                                Log.e("H3_Run", "" + puffRun);
+                                Log.e("H3_Cnt", "" + puffCnt);
+                                Log.e("H4_SN", siliconSN);
+                                Log.e("H4_Run", "" + siliconRun);
+                                Log.e("H4_Cnt", "" + siliconCnt);
 //                            SharedPreferencesPackage.setAllData(getContext(), deviceSN, deviceFaul, deviceRun, deviceCnt, brushSN, brushRun, brushCnt, coolerSN, coolerRun, coolerCnt, puffSN, puffRun, puffCnt, siliconSN, siliconRun, siliconCnt);
 //                            SharedPreferencesPackage.setDummy(getContext());
-                            SharedPreferencesPackage.setAllData(getContext(), deviceSN, deviceFual, deviceRun, deviceCnt, headType, brushSN, 3600, 2000, coolerSN, 10800, 4000, puffSN, 18000, 6000, siliconSN, 1800, 800);
+                                SharedPreferencesPackage.setAllData(getContext(), deviceSN, deviceFual, deviceRun, deviceCnt, headType, brushSN, brushRun, brushCnt, coolerSN, coolerRun, coolerCnt, puffSN, puffRun, puffCnt, siliconSN, siliconRun, siliconCnt);
+                            } else if (str.length() == 244) { // 짤린 첫부분
+                                appendStr = str;
+                                Log.e("짤린 첫부분", appendStr);
+                            } else { // 짤린 마지막
+                                str = str.substring(0, str.length() - 2);
+                                str = str + "}";
+                                Log.e("짤린 마지막", appendStr+"\n"+str);
+                                appendStr = appendStr + str;
+                                Log.e("짤린 마지막", appendStr);
+                                setJson(appendStr);
+                            }
                         } catch (JSONException e) {
                             e.printStackTrace();
+                            Log.e("catch", "catch err : " + e);
                         }
                         final String text = data.getStringValue(0);
                         log(LogContract.Log.Level.APPLICATION, "\"" + text + "\" received");
@@ -141,6 +158,49 @@ public class UARTManager extends LoggableBleManager<UARTManagerCallbacks> {
                     });
             requestMtu(260).enqueue();
             enableNotifications(txCharacteristic).enqueue();
+        }
+
+        private void setJson(String str) throws JSONException {
+            JSONObject json = new JSONObject(str);
+            String deviceSN = json.getString("DID");
+            int deviceFual = Integer.parseInt(json.getString("Fual"));
+            String deviceRun = (json.getString("D_Run"));
+            String deviceCnt = (json.getString("D_Cnt"));
+            int headType = Integer.parseInt(json.getString("H_type"));
+
+            String brushSN = (json.getString("H1_SN"));
+            String brushRun = (json.getString("H1_Run"));
+            String brushCnt = (json.getString("H1_Cnt"));
+            String coolerSN = json.getString("H2_SN");
+            String coolerRun = (json.getString("H2_Run"));
+            String coolerCnt = (json.getString("H2_Cnt"));
+            String puffSN = json.getString("H3_SN");
+            String puffRun = (json.getString("H3_Run"));
+            String puffCnt = (json.getString("H3_Cnt"));
+            String siliconSN = json.getString("H4_SN");
+            String siliconRun = (json.getString("H4_Run"));
+            String siliconCnt = (json.getString("H4_Cnt"));
+
+            Log.e("DID", deviceSN);
+            Log.e("Faul", "" + deviceFual);
+            Log.e("D_Run", "" + deviceRun);
+            Log.e("D_Cnt", "" + deviceCnt);
+            Log.e("H_type", "" + headType);
+            Log.e("H1_SN", brushSN);
+            Log.e("H1_Run", "" + brushRun);
+            Log.e("H1_Cnt", "" + brushCnt);
+            Log.e("H2_SN", coolerSN);
+            Log.e("H2_Run", "" + coolerRun);
+            Log.e("H2_Cnt", "" + coolerCnt);
+            Log.e("H3_SN", puffSN);
+            Log.e("H3_Run", "" + puffRun);
+            Log.e("H3_Cnt", "" + puffCnt);
+            Log.e("H4_SN", siliconSN);
+            Log.e("H4_Run", "" + siliconRun);
+            Log.e("H4_Cnt", "" + siliconCnt);
+//                            SharedPreferencesPackage.setAllData(getContext(), deviceSN, deviceFaul, deviceRun, deviceCnt, brushSN, brushRun, brushCnt, coolerSN, coolerRun, coolerCnt, puffSN, puffRun, puffCnt, siliconSN, siliconRun, siliconCnt);
+//                            SharedPreferencesPackage.setDummy(getContext());
+            SharedPreferencesPackage.setAllData(getContext(), deviceSN, deviceFual, deviceRun, deviceCnt, headType, brushSN, brushRun, brushCnt, coolerSN, coolerRun, coolerCnt, puffSN, puffRun, puffCnt, siliconSN, siliconRun, siliconCnt);
         }
 
         @Override

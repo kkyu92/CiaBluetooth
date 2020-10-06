@@ -1,53 +1,153 @@
 package com.example.ciabluetooth.util;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Message;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RadioGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.DialogFragment;
 
+import com.example.ciabluetooth.Constants;
 import com.example.ciabluetooth.R;
 
-public class CustomDialog extends Dialog {
-    private Button mPositiveButton;
-    private Button mNegativeButton;
-
-    private View.OnClickListener mPositiveListener;
-    private View.OnClickListener mNegativeListener;
+import java.util.Objects;
 
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+//다이얼로그 밖의 화면은 흐리게 만들어줌
+//        WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams();
+//                layoutParams.flags = WindowManager.LayoutParams.FLAG_DIM_BEHIND;
+//                layoutParams.dimAmount = 0.8f;
+//                getWindow().setAttributes(layoutParams);
 
-        //다이얼로그 밖의 화면은 흐리게 만들어줌
-        WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams();
-        layoutParams.flags = WindowManager.LayoutParams.FLAG_DIM_BEHIND;
-        layoutParams.dimAmount = 0.8f;
-        getWindow().setAttributes(layoutParams);
 
-        setContentView(R.layout.custom_dialog);
 
-        //셋팅
-//        mPositiveButton=(Button)findViewById(R.id.pbutton);
-//        mNegativeButton=(Button)findViewById(R.id.nbutton);
+public class CustomDialog extends DialogFragment {
+    private static final String TAG = CustomDialog.class.getSimpleName();
+    public static boolean DIALOG_STATE = false;
 
-        //클릭 리스너 셋팅 (클릭버튼이 동작하도록 만들어줌.)
-//        mPositiveButton.setOnClickListener(mPositiveListener);
-//        mNegativeButton.setOnClickListener(mNegativeListener);
+    private Activity mActivity;
+    private int mNoticeType;
+    private String mTitle, mContents;
+
+    private String mStringData;
+    private OnDialogClick mOnDialogClick;
+
+    public void setNoticeType(Activity activity, int type) {
+        mActivity = activity;
+        mNoticeType = type;
     }
 
-    //생성자 생성
-//    public CustomDialog(@NonNull Context context, View.OnClickListener positiveListener, View.OnClickListener negativeListener) {
-//        super(context);
-//        this.mPositiveListener = positiveListener;
-//        this.mNegativeListener = negativeListener;
-//    }
+    public void setNoticeTypePauseText(Activity activity, int type, String title, String contents) {
+        mActivity = activity;
+        mNoticeType = type;
+        mTitle = title;
+        mContents = contents;
+    }
 
-    public CustomDialog(@NonNull Context context) {
-        super(context);
+    public void setStringData(String data) {
+        mStringData = data;
+    }
+
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        if (mActivity == null) {
+            dismiss();
+            return null;
+        }
+        String tag = getTag();
+        assert tag != null;
+
+        Objects.requireNonNull(getDialog().getWindow()).requestFeature(Window.FEATURE_NO_TITLE);
+//        if (!tag.equals(Constants.INTERVIEW_DIALOG)) {
+//            getDialog().getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+//        }
+
+        switch (tag) {
+            case Constants.APP_FINISH_DIALOG:
+                return appFinishDialog(inflater, container);
+            case Constants.GRAPH_DIALOG:
+                return graphDialog(inflater, container);
+        }
+        return null;
+    }
+
+    private View graphDialog(LayoutInflater inflater, ViewGroup container) {
+        View view = inflater.inflate(R.layout.custom_dialog, container);
+        Log.i(TAG, "sexDialog");
+
+        LinearLayout btnContainer = view.findViewById(R.id.btn_container);
+//        Button ok = view.findViewById(R.id.ok_btn);
+//        Button cancel = view.findViewById(R.id.cancel_btn);
+
+        btnContainer.setVisibility(View.GONE);
+//        ok.setOnClickListener(mOnClickListener);
+//        cancel.setOnClickListener(mOnClickListener);
+        return view;
+    }
+
+    private View appFinishDialog(LayoutInflater inflater, ViewGroup container) {
+        View view = inflater.inflate(R.layout.custom_dialog, container);
+        Log.i(TAG, "logoutDialog");
+
+        TextView title = view.findViewById(R.id.title);
+        TextView contents = view.findViewById(R.id.content);
+        Button ok = view.findViewById(R.id.ok_btn);
+        Button cancel = view.findViewById(R.id.cancel_btn);
+
+        title.setText("CIA 앱을 종료하시겠습니까?");
+        contents.setVisibility(View.GONE);
+        ok.setOnClickListener(mOnClickListener);
+        cancel.setOnClickListener(mOnClickListener);
+
+        return view;
+    }
+
+    private View.OnClickListener mOnClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            switch (v.getId()) {
+                case R.id.ok_btn:
+                    // 종료
+                    if (mOnDialogClick != null) {
+                        mOnDialogClick.onDialogClick(mNoticeType, true);
+                        dismiss();
+                    }
+                    break;
+                case R.id.cancel_btn:
+                    // 닫기
+                    dismiss();
+                    DIALOG_STATE = false;
+                    if (mOnDialogClick != null) {
+                        mOnDialogClick.onDialogClick(mNoticeType, false);
+                    }
+                    break;
+            }
+        }
+    };
+
+    public void setOnDialogClick(OnDialogClick onDialogClick) {
+        mOnDialogClick = onDialogClick;
+    }
+
+    public interface OnDialogClick {
+        void onDialogClick(int type, boolean isOk);
     }
 }

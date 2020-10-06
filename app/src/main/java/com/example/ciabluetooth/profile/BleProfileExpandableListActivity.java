@@ -372,7 +372,7 @@ public abstract class BleProfileExpandableListActivity extends ExpandableListAct
 	 */
 	private void showDeviceScanningDialog(final UUID filter) {
 		runOnUiThread(() -> {
-			final ScannerFragment dialog = ScannerFragment.getInstance(filter);
+			final ScannerFragment dialog = ScannerFragment.getInstance(filter,"");
 			dialog.show(getSupportFragmentManager(), "scan_fragment");
 		});
 	}

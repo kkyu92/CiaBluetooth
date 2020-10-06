@@ -17,6 +17,7 @@ import com.example.ciabluetooth.databinding.ActivityCiaInfoBinding;
 import com.example.ciabluetooth.fragment.info.InfoBatteryFragment;
 import com.example.ciabluetooth.fragment.info.InfoDeviceFragment;
 import com.example.ciabluetooth.fragment.info.InfoTimeFragment;
+import com.example.ciabluetooth.util.SharedPreferencesPackage;
 import com.google.android.material.tabs.TabLayout;
 
 public class CiaInfoActivity extends AppCompatActivity {
@@ -41,7 +42,7 @@ public class CiaInfoActivity extends AppCompatActivity {
             @Override
             public void run() {
                 viewPagerAdapter.addFragment(InfoDeviceFragment.getInstance(), getString(R.string.device_info));
-                viewPagerAdapter.addFragment(InfoBatteryFragment.getInstance(80), getString(R.string.battery));
+                viewPagerAdapter.addFragment(InfoBatteryFragment.getInstance(SharedPreferencesPackage.getDeviceBattery(CiaInfoActivity.this)), getString(R.string.battery));
                 viewPagerAdapter.addFragment(InfoTimeFragment.getInstance(), getString(R.string.usage_time));
 
                 mBinding.viewPager.setAdapter(viewPagerAdapter);
@@ -85,11 +86,11 @@ public class CiaInfoActivity extends AppCompatActivity {
                 mBinding.viewPager.setCurrentItem(tab.getPosition());
                 mBinding.deviceImg.startAnimation(fadeOutIn);
                 if (tab.getPosition() == 0) {
-                    mBinding.deviceImg.setBackgroundResource(R.drawable.img_splash_device_left);
+                    mBinding.deviceImg.setImageDrawable(getResources().getDrawable(R.drawable.img_splash_device_left));
                 } else if (tab.getPosition() == 1) {
-                    mBinding.deviceImg.setBackgroundResource(R.drawable.img_splash_device);
+                    mBinding.deviceImg.setImageDrawable(getResources().getDrawable(R.drawable.img_splash_device));
                 } else {
-                    mBinding.deviceImg.setBackgroundResource(R.drawable.img_splash_device_right);
+                    mBinding.deviceImg.setImageDrawable(getResources().getDrawable(R.drawable.img_splash_device_right));
                 }
             }
 
@@ -116,6 +117,7 @@ public class CiaInfoActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
+        setResult(RESULT_OK);
         finish();
     }
 }

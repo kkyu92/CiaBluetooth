@@ -102,6 +102,14 @@ class DeviceListAdapter extends BaseAdapter {
         notifyDataSetChanged();
     }
 
+    public int getBoundedCount() {
+        final int bondedCount = listBondedValues.size() + 1; // 1 for the title
+        final int availableCount = listValues.isEmpty() ? 2 : listValues.size() + 1; // 1 for title, 1 for empty text
+        if (bondedCount == 1)
+            return availableCount;
+        return bondedCount;
+    }
+
     @Override
     public int getCount() {
         final int bondedCount = listBondedValues.size() + 1; // 1 for the title

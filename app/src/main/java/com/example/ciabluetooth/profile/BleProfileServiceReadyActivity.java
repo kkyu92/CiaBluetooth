@@ -48,7 +48,9 @@ import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import com.example.ciabluetooth.Constants;
 import com.example.ciabluetooth.R;
+import com.example.ciabluetooth.SplashScreenActivity;
 import com.example.ciabluetooth.activity.BaseActivity;
+import com.example.ciabluetooth.activity.MainActivity;
 import com.example.ciabluetooth.scanner.ScannerFragment;
 import com.example.ciabluetooth.util.DebugLogger;
 
@@ -187,7 +189,9 @@ public abstract class BleProfileServiceReadyActivity<E extends BleProfileService
 			// Update UI
 			deviceName = bleService.getDeviceName();
 //			deviceNameView.setText(deviceName);
-			connectButton.setText(getString(R.string.action_disconnect));
+			if (connectButton != null) {
+				connectButton.setText(getString(R.string.action_disconnect));
+			}
 
 			// And notify user if device is connected
 			if (bleService.isConnected()) {
@@ -206,9 +210,10 @@ public abstract class BleProfileServiceReadyActivity<E extends BleProfileService
 			// It will be called only when there is critically low memory, in practice never
 			// when the activity is in foreground.
 			Logger.d(logSession, "Activity disconnected from the service");
-			deviceNameView.setText(getDefaultDeviceName());
-			connectButton.setText(R.string.action_connect);
-
+//			deviceNameView.setText(getDefaultDeviceName());
+			if (connectButton != null) {
+				connectButton.setText(R.string.action_connect);
+			}
 			service = null;
 			deviceName = null;
 			bluetoothDevice = null;
@@ -393,13 +398,26 @@ public abstract class BleProfileServiceReadyActivity<E extends BleProfileService
 	public void onConnectClicked(final View view) {
 		if (isBLEEnabled()) {
 			if (service == null) {
-				setDefaultUI();
-				showDeviceScanningDialog(getFilterUUID());
+				if (view == null) {
+					setDefaultUI();
+					showDeviceScanningDialog(getFilterUUID());
+				} else {
+					setDefaultUI();
+					showDeviceScanningDialog(getFilterUUID());
+				}
 			} else {
-				service.disconnect();
+//				service.disconnect();
 			}
 		} else {
 			showBLEDialog();
+		}
+	}
+
+	public boolean isConnected() {
+		if (service != null) {
+			return true;
+		} else {
+			return false;
 		}
 	}
 
@@ -456,23 +474,31 @@ public abstract class BleProfileServiceReadyActivity<E extends BleProfileService
 	@Override
 	public void onDeviceConnecting(@NonNull final BluetoothDevice device) {
 //		deviceNameView.setText(deviceName != null ? deviceName : getString(R.string.not_available));
-		connectButton.setText(R.string.bluetooth_show_list);
+		if (connectButton != null) {
+			connectButton.setText(R.string.bluetooth_show_list);
+		}
 	}
 
 	@Override
 	public void onDeviceConnected(@NonNull final BluetoothDevice device) {
 //		deviceNameView.setText(deviceName);
-		connectButton.setText(R.string.action_disconnect);
+		if (connectButton != null) {
+			connectButton.setText(R.string.action_disconnect);
+		}
 	}
 
 	@Override
 	public void onDeviceDisconnecting(@NonNull final BluetoothDevice device) {
-		connectButton.setText(R.string.action_disconnecting);
+		if (connectButton != null) {
+			connectButton.setText(R.string.action_disconnecting);
+		}
 	}
 
 	@Override
 	public void onDeviceDisconnected(@NonNull final BluetoothDevice device) {
-		connectButton.setText(R.string.action_connect);
+		if (connectButton != null) {
+			connectButton.setText(R.string.action_connect);
+		}
 //		deviceNameView.setText(getDefaultDeviceName());
 
 		try {
@@ -608,8 +634,8 @@ public abstract class BleProfileServiceReadyActivity<E extends BleProfileService
 	 *                             services
 	 * @see #getFilterUUID()
 	 */
-	private void showDeviceScanningDialog(final UUID filter) {
-		final ScannerFragment dialog = ScannerFragment.getInstance(filter);
+	public void showDeviceScanningDialog(final UUID filter) {
+		final ScannerFragment dialog = ScannerFragment.getInstance(filter, "already");
 		dialog.show(getSupportFragmentManager(), "scan_fragment");
 	}
 

@@ -11,8 +11,10 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
+import androidx.viewpager.widget.ViewPager;
 
 import com.example.ciabluetooth.R;
+import com.example.ciabluetooth.adapter.AdViewPagerAdapter;
 import com.example.ciabluetooth.databinding.ActivityHeadBinding;
 import com.example.ciabluetooth.util.Common;
 import com.example.ciabluetooth.util.SharedPreferencesPackage;
@@ -22,6 +24,8 @@ public class HeadActivity extends BaseActivity {
     private ActivityHeadBinding mBinding;
     private String headName;
     private int headRun, headCnt;
+    private AdViewPagerAdapter adapter;
+    private ViewPager viewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +41,20 @@ public class HeadActivity extends BaseActivity {
         allCnt = getIntent.getIntExtra("allCnt", 0);
         // activity, guide title
         mBinding.title.setText(headName);
-        mBinding.guideTitle.setText(headName+getString(R.string.guide_head));
+        String fffff = "";
+        if (headName.equals("Brush")) {
+            fffff = "브러시";
+        } else if (headName.equals("Cooler")) {
+            fffff = "쿨러";
+        } else if (headName.equals("Puff")) {
+            fffff = "퍼프";
+        } else if (headName.equals("Silicon")) {
+            fffff = "실리콘";
+        } else {
+            fffff = "ffffffffffffffff";
+        }
+        mBinding.headUse.setText(fffff+" 사용율");
+        mBinding.guideTitle.setText(fffff+getString(R.string.guide_head));
 
         // TODO 헤드기기 교체 알림 기준
 
@@ -53,6 +70,11 @@ public class HeadActivity extends BaseActivity {
                 mBinding.percentProgress.getViewTreeObserver().removeOnGlobalLayoutListener(this);
             }
         });
+
+        // ad viewpager
+        viewPager = findViewById(R.id.ad);
+        adapter = new AdViewPagerAdapter(this);
+        viewPager.setAdapter(adapter);
     }
 
     @Override
@@ -74,6 +96,8 @@ public class HeadActivity extends BaseActivity {
     }
 
     private void setBarPercent(int allCnt, int allRun, int headCnt, int headRun) {
+        allCnt = allCnt == 0 ? 1 : allCnt;
+        allRun = allRun == 0 ? 1 : allRun;
         int cntPer = headCnt * 100 / allCnt;
         int runPer = headRun * 100 / allRun;
         mBinding.percentProgress.setProgressWithAnimation(cntPer, 2000L); // =2 sec
@@ -92,7 +116,6 @@ public class HeadActivity extends BaseActivity {
         setBarPercent(allCnt, allRun, headCnt, headRun);
         switch (headName) {
             case "Brush":
-                mBinding.ad.setText("Brush 광고");
                 mBinding.headNum.setText("   " + SharedPreferencesPackage.getBrushID(this));
                 break;
             case "Cooler":
@@ -103,7 +126,6 @@ public class HeadActivity extends BaseActivity {
                 mBinding.step3Img.setBackgroundResource(R.drawable.img_brush_guide3);
                 mBinding.step4Img.setBackgroundResource(R.drawable.ic_img_cooler_step4);
                 setGuideText(getString(R.string.cooler_step1), getString(R.string.cooler_step2), getString(R.string.cooler_step3), getString(R.string.cooler_step4));
-                mBinding.ad.setText("Cooler 광고");
                 mBinding.headNum.setText("   " + SharedPreferencesPackage.getCoolerID(this));
                 break;
             case "Puff":
@@ -114,7 +136,6 @@ public class HeadActivity extends BaseActivity {
                 mBinding.step3Img.setBackgroundResource(R.drawable.img_brush_guide3);
                 mBinding.step4Img.setBackgroundResource(R.drawable.ic_img_cooler_step1);
                 setGuideText(getString(R.string.puff_step1), getString(R.string.puff_step2), getString(R.string.puff_step3), getString(R.string.puff_step4));
-                mBinding.ad.setText("Puff 광고");
                 mBinding.headNum.setText("   " + SharedPreferencesPackage.getPuffID(this));
                 break;
             case "Silicon":
@@ -125,7 +146,6 @@ public class HeadActivity extends BaseActivity {
                 mBinding.step3Img.setBackgroundResource(R.drawable.img_silicon_guide3);
                 mBinding.step4Img.setBackgroundResource(R.drawable.img_brush_guide4);
                 setGuideText(getString(R.string.silicon_step1), getString(R.string.silicon_step2), getString(R.string.silicon_step3), getString(R.string.silicon_step4));
-                mBinding.ad.setText("Silicon 광고");
                 mBinding.headNum.setText("   " + SharedPreferencesPackage.getSiliconID(this));
                 break;
         }
@@ -134,6 +154,7 @@ public class HeadActivity extends BaseActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
+        setResult(RESULT_OK);
         finish();
     }
 

@@ -19,8 +19,16 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/back_menu3"
+            android:background="@color/white"
             tools:context=".activity.HeadActivity">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/circle_back_short"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
                 android:id="@+id/back_btn"
@@ -377,8 +385,8 @@
                     android:text="@string/hundred"
                     android:textColor="@color/text_gray_opacity"
                     android:textSize="13sp"
-                    app:layout_constraintEnd_toEndOf="@id/line"
-                    app:layout_constraintStart_toEndOf="@+id/line"
+                    android:layout_marginEnd="25dp"
+                    app:layout_constraintEnd_toEndOf="@+id/bar_container"
                     app:layout_constraintTop_toBottomOf="@+id/line" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -394,15 +402,15 @@
                 app:layout_constraintStart_toStartOf="@+id/bar_container"
                 app:layout_constraintTop_toBottomOf="@+id/bar_container" />
 
-<!--            <com.example.ciabluetooth.util.StepContainer-->
-<!--                style="@style/StepView"-->
-<!--                app:img="@drawable/img_brush_guide1"-->
-<!--                app:step="@string/step_1"-->
-<!--                app:contents="@string/step_1"-->
-<!--                app:layout_constraintEnd_toEndOf="parent"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toBottomOf="@id/guide_title"-->
-<!--                />-->
+            <!--            <com.example.ciabluetooth.util.StepContainer-->
+            <!--                style="@style/StepView"-->
+            <!--                app:img="@drawable/img_brush_guide1"-->
+            <!--                app:step="@string/step_1"-->
+            <!--                app:contents="@string/step_1"-->
+            <!--                app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                app:layout_constraintStart_toStartOf="parent"-->
+            <!--                app:layout_constraintTop_toBottomOf="@id/guide_title"-->
+            <!--                />-->
 
             <LinearLayout
                 android:id="@+id/step1_container"
@@ -451,6 +459,7 @@
                         android:text="@string/step_1"
                         android:textColor="@color/text_gray"
                         android:textSize="18sp"
+                        android:textStyle="bold"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -515,6 +524,7 @@
                         android:text="@string/step_2"
                         android:textColor="@color/text_gray"
                         android:textSize="18sp"
+                        android:textStyle="bold"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -579,6 +589,7 @@
                         android:text="@string/step_3"
                         android:textColor="@color/text_gray"
                         android:textSize="18sp"
+                        android:textStyle="bold"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -643,6 +654,7 @@
                         android:text="@string/step_4"
                         android:textColor="@color/text_gray"
                         android:textSize="18sp"
+                        android:textStyle="bold"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -661,12 +673,11 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/device_num"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
-                android:layout_marginBottom="30dp"
                 android:orientation="horizontal"
-                app:layout_constraintBottom_toTopOf="@+id/ad"
                 app:layout_constraintEnd_toEndOf="@id/step4_container"
                 app:layout_constraintStart_toStartOf="@id/step4_container"
                 app:layout_constraintTop_toBottomOf="@id/step4_container">
@@ -682,25 +693,43 @@
                     android:id="@+id/head_num"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="   FFQD000001"
                     android:textColor="@color/text_title_50"
                     android:textSize="14sp"
                     android:textStyle="bold" />
             </LinearLayout>
 
-            <TextView
+            <androidx.viewpager.widget.ViewPager
                 android:id="@+id/ad"
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:background="@color/pink"
-                android:gravity="center"
-                android:text="광고"
-                android:textSize="50sp"
-                android:onClick="@{view::onClick}"
+                android:layout_height="117dp"
+                android:layout_marginTop="25dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/device_num" />
 
+<!--            <com.smarteist.autoimageslider.SliderView-->
+<!--                android:id="@+id/imageSlider"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="120dp"-->
+<!--                app:sliderAnimationDuration="600"-->
+<!--                app:sliderAutoCycleDirection="back_and_forth"-->
+<!--                app:sliderAutoCycleEnabled="true"-->
+<!--                app:sliderIndicatorAnimationDuration="600"-->
+<!--                app:sliderIndicatorGravity="center_horizontal|bottom"-->
+<!--                app:sliderIndicatorMargin="15dp"-->
+<!--                app:sliderIndicatorOrientation="horizontal"-->
+<!--                app:sliderIndicatorPadding="3dp"-->
+<!--                app:sliderIndicatorRadius="2dp"-->
+<!--                app:sliderIndicatorSelectedColor="#5A5A5A"-->
+<!--                app:sliderIndicatorUnselectedColor="#FFF"-->
+<!--                app:sliderScrollTimeInSec="1"-->
+<!--                app:sliderStartAutoCycle="true"-->
+<!--                android:layout_marginTop="25dp"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/device_num"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"/>-->
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </layout>

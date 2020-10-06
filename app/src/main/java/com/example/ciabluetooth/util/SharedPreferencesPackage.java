@@ -22,42 +22,67 @@ public class SharedPreferencesPackage {
         SharedPreferences preferences = context.getSharedPreferences("base", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
 
-        editor.putInt("brushSNRun202006", 300);
-        editor.putInt("brushSNCnt202007", 300);
-        editor.putInt("brushSNRun202006", 300);
-        editor.putInt("brushSNCnt202007", 300);
+        editor.putInt("brushSNRun202009", 300);
+        editor.putInt("brushSNCnt202009", 300);
+        editor.putInt("brushSNRun202010", 300);
+        editor.putInt("brushSNCnt2020010", 300);
 
-        editor.putInt("coolerSNRun202006", 300);
-        editor.putInt("coolerSNCnt202007", 300);
-        editor.putInt("coolerSNRun202006", 300);
-        editor.putInt("coolerSNCnt202007", 300);
+        editor.putInt("coolerSNRun202009", 300);
+        editor.putInt("coolerSNCnt202009", 300);
+        editor.putInt("coolerSNRun202010", 300);
+        editor.putInt("coolerSNCnt202010", 300);
 
-        editor.putInt("puffSNRun202006", 300);
-        editor.putInt("puffSNCnt202007", 300);
-        editor.putInt("puffSNRun202006", 300);
-        editor.putInt("puffSNCnt202007", 300);
+        editor.putInt("puffSNRun202009", 300);
+        editor.putInt("puffSNCnt202009", 300);
+        editor.putInt("puffSNRun202010", 300);
+        editor.putInt("puffSNCnt202010", 300);
 
-        editor.putInt("siliconSNRun202006", 300);
-        editor.putInt("siliconSNRun202007", 300);
-        editor.putInt("siliconSNCnt202006", 300);
-        editor.putInt("siliconSNCnt202007", 300);
+        editor.putInt("siliconSNRun202009", 300);
+        editor.putInt("siliconSNCnt202009", 300);
+        editor.putInt("siliconSNRun202010", 300);
+        editor.putInt("siliconSNCnt202010", 300);
         editor.apply();
     }
 
+    public static void setNowActivityName(Context context, String activityName) {
+        SharedPreferences preferences = context.getSharedPreferences("base", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+
+        editor.putString("activity", activityName);
+        editor.apply();
+    }
+
+    public static void setIsConnected(Context context, boolean isConnected) {
+        SharedPreferences preferences = context.getSharedPreferences("base", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+
+        editor.putBoolean("isConnected", isConnected);
+        editor.apply();
+    }
+
+    public static String getNowActivityName(Context context) {
+        SharedPreferences preferences = context.getSharedPreferences("base", Context.MODE_PRIVATE);
+        return preferences.getString("activity", "");
+    }
+
+    public static Boolean getIsConnected(Context context) {
+        SharedPreferences preferences = context.getSharedPreferences("base", Context.MODE_PRIVATE);
+        return preferences.getBoolean("isConnected", false);
+    }
     // 월별 사용량 저장
     // year + month (ex. 202007) 를 key 뒤에 붙여 월별 저장 사용
     // TODO: brush / cooler / puff / silicon
-    public static void setAllData(Context context, String deviceSN, int deviceFual, int deviceRun, int deviceCnt, int headType, String brushSN, int brushRun, int brushCnt, String coolerSN, int coolerRun, int coolerCnt, String puffSN, int puffRun, int puffCnt, String siliconSN, int siliconRun, int siliconCnt) {
+    public static void setAllData(Context context, String deviceSN, int deviceFual, String deviceRun, String deviceCnt, int headType, String brushSN, String brushRun, String brushCnt, String coolerSN, String coolerRun, String coolerCnt, String puffSN, String puffRun, String puffCnt, String siliconSN, String siliconRun, String siliconCnt) {
         SharedPreferences preferences = context.getSharedPreferences("base", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
         String month = mFormat.format(currentTime);
         String year = yFormat.format(currentTime);
         // fake data
         //TODO: month => (String + 월)로 key 값 구분 1 ~ 12 값이 있다면 저장
-        brushSN = "brushSN";
-        coolerSN = "coolerSN";
-        puffSN = "puffSN";
-        siliconSN = "siliconSN";
+//        brushSN = "brushSN";
+//        coolerSN = "coolerSN";
+//        puffSN = "puffSN";
+//        siliconSN = "siliconSN";
 
         int brushRunTM = 0, brushCntTM = 0, coolerRunTM = 0, coolerCntTM = 0, puffRunTM = 0, puffCntTM = 0, siliconRunTM = 0, siliconCntTM = 0;
 
@@ -99,29 +124,36 @@ public class SharedPreferencesPackage {
         Log.e("Shared", siliconCntTM + " <-siliconThisMonth");
         editor.putString(Constants.DEVICE_SN, deviceSN);
         editor.putInt(deviceSN + "Fual", deviceFual);
-        editor.putInt(deviceSN + "Run", deviceRun);
-        editor.putInt(deviceSN + "Cnt", deviceCnt);
+        editor.putInt(deviceSN + "Run", Integer.parseInt(deviceRun, 16));
+        editor.putInt(deviceSN + "Cnt", Integer.parseInt(deviceCnt, 16));
         editor.putInt(deviceSN + "HeadType", headType);
         editor.putString(Constants.BRUSH_SN, brushSN);
-        editor.putInt(brushSN + "RunTotal", brushRun);
-        editor.putInt(brushSN + "Run" + year + month, brushRun - brushRunTM);
-        editor.putInt(brushSN + "CntTotal", brushCnt);
-        editor.putInt(brushSN + "Cnt" + year + month, brushCnt - brushCntTM);
+        editor.putInt(brushSN + "RunTotal", Integer.parseInt(brushRun, 16));
+        editor.putInt(brushSN + "Run" + year + month, Integer.parseInt(brushRun, 16) - brushRunTM);
+        editor.putInt(brushSN + "CntTotal", Integer.parseInt(brushCnt, 16));
+        editor.putInt(brushSN + "Cnt" + year + month, Integer.parseInt(brushCnt, 16) - brushCntTM);
         editor.putString(Constants.COOLER_SN, coolerSN);
-        editor.putInt(coolerSN + "RunTotal", coolerRun);
-        editor.putInt(coolerSN + "Run" + year + month, coolerRun - coolerRunTM);
-        editor.putInt(coolerSN + "CntTotal", coolerCnt);
-        editor.putInt(coolerSN + "Cnt" + year + month, coolerCnt - coolerCntTM);
+        editor.putInt(coolerSN + "RunTotal", Integer.parseInt(coolerRun, 16));
+        editor.putInt(coolerSN + "Run" + year + month, Integer.parseInt(coolerRun, 16) - coolerRunTM);
+        editor.putInt(coolerSN + "CntTotal", Integer.parseInt(coolerCnt, 16));
+        editor.putInt(coolerSN + "Cnt" + year + month, Integer.parseInt(coolerCnt, 16) - coolerCntTM);
         editor.putString(Constants.PUFF_SN, puffSN);
-        editor.putInt(puffSN + "RunTotal", puffRun);
-        editor.putInt(puffSN + "Run" + year + month, puffRun - puffRunTM);
-        editor.putInt(puffSN + "CntTotal", puffCnt);
-        editor.putInt(puffSN + "Cnt" + year + month, puffCnt - puffCntTM);
+        editor.putInt(puffSN + "RunTotal", Integer.parseInt(puffRun, 16));
+        editor.putInt(puffSN + "Run" + year + month, Integer.parseInt(puffRun, 16) - puffRunTM);
+        editor.putInt(puffSN + "CntTotal", Integer.parseInt(puffCnt, 16));
+        editor.putInt(puffSN + "Cnt" + year + month, Integer.parseInt(puffCnt, 16) - puffCntTM);
         editor.putString(Constants.SILICON_SN, siliconSN);
-        editor.putInt(siliconSN + "RunTotal", siliconRun);
-        editor.putInt(siliconSN + "Run" + year + month, siliconRun - siliconRunTM);
-        editor.putInt(siliconSN + "CntTotal", siliconCnt);
-        editor.putInt(siliconSN + "Cnt" + year + month, siliconCnt - siliconCntTM);
+        editor.putInt(siliconSN + "RunTotal", Integer.parseInt(siliconRun, 16));
+        editor.putInt(siliconSN + "Run" + year + month, Integer.parseInt(siliconRun, 16) - siliconRunTM);
+        editor.putInt(siliconSN + "CntTotal", Integer.parseInt(siliconCnt, 16));
+        editor.putInt(siliconSN + "Cnt" + year + month, Integer.parseInt(siliconCnt, 16) - siliconCntTM);
+        editor.apply();
+    }
+
+    public static void setDeviceAddress(Context context, String deviceAddress) {
+        SharedPreferences preferences = context.getSharedPreferences("base", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString(Constants.DEVICE_ADDRESS, deviceAddress);
         editor.apply();
     }
 
@@ -129,6 +161,10 @@ public class SharedPreferencesPackage {
     public static String getDeviceID(Context context) {
         SharedPreferences preferences = context.getSharedPreferences("base", Context.MODE_PRIVATE);
         return preferences.getString(Constants.DEVICE_SN, "");
+    }
+    public static String getDeviceAddress(Context context) {
+        SharedPreferences preferences = context.getSharedPreferences("base", Context.MODE_PRIVATE);
+        return preferences.getString(Constants.DEVICE_ADDRESS, "");
     }
     public static int getDeviceRun(Context context) {
         SharedPreferences preferences = context.getSharedPreferences("base", Context.MODE_PRIVATE);

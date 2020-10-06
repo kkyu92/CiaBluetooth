@@ -16,20 +16,374 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
+            android:id="@+id/how_to_use1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
             android:layout_marginEnd="30dp"
             android:layout_marginTop="30dp"
-            android:layout_marginBottom="50dp"
-            android:text="@string/how_to_use"
+            android:text="@string/how_to_use1"
             android:textSize="16sp"
             android:textColor="@color/text_color"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent"/>
 
+        <TextView
+            android:id="@+id/num1_1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/num1"
+            android:textColor="@color/text_color"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/how_to_use1"
+            app:layout_constraintTop_toBottomOf="@+id/how_to_use1"/>
+
+        <TextView
+            android:id="@+id/how_to_use1_1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_color"
+            android:textSize="16sp"
+            android:text="@string/how_to_use1_1"
+            android:layout_marginStart="5dp"
+            app:layout_constraintStart_toEndOf="@+id/num1_1"
+            app:layout_constraintTop_toTopOf="@+id/num1_1"
+            app:layout_constraintEnd_toEndOf="@+id/how_to_use1"/>
+
+        <TextView
+            android:id="@+id/num1_2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_color"
+            android:textSize="16sp"
+            android:text="@string/num2"
+            app:layout_constraintStart_toStartOf="@+id/how_to_use1"
+            app:layout_constraintTop_toBottomOf="@id/how_to_use1_1" />
+
+        <TextView
+            android:id="@+id/how_to_use1_2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_color"
+            android:textSize="16sp"
+            android:text="@string/how_to_use1_2"
+            app:layout_constraintStart_toStartOf="@+id/how_to_use1_1"
+            app:layout_constraintEnd_toEndOf="@+id/how_to_use1_1"
+            app:layout_constraintTop_toTopOf="@+id/num1_2"/>
+
+        <TextView
+            android:id="@+id/num1_3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_color"
+            android:textSize="16sp"
+            android:text="@string/num3"
+            app:layout_constraintStart_toStartOf="@+id/how_to_use1"
+            app:layout_constraintTop_toBottomOf="@+id/how_to_use1_2" />
+
+        <TextView
+            android:id="@+id/how_to_use1_3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_color"
+            android:textSize="16sp"
+            android:text="@string/how_to_use1_3"
+            app:layout_constraintStart_toStartOf="@+id/how_to_use1_1"
+            app:layout_constraintEnd_toEndOf="@+id/how_to_use1_1"
+            app:layout_constraintTop_toTopOf="@+id/num1_3"/>
+
+        <TextView
+            android:id="@+id/num1_4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_color"
+            android:textSize="16sp"
+            android:text="@string/num4"
+            app:layout_constraintStart_toStartOf="@+id/how_to_use1"
+            app:layout_constraintTop_toBottomOf="@+id/how_to_use1_3" />
+
+        <TextView
+            android:id="@+id/how_to_use1_4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_color"
+            android:textSize="16sp"
+            android:text="@string/how_to_use1_4"
+            app:layout_constraintStart_toStartOf="@+id/how_to_use1_1"
+            app:layout_constraintEnd_toEndOf="@+id/how_to_use1_1"
+            app:layout_constraintTop_toTopOf="@+id/num1_4"/>
+
+        <TextView
+            android:id="@+id/num1_5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_color"
+            android:textSize="16sp"
+            android:text="@string/num5"
+            app:layout_constraintStart_toStartOf="@+id/how_to_use1"
+            app:layout_constraintTop_toBottomOf="@+id/how_to_use1_4" />
+
+        <TextView
+            android:id="@+id/how_to_use1_5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_color"
+            android:textSize="16sp"
+            android:text="@string/how_to_use1_5"
+            app:layout_constraintStart_toStartOf="@+id/how_to_use1_1"
+            app:layout_constraintEnd_toEndOf="@+id/how_to_use1_1"
+            app:layout_constraintTop_toTopOf="@+id/num1_5"/>
+
+        <TextView
+            android:id="@+id/how_to_use2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_color"
+            android:textSize="16sp"
+            android:text="@string/how_to_use2"
+            app:layout_constraintStart_toStartOf="@+id/how_to_use1"
+            app:layout_constraintEnd_toEndOf="@+id/how_to_use1"
+            app:layout_constraintTop_toBottomOf="@+id/how_to_use1_5"/>
+
+        <TextView
+            android:id="@+id/num2_1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_color"
+            android:textSize="16sp"
+            android:text="@string/num1"
+            app:layout_constraintStart_toStartOf="@+id/how_to_use2"
+            app:layout_constraintTop_toBottomOf="@+id/how_to_use2"/>
+
+        <TextView
+            android:id="@+id/how_to_use2_1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_color"
+            android:textSize="16sp"
+            android:text="@string/how_to_use2_1"
+            android:layout_marginStart="5dp"
+            app:layout_constraintStart_toEndOf="@+id/num2_1"
+            app:layout_constraintTop_toTopOf="@+id/num2_1"
+            app:layout_constraintEnd_toEndOf="@+id/how_to_use2"/>
+
+        <TextView
+            android:id="@+id/num2_2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_color"
+            android:textSize="16sp"
+            android:text="@string/num2"
+            app:layout_constraintStart_toStartOf="@+id/how_to_use2"
+            app:layout_constraintTop_toBottomOf="@+id/how_to_use2_1"/>
+
+        <TextView
+            android:id="@+id/how_to_use2_2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_color"
+            android:textSize="16sp"
+            android:text="@string/how_to_use2_2"
+            app:layout_constraintStart_toStartOf="@+id/how_to_use2_1"
+            app:layout_constraintEnd_toEndOf="@+id/how_to_use2_1"
+            app:layout_constraintTop_toTopOf="@+id/num2_2"/>
+
+        <TextView
+            android:id="@+id/num2_3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_color"
+            android:textSize="16sp"
+            android:text="@string/num3"
+            app:layout_constraintStart_toStartOf="@+id/how_to_use2"
+            app:layout_constraintTop_toBottomOf="@+id/how_to_use2_2"/>
+
+        <TextView
+            android:id="@+id/how_to_use2_3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_color"
+            android:textSize="16sp"
+            android:text="@string/how_to_use2_3"
+            app:layout_constraintStart_toStartOf="@+id/how_to_use2_1"
+            app:layout_constraintEnd_toEndOf="@+id/how_to_use2_1"
+            app:layout_constraintTop_toTopOf="@+id/num2_3"/>
+
+        <TextView
+            android:id="@+id/num2_4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_color"
+            android:textSize="16sp"
+            android:text="@string/num4"
+            app:layout_constraintStart_toStartOf="@+id/how_to_use2"
+            app:layout_constraintTop_toBottomOf="@+id/how_to_use2_3"/>
+
+        <TextView
+            android:id="@+id/how_to_use2_4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_color"
+            android:textSize="16sp"
+            android:text="@string/how_to_use2_4"
+            app:layout_constraintStart_toStartOf="@+id/how_to_use2_1"
+            app:layout_constraintEnd_toEndOf="@+id/how_to_use2_1"
+            app:layout_constraintTop_toTopOf="@+id/num2_4"/>
+
+        <TextView
+            android:id="@+id/num2_5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_color"
+            android:textSize="16sp"
+            android:text="@string/num5"
+            app:layout_constraintStart_toStartOf="@+id/how_to_use2"
+            app:layout_constraintTop_toBottomOf="@+id/how_to_use2_4"/>
+
+        <TextView
+            android:id="@+id/how_to_use2_5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_color"
+            android:textSize="16sp"
+            android:text="@string/how_to_use2_5"
+            app:layout_constraintStart_toStartOf="@+id/how_to_use2_1"
+            app:layout_constraintEnd_toEndOf="@+id/how_to_use2_1"
+            app:layout_constraintTop_toTopOf="@+id/num2_5"/>
+
+        <TextView
+            android:id="@+id/how_to_use3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_color"
+            android:textSize="16sp"
+            android:text="@string/how_to_use3"
+            app:layout_constraintTop_toBottomOf="@+id/how_to_use2_5"
+            app:layout_constraintStart_toStartOf="@+id/how_to_use1"
+            app:layout_constraintEnd_toEndOf="@+id/how_to_use1"/>
+        
+        <TextView
+            android:id="@+id/num3_1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_color"
+            android:textSize="16sp"
+            android:text="@string/num1"
+            app:layout_constraintStart_toStartOf="@+id/how_to_use3"
+            app:layout_constraintTop_toBottomOf="@+id/how_to_use3"/>
+
+        <TextView
+            android:id="@+id/how_to_use3_1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_color"
+            android:textSize="16sp"
+            android:text="@string/how_to_use3_1"
+            android:layout_marginStart="5dp"
+            app:layout_constraintStart_toEndOf="@+id/num3_1"
+            app:layout_constraintEnd_toEndOf="@+id/how_to_use3"
+            app:layout_constraintTop_toTopOf="@+id/num3_1"/>
+        
+        <TextView
+            android:id="@+id/num3_2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_color"
+            android:textSize="16sp"
+            android:text="@string/num2"
+            app:layout_constraintStart_toStartOf="@+id/how_to_use3"
+            app:layout_constraintTop_toBottomOf="@+id/how_to_use3_1"/>
+
+        <TextView
+            android:id="@+id/how_to_use3_2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_color"
+            android:textSize="16sp"
+            android:text="@string/how_to_use3_2"
+            android:layout_marginStart="5dp"
+            app:layout_constraintStart_toEndOf="@+id/num3_1"
+            app:layout_constraintEnd_toEndOf="@+id/how_to_use3"
+            app:layout_constraintTop_toTopOf="@+id/num3_2"/>
+
+        <TextView
+            android:id="@+id/num3_3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_color"
+            android:textSize="16sp"
+            android:text="@string/num3"
+            app:layout_constraintStart_toStartOf="@+id/how_to_use3"
+            app:layout_constraintTop_toBottomOf="@+id/how_to_use3_2"/>
+
+        <TextView
+            android:id="@+id/how_to_use3_3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_color"
+            android:textSize="16sp"
+            android:text="@string/how_to_use3_3"
+            android:layout_marginStart="5dp"
+            app:layout_constraintStart_toEndOf="@+id/num3_1"
+            app:layout_constraintEnd_toEndOf="@+id/how_to_use3"
+            app:layout_constraintTop_toTopOf="@+id/num3_3"/>
+
+        <TextView
+            android:id="@+id/num3_4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_color"
+            android:textSize="16sp"
+            android:text="@string/num4"
+            app:layout_constraintStart_toStartOf="@+id/how_to_use3"
+            app:layout_constraintTop_toBottomOf="@+id/how_to_use3_3"/>
+
+        <TextView
+            android:id="@+id/how_to_use3_4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_color"
+            android:textSize="16sp"
+            android:text="@string/how_to_use3_4"
+            android:layout_marginStart="5dp"
+            app:layout_constraintStart_toEndOf="@+id/num3_1"
+            app:layout_constraintEnd_toEndOf="@+id/how_to_use3"
+            app:layout_constraintTop_toTopOf="@+id/num3_4"/>
+
+        <TextView
+            android:id="@+id/num3_5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_color"
+            android:textSize="16sp"
+            android:text="@string/num5"
+            app:layout_constraintStart_toStartOf="@+id/how_to_use3"
+            app:layout_constraintTop_toBottomOf="@+id/how_to_use3_4"/>
+
+        <TextView
+            android:id="@+id/how_to_use3_5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_color"
+            android:textSize="16sp"
+            android:text="@string/how_to_use3_5"
+            android:layout_marginStart="5dp"
+            app:layout_constraintStart_toEndOf="@+id/num3_1"
+            app:layout_constraintEnd_toEndOf="@+id/how_to_use3"
+            app:layout_constraintTop_toTopOf="@+id/num3_5"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_color"
+            android:textSize="16sp"
+            android:text="@string/how_to_use4"
+            android:layout_marginBottom="50dp"
+            app:layout_constraintStart_toStartOf="@+id/how_to_use1"
+            app:layout_constraintEnd_toEndOf="@+id/how_to_use1"
+            app:layout_constraintTop_toBottomOf="@+id/how_to_use3_5"
+            app:layout_constraintBottom_toBottomOf="parent"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>

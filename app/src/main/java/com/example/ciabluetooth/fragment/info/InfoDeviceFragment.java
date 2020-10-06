@@ -14,6 +14,7 @@ import androidx.databinding.DataBindingUtil;
 import com.example.ciabluetooth.R;
 import com.example.ciabluetooth.databinding.FragmentInfoDeviceBinding;
 import com.example.ciabluetooth.fragment.BaseFragment;
+import com.example.ciabluetooth.util.SharedPreferencesPackage;
 
 public class InfoDeviceFragment extends BaseFragment {
     private String TAG = this.getClass().getSimpleName();
@@ -34,6 +35,8 @@ public class InfoDeviceFragment extends BaseFragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         mBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_info_device, container, false);
         isCreateView = true;
+
+        mBinding.deviceNum.setText(SharedPreferencesPackage.getDeviceID(getContext()));
         return mBinding.getRoot();
     }
 
