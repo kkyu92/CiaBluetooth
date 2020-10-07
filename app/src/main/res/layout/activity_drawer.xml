@@ -125,7 +125,7 @@
                         android:id="@+id/pdf_img"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/icon_pdfdown"
+                        android:background="@drawable/icon_manual_down"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent"

@@ -212,7 +212,7 @@ public class ScannerFragment extends DialogFragment {
             listener.onDeviceSelected(d.device, d.name);
             // getString(R.string.cia_id)
             // "CIA_IOT"
-            if (!d.name.contains("mine")) {
+            if (!d.name.contains(getString(R.string.cia_id))) {
                 Toast.makeText(getContext(), " mine 디바이스를 연결해주세요. ", Toast.LENGTH_LONG).show();
             } else {
                 dialog.dismiss();
