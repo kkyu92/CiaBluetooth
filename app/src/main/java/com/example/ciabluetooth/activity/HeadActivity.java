@@ -96,17 +96,38 @@ public class HeadActivity extends BaseActivity {
     }
 
     private void setBarPercent(int allCnt, int allRun, int headCnt, int headRun) {
-        allCnt = allCnt == 0 ? 1 : allCnt;
-        allRun = allRun == 0 ? 1 : allRun;
-        int cntPer = headCnt * 100 / allCnt;
-        int runPer = headRun * 100 / allRun;
+//        allCnt = allCnt == 0 ? 1 : allCnt;
+//        allRun = allRun == 0 ? 1 : allRun;
+        int cntPer, runPer;
+        if (allCnt == 0 || allRun == 0) {
+            cntPer = 0;
+            runPer = 0;
+        } else {
+            cntPer = headCnt * 100 / allCnt;
+            runPer = headRun * 100 / allRun;
+        }
         mBinding.percentProgress.setProgressWithAnimation(cntPer, 2000L); // =2 sec
         mBinding.percentText.setText(String.valueOf(cntPer));
 
         mBinding.totalProgress.setProgressWithAnimation(runPer, 2000L);
         // hour change
-        mBinding.totalText.setText(changeHour(headRun));
+        String getTime = changeHour(headRun);
+        String time = getTime.substring(0, getTime.length() - 1);
+        String unit = getTime.substring(getTime.length() - 1);
+        mBinding.totalText.setText(time);
+        mBinding.totalUnit.setText(unit);
 
+        // 교체시기
+        int timeNum = Integer.parseInt(time);
+        if (timeNum >= 365 && headName.equals("Cooler")) {
+            mBinding.headChangeNotify.setVisibility(View.VISIBLE);
+        } else if (timeNum >= 180 && (headName.equals("Brush"))) {
+            mBinding.headChangeNotify.setVisibility(View.VISIBLE);
+        } else if (timeNum >= 90 && (headName.equals("Puff") || headName.equals("Silicon"))) {
+            mBinding.headChangeNotify.setVisibility(View.VISIBLE);
+        } else {
+            mBinding.headChangeNotify.setVisibility(View.INVISIBLE);
+        }
         setBar(allCnt, headCnt, headCnt+"회");
     }
 
@@ -169,8 +190,19 @@ public class HeadActivity extends BaseActivity {
     // percent line
     private void setBar(int total, int head, String countTxt) {
         // 전체 256 기준 133  bar setting
-        int count = head * 100 / total;
-        mBinding.totalCount.setText(String.valueOf(total));
+        int count;
+        if (total == 0) {
+            count = 0;
+            mBinding.zeroCount.setVisibility(View.GONE);
+            mBinding.totalCount.setVisibility(View.INVISIBLE);
+        } else {
+            count = head * 100 / total;
+            mBinding.totalCount.setText(String.valueOf(total));
+        }
+        if (countTxt.equals("0회")) {
+            mBinding.zeroCount.setVisibility(View.GONE);
+        }
+
         mBinding.useCount.setText(countTxt);
         new StartBar().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, count);
     }

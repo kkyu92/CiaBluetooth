@@ -70,6 +70,7 @@ public class MainActivity extends BleProfileServiceReadyActivity<UARTService.UAR
             }, 1000);
         } else {
             Log.e(TAG, "onResume : 연결안됨");
+            Toast.makeText(this, "블루투스 연결을 확인해주세요.", Toast.LENGTH_LONG).show();
             saveData();
         }
         Log.e(TAG, "onResume : end");
@@ -180,7 +181,11 @@ public class MainActivity extends BleProfileServiceReadyActivity<UARTService.UAR
             case R.id.plus_btn:
                 onConnectClicked(null);
                 send(getString(R.string.get_info));
-                saveData();
+                runOnUiThread(() -> {mBinding.loading.setVisibility(View.VISIBLE);});
+                new Handler().postDelayed(() -> {
+                    saveData();
+                    mBinding.loading.setVisibility(View.GONE);
+                }, 1000);
                 break;
             case R.id.brush_container:
                 headStartActivity("Brush", brushRun, brushCnt);

@@ -80,7 +80,7 @@ Blinky가 광고 중이고 여기에 표시되지 않는 경우 아래 버튼을
     <string name="connect_explain">제품 사용 관련 문의사항 발생시 0000-0000을 통해 신속한 상담을 받으실 수 있습니다.</string>
     <string name="connect">연결</string>
 
-    <string name="main_title">Cia IOT 클렌저</string>
+    <string name="main_title">mine</string>
     <string name="brush">Brush</string>
     <string name="cooler">Cooler</string>
     <string name="puff">Puff</string>
@@ -215,7 +215,7 @@ Blinky가 광고 중이고 여기에 표시되지 않는 경우 아래 버튼을
     // nordic
 <!--    mine 로 최종변경 해야함 -->
     <string name="cia_id">mine</string>
-<!--    <string name="cia_id">K5</string>-->
+<!--    <string name="cia_id">"a"</string>-->
     <string name="scanner_action_scan">찾기</string>
     <string name="scanner_action_cancel">중지</string>
     <string name="scanner_subtitle_bonded">등록된 디바이스</string>
@@ -293,7 +293,7 @@ Blinky가 광고 중이고 여기에 표시되지 않는 경우 아래 버튼을
     <string name="manual_step4">충전시 전원버튼이 점멸표시되며 완충시 전원버튼이 점등됩니다.</string>
 
     <string name="device_name">상품명</string>
-    <string name="device_name_contents">Cia IOT 클렌저</string>
+    <string name="device_name_contents">mine</string>
     <string name="components_txt">구성품</string>
     <string name="components_contents_txt">본체, 살균 충전크래들, 실리콘헤드,\n브러시헤드, 쿨러헤드, 퍼프헤드,\nUSB케이블, 매뉴얼</string>
     <string name="warranty_text">보증기간</string>
@@ -304,7 +304,7 @@ Blinky가 광고 중이고 여기에 표시되지 않는 경우 아래 버튼을
     <string name="head_usage_time">헤드 사용시간</string>
     <string name="head1_title">1.헤드 교체</string>
     <string name="head2_title">2.헤드 살균</string>
-    <string name="pdf_text">MINE 제품 사용 매뉴얼.pdf</string>
+    <string name="pdf_text">mine 제품 사용 매뉴얼.pdf</string>
     <string name="view">"'PDF 뷰어'에서 열기"</string>
     <string name="download">다운로드</string>
     <string name="bluetooth_connect">블루투스 켜기</string>

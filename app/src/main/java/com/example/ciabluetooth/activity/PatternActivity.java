@@ -40,7 +40,7 @@ public class PatternActivity extends BaseActivity {
         ImageView imgThird = viewThird.findViewById(R.id.img_tab);
         TextView txtThird = viewThird.findViewById(R.id.txt_tab);
         imgThird.setImageResource(R.drawable.ic_img_tri_gray);
-        txtThird.setText(R.string.manual_head);
+        txtThird.setText(R.string.usage_time);
         mBinding.tabLayout.getTabAt(1).setCustomView(viewThird);
 
     }

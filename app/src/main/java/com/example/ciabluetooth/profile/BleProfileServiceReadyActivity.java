@@ -406,6 +406,9 @@ public abstract class BleProfileServiceReadyActivity<E extends BleProfileService
 					showDeviceScanningDialog(getFilterUUID());
 				}
 			} else {
+				//TODO: device click --> service.disconnect();
+//				setDefaultUI();
+//				showDeviceScanningDialog(getFilterUUID());
 //				service.disconnect();
 			}
 		} else {

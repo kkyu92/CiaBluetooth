@@ -67,12 +67,11 @@
 
             <ImageView
                 android:id="@+id/img1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="525dp"
+                android:layout_height="820dp"
                 android:background="@drawable/pers_2"
-                android:layout_marginTop="170dp"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/title1"
+                app:layout_constraintStart_toStartOf="parent"/>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/permit_container"

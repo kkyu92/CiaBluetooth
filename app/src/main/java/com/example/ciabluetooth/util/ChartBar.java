@@ -133,9 +133,9 @@ public class ChartBar {
 
         if (headRun >= 86400) {
             changeHour = day + "일";
-        } else if (headRun > 3600) {
+        } else if (headRun >= 3600) {
             changeHour = hour + "시";
-        } else if (headRun > 60) {
+        } else if (headRun >= 60) {
             changeHour = min + "분";
         } else {
             changeHour = sec + "초";

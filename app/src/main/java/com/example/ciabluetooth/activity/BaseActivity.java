@@ -186,13 +186,13 @@ public class BaseActivity extends AppCompatActivity {
             // 블루투스 adapter가 있으면, 블루투스 adater에서 페어링된 장치 목록을 불러올 수 있다.
 //            List<BluetoothDevice> pairDevices = bluetoothManager.getConnectedDevices(GATT_SERVER);
             Set<BluetoothDevice> pairDevices = bluetoothAdapter.getBondedDevices();
-            Log.e(TAG, "size::: "+pairDevices.size());
+            Log.e(TAG, "size::: " + pairDevices.size());
             // Bluetooth 가 켜져있는 상테에서 들어온 경우 - 페어링된 장치가 있으면
             if (pairDevices.size() > 0) {
                 for (BluetoothDevice device : pairDevices) {
                     //페어링된 장치 이름과, MAC주소를 가져올 수 있다.
                     Log.e("pairingList-name", device.getName());
-                    Log.e("pairingList-mac", device.getAddress()+"\n"+pairDevices.size());
+                    Log.e("pairingList-mac", device.getAddress() + "\n" + pairDevices.size());
                 }
             } else {
                 Toast.makeText(getApplicationContext(), "Cia 기기와 블루투스 연결이 필요합니다.", Toast.LENGTH_LONG).show();
@@ -205,7 +205,7 @@ public class BaseActivity extends AppCompatActivity {
                 String action = intent.getAction();
                 //연결된 장치를 intent를 통하여 가져온다.
                 BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
-                Log.e(TAG, "이미 연결되어 있는 기기를 가져오는가? ::: "+device.getName());
+                Log.e(TAG, "이미 연결되어 있는 기기를 가져오는가? ::: " + device.getName());
                 //장치가 연결이 되었으면
                 if (BluetoothDevice.ACTION_ACL_CONNECTED.equals(action)) {
                     Log.e("connect", device.getName() + " Device Is Connected!");
@@ -218,7 +218,7 @@ public class BaseActivity extends AppCompatActivity {
                 } else if (BluetoothDevice.ACTION_ACL_DISCONNECTED.equals(action)) {
                     Log.e("disConnect", device.getName() + " Device Is DISConnected!");
                 } else {
-                    Log.e(TAG, "이미 연결되어 있는 기기를 가져오는가? ::: "+device.getName());
+                    Log.e(TAG, "이미 연결되어 있는 기기를 가져오는가? ::: " + device.getName());
                 }
             }
         };
@@ -232,20 +232,38 @@ public class BaseActivity extends AppCompatActivity {
     }
 
     // hour 계산
+//    public String changeHour(int headRun) {
+//        String changeHour = "0";
+//        if (headRun <= 360) {
+//            changeHour = "0.1";
+//        } else if (headRun < 3600) {
+//            double changeDouble = (double) headRun / 3600;
+//            changeHour = String.format("%.1f", changeDouble);
+//        } else if (headRun == 3600) {
+//            changeHour = "1";
+//        } else {
+//            changeHour = String.valueOf(headRun / 3600);
+//        }
+//        Log.e(TAG, "headRun :: "+ headRun);
+//        Log.e(TAG, "changeHour :: "+ changeHour);
+//        return changeHour;
+//    }
     public String changeHour(int headRun) {
-        String changeHour = "0";
-        if (headRun <= 360) {
-            changeHour = "0.1";
-        } else if (headRun < 3600) {
-            double changeDouble = (double) headRun / 3600;
-            changeHour = String.format("%.1f", changeDouble);
-        } else if (headRun == 3600) {
-            changeHour = "1";
+        int day = headRun / (60 * 60 * 24);
+        int hour = (headRun - day * 60 * 60 * 24) / (60 * 60);
+        int min = (headRun - day * 60 * 60 * 24 - hour * 3600) / 60;
+        int sec = headRun % 60;
+        String changeHour;
+
+        if (headRun >= 86400) {
+            changeHour = day + "일";
+        } else if (headRun >= 3600) {
+            changeHour = hour + "시";
+        } else if (headRun >= 60) {
+            changeHour = min + "분";
         } else {
-            changeHour = String.valueOf(headRun / 3600);
+            changeHour = sec + "초";
         }
-        Log.e(TAG, "headRun :: "+ headRun);
-        Log.e(TAG, "changeHour :: "+ changeHour);
         return changeHour;
     }
 }
