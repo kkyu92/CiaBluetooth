@@ -22,7 +22,7 @@ import com.example.ciabluetooth.util.SharedPreferencesPackage;
 public class HeadActivity extends BaseActivity {
     private String TAG = this.getClass().getSimpleName();
     private ActivityHeadBinding mBinding;
-    private String headName;
+    private String headName, fffff;
     private int headRun, headCnt;
     private AdViewPagerAdapter adapter;
     private ViewPager viewPager;
@@ -41,7 +41,7 @@ public class HeadActivity extends BaseActivity {
         allCnt = getIntent.getIntExtra("allCnt", 0);
         // activity, guide title
         mBinding.title.setText(headName);
-        String fffff = "";
+
         if (headName.equals("Brush")) {
             fffff = "브러시";
         } else if (headName.equals("Cooler")) {
@@ -53,8 +53,8 @@ public class HeadActivity extends BaseActivity {
         } else {
             fffff = "ffffffffffffffff";
         }
-        mBinding.headUse.setText(fffff+" 사용율");
-        mBinding.guideTitle.setText(fffff+getString(R.string.guide_head));
+        mBinding.headUse.setText(fffff + " 사용율");
+        mBinding.guideTitle.setText(fffff + getString(R.string.guide_head));
 
         // TODO 헤드기기 교체 알림 기준
 
@@ -72,9 +72,9 @@ public class HeadActivity extends BaseActivity {
         });
 
         // ad viewpager
-        viewPager = findViewById(R.id.ad);
-        adapter = new AdViewPagerAdapter(this);
-        viewPager.setAdapter(adapter);
+//        viewPager = findViewById(R.id.ad);
+//        adapter = new AdViewPagerAdapter(this);
+//        viewPager.setAdapter(adapter);
     }
 
     @Override
@@ -88,10 +88,10 @@ public class HeadActivity extends BaseActivity {
             case R.id.back_btn:
                 onBackPressed();
                 break;
-            case R.id.ad:
-                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.hosiden.co.kr/"));
-                startActivity(intent);
-                break;
+//            case R.id.ad:
+//                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.hosiden.co.kr/"));
+//                startActivity(intent);
+//                break;
         }
     }
 
@@ -108,13 +108,14 @@ public class HeadActivity extends BaseActivity {
         }
         mBinding.percentProgress.setProgressWithAnimation(cntPer, 2000L); // =2 sec
         mBinding.percentText.setText(String.valueOf(cntPer));
-
+        mBinding.percentText.setContentDescription(fffff + " 사용율은 전체해드 대비 " + cntPer + "퍼센트 입니다");
         mBinding.totalProgress.setProgressWithAnimation(runPer, 2000L);
         // hour change
         String getTime = changeHour(headRun);
         String time = getTime.substring(0, getTime.length() - 1);
         String unit = getTime.substring(getTime.length() - 1);
         mBinding.totalText.setText(time);
+        mBinding.totalText.setContentDescription(fffff + "사용시간은 " + time + unit + "입니다.");
         mBinding.totalUnit.setText(unit);
 
         // 교체시기
@@ -128,7 +129,7 @@ public class HeadActivity extends BaseActivity {
         } else {
             mBinding.headChangeNotify.setVisibility(View.INVISIBLE);
         }
-        setBar(allCnt, headCnt, headCnt+"회");
+        setBar(allCnt, headCnt, headCnt + "회");
     }
 
     // 그래프 그려주기
@@ -193,17 +194,18 @@ public class HeadActivity extends BaseActivity {
         int count;
         if (total == 0) {
             count = 0;
-            mBinding.zeroCount.setVisibility(View.GONE);
-            mBinding.totalCount.setVisibility(View.INVISIBLE);
+            mBinding.zeroCount.setContentDescription("최저 0회");
+            mBinding.totalCount.setText("0");
+            mBinding.totalCount.setContentDescription("총 사용횟수 0회");
         } else {
             count = head * 100 / total;
+            mBinding.zeroCount.setContentDescription("최저 0회");
             mBinding.totalCount.setText(String.valueOf(total));
-        }
-        if (countTxt.equals("0회")) {
-            mBinding.zeroCount.setVisibility(View.GONE);
+            mBinding.totalCount.setContentDescription("최대 " + (total) + "회");
         }
 
         mBinding.useCount.setText(countTxt);
+        mBinding.useCount.setContentDescription("총 사용횟수 " + countTxt);
         new StartBar().executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, count);
     }
 

@@ -66,11 +66,21 @@ public class ChartBarMonthly {
         int thisPuffPer = (int) Math.round((double) thisPuff * 100 / thisAll);
         int thisSiliconPer = (int) Math.round((double) thisSilicon * 100 / thisAll);
 
-        // setText percent
+        // setContentDescription
+        mBinding.lastBrushBar.setContentDescription("지난달 브러쉬는 " + lastBrushPer + "프로 사용하였습니다.");
+        mBinding.lastCoolerBar.setContentDescription("지난달 쿨러는 " + lastCoolerPer + "프로 사용하였습니다.");
+        mBinding.lastPuffBar.setContentDescription("지난달 퍼프는 " + lastPuffPer + "프로 사용하였습니다.");
+        mBinding.lastSiliconBar.setContentDescription("지난달 실리콘는 " + lastSiliconPer + "프로 사용하였습니다.");
+
+        // setText percent + contentDescription
         mBinding.brushPer.setText(thisBrushPer + "%");
+        mBinding.thisBrushBar.setContentDescription("이번달 블러쉬는 " + thisBrushPer + "프로 사용하였습니다.");
         mBinding.coolerPer.setText(thisCoolerPer + "%");
+        mBinding.thisCoolerBar.setContentDescription("이번달 쿨러는 " + thisCoolerPer + "프로 사용하였습니다.");
         mBinding.puffPer.setText(thisPuffPer + "%");
+        mBinding.thisPuffBar.setContentDescription("이번달 퍼프는 " + thisPuffPer + "프로 사용하였습니다.");
         mBinding.siliconPer.setText(thisSiliconPer + "%");
+        mBinding.thisSiliconBar.setContentDescription("이번달 실리콘는 " + thisSiliconPer + "프로 사용하였습니다.");
 
         if (lastBrushPer == 0) { lastBrushPer = 1; }
         if (lastCoolerPer == 0) { lastCoolerPer = 1; }

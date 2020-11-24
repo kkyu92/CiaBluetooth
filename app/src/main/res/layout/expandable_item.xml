@@ -49,6 +49,7 @@
             android:id="@+id/click_view"
             android:layout_width="28.7dp"
             android:layout_height="28.7dp"
+            android:visibility="gone"
             android:padding="5dp"
             android:src="@drawable/ic_icon_arrow_down" />
     </LinearLayout>

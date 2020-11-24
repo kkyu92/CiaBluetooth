@@ -63,7 +63,9 @@ public class MainActivity extends BleProfileServiceReadyActivity<UARTService.UAR
             Log.e(TAG, "onResume : 연결됨");
             onConnectClicked(null);
             send(getString(R.string.get_info));
-            runOnUiThread(() -> {mBinding.loading.setVisibility(View.VISIBLE);});
+            runOnUiThread(() -> {
+                mBinding.loading.setVisibility(View.VISIBLE);
+            });
             new Handler().postDelayed(() -> {
                 saveData();
                 mBinding.loading.setVisibility(View.GONE);
@@ -101,7 +103,10 @@ public class MainActivity extends BleProfileServiceReadyActivity<UARTService.UAR
         // setText(battery) && 20이상부터 텍스트 보이게
         if (battery >= 20) {
             mBinding.percentText.setText(battery + getString(R.string.per));
+            mBinding.percentText.setContentDescription("남은 배터리는 " + battery + getString(R.string.per) + "입니다.");
             mBinding.percentTextContainer.setVisibility(View.VISIBLE);
+        } else {
+            mBinding.percentText.setContentDescription("남은 배터리가 없습니다.");
         }
         // 끼워진 헤드 표시
         switch (head) {
@@ -181,7 +186,9 @@ public class MainActivity extends BleProfileServiceReadyActivity<UARTService.UAR
             case R.id.plus_btn:
                 onConnectClicked(null);
                 send(getString(R.string.get_info));
-                runOnUiThread(() -> {mBinding.loading.setVisibility(View.VISIBLE);});
+                runOnUiThread(() -> {
+                    mBinding.loading.setVisibility(View.VISIBLE);
+                });
                 new Handler().postDelayed(() -> {
                     saveData();
                     mBinding.loading.setVisibility(View.GONE);
@@ -217,7 +224,8 @@ public class MainActivity extends BleProfileServiceReadyActivity<UARTService.UAR
     }
 
     @Override
-    public void onUnConnected() {}
+    public void onUnConnected() {
+    }
 
     private class StartBar extends AsyncTask<Integer, Void, Void> {
         @Override

@@ -30,6 +30,6 @@
             android:layout_gravity="center"
             android:scaleType="fitCenter"
             android:tint="@drawable/selector_click_tab"
-            tools:src="@drawable/ic_img_tri_gray"/>
+            tools:src="@drawable/ic_img_tri_black"/>
     </LinearLayout>
 </LinearLayout>

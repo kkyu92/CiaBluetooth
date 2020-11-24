@@ -41,6 +41,7 @@
                     android:paddingEnd="20dp"
                     android:paddingBottom="25dp"
                     android:src="@drawable/ic_btn_back"
+                    android:contentDescription="뒤로가기"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />

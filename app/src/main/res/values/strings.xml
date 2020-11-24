@@ -214,8 +214,8 @@ Blinky가 광고 중이고 여기에 표시되지 않는 경우 아래 버튼을
 
     // nordic
 <!--    mine 로 최종변경 해야함 -->
-    <string name="cia_id">mine</string>
-<!--    <string name="cia_id">"a"</string>-->
+<!--    <string name="cia_id">mine</string>-->
+    <string name="cia_id">"a"</string>
     <string name="scanner_action_scan">찾기</string>
     <string name="scanner_action_cancel">중지</string>
     <string name="scanner_subtitle_bonded">등록된 디바이스</string>
@@ -255,7 +255,7 @@ Blinky가 광고 중이고 여기에 표시되지 않는 경우 아래 버튼을
     //
     <string name="battery_text_img">battery text img</string>
     <string name="head_img">head img</string>
-    <string name="back_btn">back btn</string>
+    <string name="back_btn">뒤로가기</string>
     <string name="progress_percent_text">(전체헤드 대비)</string>
     <string name="percent_progress_img">percent progress img</string>
     <string name="head_use">헤드 사용율</string>
@@ -291,6 +291,12 @@ Blinky가 광고 중이고 여기에 표시되지 않는 경우 아래 버튼을
     <string name="manual_step2">옆면에 위치한 전원 버튼을 켜서 작동시킵니다.</string>
     <string name="manual_step3">본 제품은 무선 충전 제품으로 구성품에 포함된 USB 케이블로 충전이 가능하며 크레들의 중심과 본체의 중심이 일치하도록 올려 충전합니다.</string>
     <string name="manual_step4">충전시 전원버튼이 점멸표시되며 완충시 전원버튼이 점등됩니다.</string>
+    <string name="manual_total">
+        step 1. 용도에 맞는 헤드를 장착해줍니다.
+        step 2. 옆면에 위치한 전원 버튼을 켜서 작동시킵니다.
+        step 3. 본 제품은 무선 충전 제품으로 구성품에 포함된 USB 케이블로 충전이 가능하며 크레들의 중심과 본체의 중심이 일치하도록 올려 충전합니다.
+        step 4. 충전시 전원버튼이 점멸표시되며 완충시 전원버튼이 점등됩니다.
+    </string>
 
     <string name="device_name">상품명</string>
     <string name="device_name_contents">mine</string>

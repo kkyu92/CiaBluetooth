@@ -78,6 +78,7 @@
                         android:paddingEnd="20dp"
                         android:paddingBottom="20dp"
                         android:src="@drawable/ic_btn_back"
+                        android:contentDescription="@string/back_btn"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -99,6 +100,7 @@
                         android:onClick="@{view::onClick}"
                         android:padding="25dp"
                         android:src="@drawable/ic_btn_menu"
+                        android:contentDescription="메뉴얼 메뉴 버튼"
                         app:layout_constraintBottom_toBottomOf="@id/back_btn"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="@+id/back_btn" />

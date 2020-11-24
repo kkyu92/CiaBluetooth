@@ -26,6 +26,7 @@
                 android:id="@+id/main_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:contentDescription="mine"
                 android:layout_marginTop="40dp"
                 android:background="@drawable/logo_mine"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -36,7 +37,8 @@
                 android:id="@+id/plus_btn"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:background="@drawable/plus_btn"
+                android:contentDescription="추가하기"
+                android:background="@drawable/plus_btn_red"
                 android:onClick="@{view::onClick}"
                 app:layout_constraintTop_toTopOf="@+id/main_title"
                 app:layout_constraintBottom_toBottomOf="@+id/main_title"
@@ -60,7 +62,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="40dp"
                 android:layout_marginBottom="10dp"
-                android:background="@drawable/ic_icon_battery_lightning"
+                android:background="@drawable/ic_icon_battery_lightning_red"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintBottom_toTopOf="@+id/line" />
 
@@ -238,6 +240,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="15dp"
+                        app:layout_constraintEnd_toStartOf="@+id/brush_point"
                         app:layout_constraintBottom_toBottomOf="@+id/brush_img"
                         app:layout_constraintStart_toEndOf="@+id/brush_img"
                         app:layout_constraintTop_toTopOf="@+id/brush_img">
@@ -269,6 +272,7 @@
                             android:text="@string/count_use"
                             android:textColor="@color/text_gray"
                             android:textSize="12sp"
+                            app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintBottom_toBottomOf="@+id/card_brush_count"
                             app:layout_constraintStart_toEndOf="@id/card_brush_count" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -315,6 +319,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="23dp"
+                        app:layout_constraintEnd_toStartOf="@+id/cooler_point"
                         app:layout_constraintBottom_toBottomOf="@+id/cooler_img"
                         app:layout_constraintStart_toEndOf="@+id/cooler_img"
                         app:layout_constraintTop_toTopOf="@+id/cooler_img">
@@ -346,6 +351,7 @@
                             android:text="@string/count_use"
                             android:textColor="@color/text_gray"
                             android:textSize="12sp"
+                            app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintBottom_toBottomOf="@+id/card_cooler_count"
                             app:layout_constraintStart_toEndOf="@id/card_cooler_count" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -392,6 +398,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="23dp"
+                        app:layout_constraintEnd_toStartOf="@+id/puff_point"
                         app:layout_constraintBottom_toBottomOf="@+id/puff_img"
                         app:layout_constraintStart_toEndOf="@+id/puff_img"
                         app:layout_constraintTop_toTopOf="@+id/puff_img">
@@ -423,6 +430,7 @@
                             android:text="@string/count_use"
                             android:textColor="@color/text_gray"
                             android:textSize="12sp"
+                            app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintBottom_toBottomOf="@+id/card_puff_count"
                             app:layout_constraintStart_toEndOf="@id/card_puff_count" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -469,6 +477,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="23dp"
+                        app:layout_constraintEnd_toStartOf="@+id/silicon_point"
                         app:layout_constraintBottom_toBottomOf="@+id/silicon_img"
                         app:layout_constraintStart_toEndOf="@+id/silicon_img"
                         app:layout_constraintTop_toTopOf="@+id/silicon_img">
@@ -500,6 +509,7 @@
                             android:text="@string/count_use"
                             android:textColor="@color/text_gray"
                             android:textSize="12sp"
+                            app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintBottom_toBottomOf="@+id/card_silicon_count"
                             app:layout_constraintStart_toEndOf="@id/card_silicon_count" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -524,7 +534,7 @@
                 android:layout_marginEnd="20dp"
                 android:layout_marginBottom="20dp"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/pink_round"
+                android:background="@drawable/black_round"
                 android:gravity="center"
                 android:orientation="horizontal"
                 android:weightSum="3"

@@ -81,6 +81,7 @@ public class InfoBatteryFragment extends BaseFragment {
 //        mBinding.circularProgressBar.setProgress(20f);
 // or with animation
             mBinding.batteryProgress.setProgressWithAnimation(battery, 3000L); // =1s
+        mBinding.batteryProgress.setContentDescription("남은 베터리 용량은 "+ battery+ "프로 입니다.");
 
 // Set Progress Max
 //            mBinding.circularProgressBar.setProgressMax(200f);

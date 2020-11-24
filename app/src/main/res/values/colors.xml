@@ -39,10 +39,11 @@
 	<color name="black">#000000</color>
 	<color name="percentLine">#FFC300</color>
 	<color name="percentLineNo">#B7950B</color> //#9C640C
-	<color name="pink">#FF9E98</color>
-	<color name="pink_50">#80FF9E98</color>
-	<color name="pink_25">#40FF9E98</color>
-	<color name="pink_10">#1AFF9E98</color>
+<!--	<color name="pink">#FF9E98</color>-->
+	<color name="pink">#F41217</color>
+	<color name="pink_50">#80F41217</color>
+	<color name="pink_25">#40F41217</color>
+	<color name="pink_10">#1AF41217</color>
 	<color name="lightGray">#FFD9E1E2</color>
 	<color name="darkGray">#FF333F48</color>
 	<color name="gray">#AFB2B3</color>

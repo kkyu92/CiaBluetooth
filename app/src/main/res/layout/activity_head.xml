@@ -28,7 +28,8 @@
                 android:background="@drawable/circle_back_short"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="contentDescription" />
 
             <ImageView
                 android:id="@+id/back_btn"
@@ -114,10 +115,10 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:background="@drawable/ic_icon_pie_chart"
-                            android:contentDescription="@string/percent_progress_img"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="contentDescription" />
 
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="wrap_content"
@@ -143,7 +144,8 @@
                                 android:textColor="@color/text_color"
                                 android:textSize="23sp"
                                 app:layout_constraintBottom_toBottomOf="@id/percent_text"
-                                app:layout_constraintStart_toEndOf="@+id/percent_text" />
+                                app:layout_constraintStart_toEndOf="@+id/percent_text"
+                                tools:ignore="contentDescription" />
                         </androidx.constraintlayout.widget.ConstraintLayout>
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -158,7 +160,8 @@
                         android:textStyle="bold"
                         app:layout_constraintEnd_toEndOf="@+id/percent_progress"
                         app:layout_constraintStart_toStartOf="@+id/percent_progress"
-                        app:layout_constraintTop_toBottomOf="@+id/percent_progress" />
+                        app:layout_constraintTop_toBottomOf="@+id/percent_progress"
+                        tools:ignore="contentDescription" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -169,7 +172,8 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="@id/head_use"
                         app:layout_constraintStart_toStartOf="@+id/head_use"
-                        app:layout_constraintTop_toBottomOf="@id/head_use" />
+                        app:layout_constraintTop_toBottomOf="@id/head_use"
+                        tools:ignore="contentDescription" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <View
@@ -209,10 +213,10 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:background="@drawable/ic_icon_timer"
-                            android:contentDescription="@string/percent_progress_img"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="contentDescription" />
 
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="wrap_content"
@@ -239,7 +243,8 @@
                                 android:textColor="@color/text_color"
                                 android:textSize="23sp"
                                 app:layout_constraintBottom_toBottomOf="@id/total_text"
-                                app:layout_constraintStart_toEndOf="@+id/total_text" />
+                                app:layout_constraintStart_toEndOf="@+id/total_text"
+                                tools:ignore="contentDescription" />
                         </androidx.constraintlayout.widget.ConstraintLayout>
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -254,7 +259,8 @@
                         android:textStyle="bold"
                         app:layout_constraintEnd_toEndOf="@+id/total_progress"
                         app:layout_constraintStart_toStartOf="@+id/total_progress"
-                        app:layout_constraintTop_toBottomOf="@+id/total_progress" />
+                        app:layout_constraintTop_toBottomOf="@+id/total_progress"
+                        tools:ignore="contentDescription" />
 
                     <TextView
                         android:id="@+id/total_head_text"
@@ -265,7 +271,8 @@
                         android:textSize="14sp"
                         app:layout_constraintEnd_toEndOf="@id/total_use"
                         app:layout_constraintStart_toStartOf="@+id/total_use"
-                        app:layout_constraintTop_toBottomOf="@id/total_use" />
+                        app:layout_constraintTop_toBottomOf="@id/total_use"
+                        tools:ignore="contentDescription" />
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/head_change_notify"
@@ -283,10 +290,10 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:background="@drawable/ic_icon_notify"
-                            android:contentDescription="@string/noti_img"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="contentDescription" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -332,14 +339,14 @@
 
                 <ImageView
                     android:id="@+id/line"
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
                     android:layout_height="25dp"
-                    android:layout_marginStart="25dp"
+                    android:layout_marginStart="10dp"
                     android:layout_marginTop="8dp"
-                    android:layout_marginEnd="25dp"
+                    android:layout_marginEnd="10dp"
                     android:background="@drawable/percent_round_pink"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/total_count"
+                    app:layout_constraintStart_toEndOf="@+id/zero_count"
                     app:layout_constraintTop_toBottomOf="@+id/bar_title"
                     tools:ignore="ContentDescription" />
 
@@ -358,9 +365,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
+                    android:layout_marginBottom="15dp"
                     android:textColor="@color/text_color"
                     android:textSize="16sp"
                     android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@id/percent_line"
                     app:layout_constraintStart_toEndOf="@+id/percent_line"
                     app:layout_constraintTop_toBottomOf="@+id/percent_line" />
@@ -369,27 +378,25 @@
                     android:id="@+id/zero_count"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginStart="10dp"
                     android:text="@string/zero"
                     android:textColor="@color/text_gray_opacity"
                     android:textSize="13sp"
-                    app:layout_constraintEnd_toStartOf="@+id/line"
-                    app:layout_constraintStart_toStartOf="@+id/line"
-                    app:layout_constraintTop_toBottomOf="@+id/line" />
+                    app:layout_constraintBottom_toBottomOf="@+id/line"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/line" />
 
                 <TextView
                     android:id="@+id/total_count"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="30dp"
+                    android:layout_marginEnd="10dp"
                     android:text="@string/hundred"
                     android:textColor="@color/text_gray_opacity"
                     android:textSize="13sp"
-                    android:layout_marginEnd="25dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintBottom_toBottomOf="@+id/line"
                     app:layout_constraintEnd_toEndOf="@+id/bar_container"
-                    app:layout_constraintTop_toBottomOf="@+id/line" />
+                    app:layout_constraintTop_toTopOf="@+id/line" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <TextView
@@ -679,10 +686,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
+                android:layout_marginBottom="30dp"
                 android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="@id/step4_container"
                 app:layout_constraintStart_toStartOf="@id/step4_container"
-                app:layout_constraintTop_toBottomOf="@id/step4_container">
+                app:layout_constraintTop_toBottomOf="@id/step4_container"
+                app:layout_constraintBottom_toBottomOf="parent">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -700,38 +709,16 @@
                     android:textStyle="bold" />
             </LinearLayout>
 
-            <androidx.viewpager.widget.ViewPager
-                android:id="@+id/ad"
-                android:layout_width="match_parent"
-                android:layout_height="117dp"
-                android:layout_marginTop="25dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/device_num" />
-
-<!--            <com.smarteist.autoimageslider.SliderView-->
-<!--                android:id="@+id/imageSlider"-->
+<!--            <androidx.viewpager.widget.ViewPager-->
+<!--                android:id="@+id/ad"-->
 <!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="120dp"-->
-<!--                app:sliderAnimationDuration="600"-->
-<!--                app:sliderAutoCycleDirection="back_and_forth"-->
-<!--                app:sliderAutoCycleEnabled="true"-->
-<!--                app:sliderIndicatorAnimationDuration="600"-->
-<!--                app:sliderIndicatorGravity="center_horizontal|bottom"-->
-<!--                app:sliderIndicatorMargin="15dp"-->
-<!--                app:sliderIndicatorOrientation="horizontal"-->
-<!--                app:sliderIndicatorPadding="3dp"-->
-<!--                app:sliderIndicatorRadius="2dp"-->
-<!--                app:sliderIndicatorSelectedColor="#5A5A5A"-->
-<!--                app:sliderIndicatorUnselectedColor="#FFF"-->
-<!--                app:sliderScrollTimeInSec="1"-->
-<!--                app:sliderStartAutoCycle="true"-->
+<!--                android:layout_height="117dp"-->
 <!--                android:layout_marginTop="25dp"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
 <!--                app:layout_constraintEnd_toEndOf="parent"-->
-<!--                app:layout_constraintTop_toBottomOf="@+id/device_num"-->
-<!--                app:layout_constraintBottom_toBottomOf="parent"/>-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/device_num" />-->
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </layout>

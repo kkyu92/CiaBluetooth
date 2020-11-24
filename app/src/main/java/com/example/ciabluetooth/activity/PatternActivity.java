@@ -32,14 +32,14 @@ public class PatternActivity extends BaseActivity {
         View viewFirst = getLayoutInflater().inflate(R.layout.custom_tab_left, null);
         ImageView imgFirst = viewFirst.findViewById(R.id.img_tab);
         TextView txtFirst = viewFirst.findViewById(R.id.txt_tab);
-        imgFirst.setImageResource(R.drawable.ic_img_tri_gray);
+        imgFirst.setImageResource(R.drawable.ic_img_tri_black);
         txtFirst.setText(R.string.monthly_pattern);
         mBinding.tabLayout.getTabAt(0).setCustomView(viewFirst);
 
         View viewThird = getLayoutInflater().inflate(R.layout.custom_tab_right, null);
         ImageView imgThird = viewThird.findViewById(R.id.img_tab);
         TextView txtThird = viewThird.findViewById(R.id.txt_tab);
-        imgThird.setImageResource(R.drawable.ic_img_tri_gray);
+        imgThird.setImageResource(R.drawable.ic_img_tri_black);
         txtThird.setText(R.string.usage_time);
         mBinding.tabLayout.getTabAt(1).setCustomView(viewThird);
 
