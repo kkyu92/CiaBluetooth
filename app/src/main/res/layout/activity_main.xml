@@ -54,7 +54,8 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/main_title"
-                app:layout_constraintBottom_toTopOf="@+id/battery_img"/>
+                app:layout_constraintBottom_toTopOf="@+id/battery_img"
+                tools:ignore="ContentDescription"/>
 
             <ImageView
                 android:id="@+id/battery_img"
@@ -64,7 +65,8 @@
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/ic_icon_battery_lightning_red"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintBottom_toTopOf="@+id/line" />
+                app:layout_constraintBottom_toTopOf="@+id/line"
+                tools:ignore="ContentDescription"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -87,7 +89,8 @@
                 android:background="@drawable/percent_round"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintBottom_toTopOf="@+id/percent_number_container" />
+                app:layout_constraintBottom_toTopOf="@+id/percent_number_container"
+                tools:ignore="ContentDescription"/>
 
             <ImageView
                 android:id="@+id/percent_line"
@@ -96,7 +99,8 @@
                 android:background="@drawable/pink_round"
                 app:layout_constraintBottom_toBottomOf="@id/line"
                 app:layout_constraintStart_toStartOf="@id/line"
-                app:layout_constraintTop_toTopOf="@id/line" />
+                app:layout_constraintTop_toTopOf="@id/line"
+                tools:ignore="ContentDescription"/>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/percent_text_container"
@@ -115,7 +119,7 @@
                     app:layout_constraintBottom_toBottomOf="@id/percent_text"
                     app:layout_constraintEnd_toStartOf="@id/percent_text"
                     app:layout_constraintTop_toTopOf="@+id/percent_text"
-                    android:contentDescription="@string/battery_text_img" />
+                    tools:ignore="ContentDescription"/>
 
                 <TextView
                     android:id="@+id/percent_text"

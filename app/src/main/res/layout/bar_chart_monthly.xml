@@ -367,7 +367,8 @@
             app:layout_constraintEnd_toEndOf="@id/zero_line"
             app:layout_constraintHorizontal_bias="0.025"
             app:layout_constraintStart_toStartOf="@id/zero_line"
-            app:layout_constraintTop_toBottomOf="@+id/first_quiz" />
+            app:layout_constraintTop_toBottomOf="@+id/first_quiz"
+            tools:ignore="ContentDescription"/>
 
         <TextView
             android:id="@+id/first_quiz"
@@ -400,7 +401,8 @@
             app:layout_constraintEnd_toEndOf="@+id/zero_line"
             app:layout_constraintHorizontal_bias="0.35"
             app:layout_constraintStart_toStartOf="@+id/zero_line"
-            app:layout_constraintTop_toTopOf="@+id/brush_img" />
+            app:layout_constraintTop_toTopOf="@+id/brush_img"
+            tools:ignore="ContentDescription"/>
 
         <TextView
             android:id="@+id/second_quiz"
@@ -432,7 +434,8 @@
             app:layout_constraintEnd_toEndOf="@+id/zero_line"
             app:layout_constraintHorizontal_bias="0.65"
             app:layout_constraintStart_toStartOf="@+id/zero_line"
-            app:layout_constraintTop_toTopOf="@+id/cooler_img" />
+            app:layout_constraintTop_toTopOf="@+id/cooler_img"
+            tools:ignore="ContentDescription"/>
 
         <TextView
             android:id="@+id/third_quiz"
@@ -465,7 +468,8 @@
             app:layout_constraintEnd_toEndOf="@+id/zero_line"
             app:layout_constraintStart_toStartOf="@+id/zero_line"
             app:layout_constraintHorizontal_bias="0.975"
-            app:layout_constraintTop_toTopOf="@+id/puff_img" />
+            app:layout_constraintTop_toTopOf="@+id/puff_img"
+            tools:ignore="ContentDescription"/>
 
         <TextView
             android:id="@+id/fourth_quiz"

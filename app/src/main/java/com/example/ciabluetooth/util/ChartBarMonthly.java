@@ -74,6 +74,7 @@ public class ChartBarMonthly {
 
         // setText percent + contentDescription
         mBinding.brushPer.setText(thisBrushPer + "%");
+//        mBinding.brushImg.setContentDescription("Brush " + thisBrushPer + "%");
         mBinding.thisBrushBar.setContentDescription("이번달 블러쉬는 " + thisBrushPer + "프로 사용하였습니다.");
         mBinding.coolerPer.setText(thisCoolerPer + "%");
         mBinding.thisCoolerBar.setContentDescription("이번달 쿨러는 " + thisCoolerPer + "프로 사용하였습니다.");

@@ -64,10 +64,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="35dp"
                 android:background="@drawable/img_head_brush_big"
-                android:contentDescription="@string/head_img"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/title" />
+                app:layout_constraintTop_toBottomOf="@+id/title"
+                tools:ignore="ContentDescription"/>
 
             <LinearLayout
                 android:id="@+id/progress_container"
