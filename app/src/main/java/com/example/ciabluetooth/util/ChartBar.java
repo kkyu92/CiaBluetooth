@@ -66,17 +66,21 @@ public class ChartBar {
 //        puffPer = puff * 100 / hundred;
 //        siliconPer = silicon * 100 / hundred;
 //        changeHeadPer = changeHead * 100 / hundred;
-        
+
 //        mBinding.brushHour.setText(changeHour(75300));
 //        mBinding.coolerHour.setText(changeHour(59889));
 //        mBinding.puffHour.setText(changeHour(3500));
 //        mBinding.siliconHour.setText(changeHour(59));
         // setText hour
         mBinding.brushHour.setText(changeHour(brush));
+        mBinding.brushBar.setContentDescription("Brush 총 사용시간은 " + changeHour(brush) + "입니다.");
         mBinding.coolerHour.setText(changeHour(cooler));
+        mBinding.coolerBar.setContentDescription("Cooler 총 사용시간은 " + changeHour(cooler) + "입니다.");
         mBinding.puffHour.setText(changeHour(puff));
+        mBinding.puffBar.setContentDescription("Puff 총 사용시간은 " + changeHour(puff) + "입니다.");
         mBinding.siliconHour.setText(changeHour(silicon));
-        Log.e("per", brushPer+"\n"+coolerPer+"\n"+puffPer+"\n"+siliconPer+"\n"+hundred);
+        mBinding.siliconBar.setContentDescription("silicon 총 사용시간은 " + changeHour(silicon) + "입니다.");
+        Log.e("per", brushPer + "\n" + coolerPer + "\n" + puffPer + "\n" + siliconPer + "\n" + hundred);
         // averageBar
         double height = (double) mBinding.averageBar.getHeight() / 100;
 //        ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) mBinding.average.getLayoutParams();

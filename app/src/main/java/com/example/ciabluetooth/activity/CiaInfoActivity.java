@@ -1,7 +1,9 @@
 package com.example.ciabluetooth.activity;
 
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -28,6 +30,7 @@ public class CiaInfoActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.e(TAG, "onCreate");
         mBinding = DataBindingUtil.setContentView(CiaInfoActivity.this, R.layout.activity_cia_info);
         mBinding.setView(CiaInfoActivity.this);
 
@@ -36,6 +39,7 @@ public class CiaInfoActivity extends AppCompatActivity {
     }
 
     private void getTabs() {
+        Log.e(TAG, "getTabs");
         final ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
 
         new Handler().post(new Runnable() {
@@ -47,12 +51,16 @@ public class CiaInfoActivity extends AppCompatActivity {
 
                 mBinding.viewPager.setAdapter(viewPagerAdapter);
                 mBinding.tabLayout.setupWithViewPager(mBinding.viewPager);
-                setupTabIcons();
             }
         });
     }
 
-    private void setupTabIcons() {
+    private void setupTabIcons(int tabIndex) {
+        mBinding.tabLayout.getTabAt(0).setCustomView(null);
+        mBinding.tabLayout.getTabAt(1).setCustomView(null);
+        mBinding.tabLayout.getTabAt(2).setCustomView(null);
+
+        Log.e(TAG, "setupTabIcons");
         View viewFirst = getLayoutInflater().inflate(R.layout.custom_tab_left, null);
         ImageView imgFirst = viewFirst.findViewById(R.id.img_tab);
         TextView txtFirst = viewFirst.findViewById(R.id.txt_tab);
@@ -74,12 +82,26 @@ public class CiaInfoActivity extends AppCompatActivity {
         txtThird.setText(R.string.usage_time);
         mBinding.tabLayout.getTabAt(2).setCustomView(viewThird);
 
+        if (tabIndex == 0) {
+            txtFirst.setTypeface(Typeface.DEFAULT_BOLD);
+            txtSecond.setTypeface(Typeface.DEFAULT);
+            txtThird.setTypeface(Typeface.DEFAULT);
+        } else if (tabIndex == 1) {
+            txtFirst.setTypeface(Typeface.DEFAULT);
+            txtSecond.setTypeface(Typeface.DEFAULT_BOLD);
+            txtThird.setTypeface(Typeface.DEFAULT);
+        } else {
+            txtFirst.setTypeface(Typeface.DEFAULT);
+            txtSecond.setTypeface(Typeface.DEFAULT);
+            txtThird.setTypeface(Typeface.DEFAULT_BOLD);
+        }
+
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-
+        Log.e(TAG, "onResume");
         mBinding.tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
@@ -87,10 +109,13 @@ public class CiaInfoActivity extends AppCompatActivity {
                 mBinding.deviceImg.startAnimation(fadeOutIn);
                 if (tab.getPosition() == 0) {
                     mBinding.deviceImg.setImageDrawable(getResources().getDrawable(R.drawable.img_splash_device_left));
+                    setupTabIcons(0);
                 } else if (tab.getPosition() == 1) {
                     mBinding.deviceImg.setImageDrawable(getResources().getDrawable(R.drawable.img_splash_device));
+                    setupTabIcons(1);
                 } else {
                     mBinding.deviceImg.setImageDrawable(getResources().getDrawable(R.drawable.img_splash_device_right));
+                    setupTabIcons(2);
                 }
             }
 

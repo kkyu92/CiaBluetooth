@@ -36,7 +36,8 @@
             android:layout_marginEnd="7dp"
             app:layout_constraintBottom_toBottomOf="@+id/last_week_txt"
             app:layout_constraintEnd_toStartOf="@id/last_week_txt"
-            app:layout_constraintTop_toTopOf="@+id/last_week_txt" />
+            app:layout_constraintTop_toTopOf="@+id/last_week_txt"
+            tools:ignore="ContentDescription" />
 
         <TextView
             android:id="@+id/last_week_txt"
@@ -56,7 +57,8 @@
             android:background="@drawable/ic_device_bg"
             app:layout_constraintBottom_toBottomOf="@+id/this_week_txt"
             app:layout_constraintEnd_toStartOf="@+id/this_week_txt"
-            app:layout_constraintTop_toTopOf="@+id/this_week_txt" />
+            app:layout_constraintTop_toTopOf="@+id/this_week_txt"
+            tools:ignore="ContentDescription" />
 
         <TextView
             android:id="@+id/this_week_txt"
@@ -73,8 +75,8 @@
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="@id/zero_line"
-            app:layout_constraintEnd_toEndOf="@id/first_quiz"
-            app:layout_constraintStart_toStartOf="@id/first_quiz"
+            app:layout_constraintEnd_toEndOf="@+id/first_container"
+            app:layout_constraintStart_toStartOf="@id/first_container"
             app:layout_constraintTop_toTopOf="@id/hundred_line">
 
             <View
@@ -99,8 +101,8 @@
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="@id/zero_line"
-            app:layout_constraintEnd_toEndOf="@id/second_quiz"
-            app:layout_constraintStart_toStartOf="@id/second_quiz"
+            app:layout_constraintEnd_toEndOf="@id/second_container"
+            app:layout_constraintStart_toStartOf="@id/second_container"
             app:layout_constraintTop_toTopOf="@id/hundred_line">
 
             <View
@@ -125,8 +127,8 @@
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="@id/zero_line"
-            app:layout_constraintEnd_toEndOf="@id/third_quiz"
-            app:layout_constraintStart_toStartOf="@id/third_quiz"
+            app:layout_constraintEnd_toEndOf="@id/third_container"
+            app:layout_constraintStart_toStartOf="@id/third_container"
             app:layout_constraintTop_toTopOf="@id/hundred_line">
 
             <View
@@ -151,8 +153,8 @@
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="@id/zero_line"
-            app:layout_constraintEnd_toEndOf="@id/fourth_quiz"
-            app:layout_constraintStart_toStartOf="@id/fourth_quiz"
+            app:layout_constraintEnd_toEndOf="@id/fourth_container"
+            app:layout_constraintStart_toStartOf="@id/fourth_container"
             app:layout_constraintTop_toTopOf="@id/hundred_line">
 
             <View
@@ -358,140 +360,186 @@
             app:layout_constraintTop_toTopOf="@id/average"
             tools:ignore="SmallSp" />
 
-        <ImageView
-            android:id="@+id/brush_img"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/first_container"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:background="@drawable/img_head_brush"
             app:layout_constraintEnd_toEndOf="@id/zero_line"
             app:layout_constraintHorizontal_bias="0.025"
             app:layout_constraintStart_toStartOf="@id/zero_line"
-            app:layout_constraintTop_toBottomOf="@+id/first_quiz"
-            tools:ignore="ContentDescription"/>
+            app:layout_constraintTop_toBottomOf="@+id/zero"
+            tools:ignore="ContentDescription">
 
-        <TextView
-            android:id="@+id/first_quiz"
+            <TextView
+                android:id="@+id/first_quiz"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:text="@string/brush"
+                android:textColor="@color/text_color"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/brush_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/img_head_brush"
+                app:layout_constraintEnd_toEndOf="@+id/first_quiz"
+                app:layout_constraintStart_toStartOf="@+id/first_quiz"
+                app:layout_constraintTop_toBottomOf="@+id/first_quiz"
+                tools:ignore="ContentDescription"/>
+
+            <TextView
+                android:id="@+id/brush_per"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_color"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="@+id/brush_img"
+                app:layout_constraintEnd_toEndOf="@+id/brush_img"
+                app:layout_constraintTop_toBottomOf="@+id/brush_img"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/second_container"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:gravity="center"
-            android:text="@string/brush"
-            android:textColor="@color/text_color"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="@+id/brush_img"
-            app:layout_constraintStart_toStartOf="@+id/brush_img"
-            app:layout_constraintTop_toBottomOf="@+id/zero" />
-
-        <TextView
-            android:id="@+id/brush_per"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/text_color"
-            android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="@+id/brush_img"
-            app:layout_constraintEnd_toEndOf="@+id/brush_img"
-            app:layout_constraintTop_toBottomOf="@+id/brush_img"/>
-
-        <ImageView
-            android:id="@+id/cooler_img"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/img_head_cooler"
             app:layout_constraintEnd_toEndOf="@+id/zero_line"
             app:layout_constraintHorizontal_bias="0.35"
             app:layout_constraintStart_toStartOf="@+id/zero_line"
-            app:layout_constraintTop_toTopOf="@+id/brush_img"
-            tools:ignore="ContentDescription"/>
+            app:layout_constraintTop_toTopOf="@+id/first_container"
+            tools:ignore="ContentDescription">
 
-        <TextView
-            android:id="@+id/second_quiz"
+            <TextView
+                android:id="@+id/second_quiz"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/cooler"
+                android:textColor="@color/text_color"
+                android:textSize="14sp"
+                android:layout_marginTop="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/cooler_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/img_head_cooler"
+                android:layout_marginTop="5dp"
+                app:layout_constraintEnd_toEndOf="@+id/second_quiz"
+                app:layout_constraintStart_toStartOf="@+id/second_quiz"
+                app:layout_constraintTop_toBottomOf="@+id/second_quiz"
+                tools:ignore="ContentDescription"/>
+
+            <TextView
+                android:id="@+id/cooler_per"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_color"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="@+id/cooler_img"
+                app:layout_constraintEnd_toEndOf="@+id/cooler_img"
+                app:layout_constraintTop_toBottomOf="@+id/cooler_img"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/third_container"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="@string/cooler"
-            android:textColor="@color/text_color"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="@+id/cooler_img"
-            app:layout_constraintStart_toStartOf="@+id/cooler_img"
-            app:layout_constraintTop_toTopOf="@+id/first_quiz" />
-
-        <TextView
-            android:id="@+id/cooler_per"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/text_color"
-            android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="@+id/cooler_img"
-            app:layout_constraintEnd_toEndOf="@+id/cooler_img"
-            app:layout_constraintTop_toBottomOf="@+id/cooler_img"/>
-
-        <ImageView
-            android:id="@+id/puff_img"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/img_head_puff"
             app:layout_constraintEnd_toEndOf="@+id/zero_line"
             app:layout_constraintHorizontal_bias="0.65"
             app:layout_constraintStart_toStartOf="@+id/zero_line"
-            app:layout_constraintTop_toTopOf="@+id/cooler_img"
-            tools:ignore="ContentDescription"/>
+            app:layout_constraintTop_toTopOf="@+id/first_container"
+            tools:ignore="ContentDescription">
 
-        <TextView
-            android:id="@+id/third_quiz"
+            <TextView
+                android:id="@+id/third_quiz"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/puff"
+                android:textColor="@color/text_color"
+                android:textSize="14sp"
+                android:layout_marginTop="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/puff_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/img_head_puff"
+                android:layout_marginTop="5dp"
+                app:layout_constraintEnd_toEndOf="@+id/third_quiz"
+                app:layout_constraintStart_toStartOf="@+id/third_quiz"
+                app:layout_constraintTop_toBottomOf="@+id/third_quiz"
+                tools:ignore="ContentDescription"/>
+
+            <TextView
+                android:id="@+id/puff_per"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_color"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="@+id/puff_img"
+                app:layout_constraintEnd_toEndOf="@+id/puff_img"
+                app:layout_constraintTop_toBottomOf="@+id/puff_img"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/fourth_container"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="@string/puff"
-            android:textColor="@color/text_color"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="@+id/puff_img"
-            app:layout_constraintStart_toStartOf="@+id/puff_img"
-            app:layout_constraintTop_toTopOf="@+id/first_quiz" />
-
-        <TextView
-            android:id="@+id/puff_per"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/text_color"
-            android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="@+id/puff_img"
-            app:layout_constraintEnd_toEndOf="@+id/puff_img"
-            app:layout_constraintTop_toBottomOf="@+id/puff_img"/>
-
-        <ImageView
-            android:id="@+id/silicon_img"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="10dp"
-            android:background="@drawable/img_head_sillicon"
+            android:layout_marginEnd="5dp"
             app:layout_constraintEnd_toEndOf="@+id/zero_line"
             app:layout_constraintStart_toStartOf="@+id/zero_line"
             app:layout_constraintHorizontal_bias="0.975"
-            app:layout_constraintTop_toTopOf="@+id/puff_img"
-            tools:ignore="ContentDescription"/>
+            app:layout_constraintTop_toTopOf="@+id/first_container"
+            tools:ignore="ContentDescription">
 
-        <TextView
-            android:id="@+id/fourth_quiz"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="@string/silicon"
-            android:textColor="@color/text_color"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="@+id/silicon_img"
-            app:layout_constraintStart_toStartOf="@+id/silicon_img"
-            app:layout_constraintTop_toTopOf="@+id/first_quiz" />
+            <TextView
+                android:id="@+id/fourth_quiz"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/silicon"
+                android:textColor="@color/text_color"
+                android:textSize="14sp"
+                android:layout_marginTop="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/silicon_per"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/text_color"
-            android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="@+id/silicon_img"
-            app:layout_constraintEnd_toEndOf="@+id/silicon_img"
-            app:layout_constraintTop_toBottomOf="@+id/silicon_img"/>
+            <ImageView
+                android:id="@+id/silicon_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/img_head_sillicon"
+                android:layout_marginTop="5dp"
+                app:layout_constraintEnd_toEndOf="@+id/fourth_quiz"
+                app:layout_constraintStart_toStartOf="@+id/fourth_quiz"
+                app:layout_constraintTop_toBottomOf="@+id/fourth_quiz"
+                tools:ignore="ContentDescription"/>
+
+            <TextView
+                android:id="@+id/silicon_per"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_color"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="@+id/silicon_img"
+                app:layout_constraintEnd_toEndOf="@+id/silicon_img"
+                app:layout_constraintTop_toBottomOf="@+id/silicon_img"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
             android:id="@+id/fifth_quiz"
@@ -503,7 +551,7 @@
             android:textSize="12sp"
             android:visibility="visible"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/fourth_quiz" />
+            app:layout_constraintTop_toTopOf="@id/first_container" />
 
         <View
             android:id="@+id/average_bar"

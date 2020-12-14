@@ -1,6 +1,7 @@
 package com.example.ciabluetooth.activity;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.MenuItem;
@@ -20,6 +21,7 @@ import com.example.ciabluetooth.fragment.manual.ManualHeadFragment;
 import com.example.ciabluetooth.fragment.manual.ManualStartFragment;
 import com.example.ciabluetooth.fragment.manual.ManualUseFragment;
 import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.tabs.TabLayout;
 
 public class ManualActivity extends BaseActivity implements NavigationView.OnNavigationItemSelectedListener {
     private String TAG = this.getClass().getSimpleName();
@@ -51,33 +53,49 @@ public class ManualActivity extends BaseActivity implements NavigationView.OnNav
 
                 mBinding.viewPager.setAdapter(viewPagerAdapter);
                 mBinding.tabLayout.setupWithViewPager(mBinding.viewPager);
-                setupTabIcons();
             }
         });
     }
 
-    private void setupTabIcons() {
+    private void setupTabIcons(int tabIndex) {
+        mBinding.tabLayout.getTabAt(0).setCustomView(null);
+        mBinding.tabLayout.getTabAt(1).setCustomView(null);
+        mBinding.tabLayout.getTabAt(2).setCustomView(null);
+
         View viewFirst = getLayoutInflater().inflate(R.layout.custom_tab_left, null);
         ImageView imgFirst = viewFirst.findViewById(R.id.img_tab);
         TextView txtFirst = viewFirst.findViewById(R.id.txt_tab);
-        imgFirst.setImageResource(R.drawable.ic_img_tri_gray);
+        imgFirst.setImageResource(R.drawable.ic_img_tri_black);
         txtFirst.setText(R.string.manual_start);
         mBinding.tabLayout.getTabAt(0).setCustomView(viewFirst);
 
         View viewSecond = getLayoutInflater().inflate(R.layout.custom_tab, null);
         ImageView imgSecond = viewSecond.findViewById(R.id.img_tab);
         TextView txtSecond = viewSecond.findViewById(R.id.txt_tab);
-        imgSecond.setImageResource(R.drawable.ic_img_tri_gray);
+        imgSecond.setImageResource(R.drawable.ic_img_tri_black);
         txtSecond.setText(R.string.manual_usage);
         mBinding.tabLayout.getTabAt(1).setCustomView(viewSecond);
 
         View viewThird = getLayoutInflater().inflate(R.layout.custom_tab_right, null);
         ImageView imgThird = viewThird.findViewById(R.id.img_tab);
         TextView txtThird = viewThird.findViewById(R.id.txt_tab);
-        imgThird.setImageResource(R.drawable.ic_img_tri_gray);
+        imgThird.setImageResource(R.drawable.ic_img_tri_black);
         txtThird.setText(R.string.manual_head);
         mBinding.tabLayout.getTabAt(2).setCustomView(viewThird);
 
+        if (tabIndex == 0) {
+            txtFirst.setTypeface(Typeface.DEFAULT_BOLD);
+            txtSecond.setTypeface(Typeface.DEFAULT);
+            txtThird.setTypeface(Typeface.DEFAULT);
+        } else if (tabIndex == 1) {
+            txtFirst.setTypeface(Typeface.DEFAULT);
+            txtSecond.setTypeface(Typeface.DEFAULT_BOLD);
+            txtThird.setTypeface(Typeface.DEFAULT);
+        } else {
+            txtFirst.setTypeface(Typeface.DEFAULT);
+            txtSecond.setTypeface(Typeface.DEFAULT);
+            txtThird.setTypeface(Typeface.DEFAULT_BOLD);
+        }
     }
 //    @Override
 //    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
@@ -118,6 +136,30 @@ public class ManualActivity extends BaseActivity implements NavigationView.OnNav
     @Override
     protected void onResume() {
         super.onResume();
+
+        mBinding.tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                mBinding.viewPager.setCurrentItem(tab.getPosition());
+                if (tab.getPosition() == 0) {
+                    setupTabIcons(0);
+                } else if (tab.getPosition() == 1) {
+                    setupTabIcons(1);
+                } else {
+                    setupTabIcons(2);
+                }
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
 
         View header = mBinding.manualNavigationView.getHeaderView(0);
         ImageView drawerCloseBtn = header.findViewById(R.id.drawer_close_btn);

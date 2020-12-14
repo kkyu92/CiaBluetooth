@@ -1,5 +1,6 @@
 package com.example.ciabluetooth.activity;
 
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -14,6 +15,7 @@ import com.example.ciabluetooth.adapter.ViewPagerAdapter;
 import com.example.ciabluetooth.databinding.ActivityPatternBinding;
 import com.example.ciabluetooth.fragment.pattern.PatternMonthlyFragment;
 import com.example.ciabluetooth.fragment.pattern.PatternTimeFragment;
+import com.google.android.material.tabs.TabLayout;
 
 public class PatternActivity extends BaseActivity {
     private String TAG = this.getClass().getSimpleName();
@@ -28,7 +30,27 @@ public class PatternActivity extends BaseActivity {
         getTabs();
     }
 
-    private void setupTabIcons() {
+    private void getTabs() {
+        final ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
+        final String stringData = "stringData";
+        final String time = "50";
+        new Handler().post(new Runnable() {
+            @Override
+            public void run() {
+                viewPagerAdapter.addFragment(PatternMonthlyFragment.getInstance(stringData), "월간패턴");
+                viewPagerAdapter.addFragment(PatternTimeFragment.getInstance(time), "사용시간");
+
+                mBinding.viewPager.setAdapter(viewPagerAdapter);
+                mBinding.tabLayout.setupWithViewPager(mBinding.viewPager);
+                setupTabIcons(0);
+            }
+        });
+    }
+
+    private void setupTabIcons(int tabIndex) {
+        mBinding.tabLayout.getTabAt(0).setCustomView(null);
+        mBinding.tabLayout.getTabAt(1).setCustomView(null);
+
         View viewFirst = getLayoutInflater().inflate(R.layout.custom_tab_left, null);
         ImageView imgFirst = viewFirst.findViewById(R.id.img_tab);
         TextView txtFirst = viewFirst.findViewById(R.id.txt_tab);
@@ -43,21 +65,36 @@ public class PatternActivity extends BaseActivity {
         txtThird.setText(R.string.usage_time);
         mBinding.tabLayout.getTabAt(1).setCustomView(viewThird);
 
+        if (tabIndex == 0) {
+            txtFirst.setTypeface(Typeface.DEFAULT_BOLD);
+            txtThird.setTypeface(Typeface.DEFAULT);
+        } else {
+            txtFirst.setTypeface(Typeface.DEFAULT);
+            txtThird.setTypeface(Typeface.DEFAULT_BOLD);
+        }
     }
 
-    private void getTabs() {
-        final ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
-        final String stringData = "stringData";
-        final String time = "50";
-        new Handler().post(new Runnable() {
+    protected void onResume() {
+        super.onResume();
+        mBinding.tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
-            public void run() {
-                viewPagerAdapter.addFragment(PatternMonthlyFragment.getInstance(stringData), "월간패턴");
-                viewPagerAdapter.addFragment(PatternTimeFragment.getInstance(time), "사용시간");
+            public void onTabSelected(TabLayout.Tab tab) {
+                mBinding.viewPager.setCurrentItem(tab.getPosition());
+                if (tab.getPosition() == 0) {
+                    setupTabIcons(0);
+                } else {
+                    setupTabIcons(1);
+                }
+            }
 
-                mBinding.viewPager.setAdapter(viewPagerAdapter);
-                mBinding.tabLayout.setupWithViewPager(mBinding.viewPager);
-                setupTabIcons();
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
             }
         });
     }

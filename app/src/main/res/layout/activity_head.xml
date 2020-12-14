@@ -92,6 +92,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/progress_back"
+                        android:layout_marginTop="15dp"
                         app:cpb_background_progressbar_color="@color/pink_10"
                         app:cpb_background_progressbar_width="10dp"
                         app:cpb_progress_direction="to_right"
@@ -100,7 +101,7 @@
                         app:cpb_round_border="true"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toBottomOf="@+id/head_use2" />
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="wrap_content"
@@ -153,23 +154,22 @@
                         android:id="@+id/head_use"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
                         android:text="@string/head_use"
                         android:textColor="@color/text_color"
                         android:textSize="16sp"
                         android:textStyle="bold"
                         app:layout_constraintEnd_toEndOf="@+id/percent_progress"
                         app:layout_constraintStart_toStartOf="@+id/percent_progress"
-                        app:layout_constraintTop_toBottomOf="@+id/percent_progress"
+                        app:layout_constraintTop_toTopOf="parent"
                         tools:ignore="contentDescription" />
 
                     <TextView
+                        android:id="@+id/head_use2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/progress_percent_text"
                         android:textColor="@color/text_gray_50"
                         android:textSize="14sp"
-                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="@id/head_use"
                         app:layout_constraintStart_toStartOf="@+id/head_use"
                         app:layout_constraintTop_toBottomOf="@id/head_use"
@@ -190,6 +190,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/progress_back"
+                        android:layout_marginTop="15dp"
                         app:cpb_background_progressbar_color="@color/pink_10"
                         app:cpb_background_progressbar_width="10dp"
                         app:cpb_progress_direction="to_right"
@@ -198,7 +199,7 @@
                         app:cpb_round_border="true"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toBottomOf="@+id/total_head_text" />
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="wrap_content"
@@ -252,14 +253,13 @@
                         android:id="@+id/total_use"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
                         android:text="@string/total_time"
                         android:textColor="@color/text_color"
                         android:textSize="16sp"
                         android:textStyle="bold"
                         app:layout_constraintEnd_toEndOf="@+id/total_progress"
                         app:layout_constraintStart_toStartOf="@+id/total_progress"
-                        app:layout_constraintTop_toBottomOf="@+id/total_progress"
+                        app:layout_constraintTop_toTopOf="parent"
                         tools:ignore="contentDescription" />
 
                     <TextView
@@ -281,9 +281,9 @@
                         android:layout_marginTop="13dp"
                         android:visibility="visible"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="@id/total_head_text"
-                        app:layout_constraintStart_toStartOf="@id/total_head_text"
-                        app:layout_constraintTop_toBottomOf="@id/total_head_text">
+                        app:layout_constraintEnd_toEndOf="@id/total_progress"
+                        app:layout_constraintStart_toStartOf="@id/total_progress"
+                        app:layout_constraintTop_toBottomOf="@id/total_progress">
 
                         <ImageView
                             android:id="@+id/notify_img"

@@ -63,11 +63,14 @@
 	<color name="text_title_50">#80202020</color>
 	<color name="text_color">#3E3E3E</color>
 	<color name="text_color_50">#803E3E3E</color>
-	<color name="text_gray_50">#80717171</color>
-	<color name="text_gray_opacity">#7A717171</color>
+<!--	<color name="text_gray_50">#80717171</color>-->
+	<color name="text_gray_50">#000000</color>
+<!--	<color name="text_gray_opacity">#7A717171</color>-->
+	<color name="text_gray_opacity">#000000</color>
 	<color name="text_gray">#717171</color>
 	<color name="text_serial">#80202020</color>
-	<color name="text_percent">#7A717171</color>
+<!--	<color name="text_percent">#7A717171</color>-->
+	<color name="text_percent">#000000</color>
 
 	<color name="background_gray">#F8F9FA</color>
 
