@@ -33,7 +33,7 @@
                     android:id="@+id/battery_bg"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/battery_gage_black"
+                    android:src="@drawable/battery_gage"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -60,7 +60,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/ic_icon_battery_charge_red"
+                    android:background="@drawable/ic_icon_battery_charge"
                     app:layout_constraintBottom_toBottomOf="@+id/battery_container"
                     app:layout_constraintEnd_toEndOf="@+id/battery_container"
                     app:layout_constraintStart_toStartOf="@+id/battery_container"

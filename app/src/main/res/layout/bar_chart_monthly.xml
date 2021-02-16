@@ -511,7 +511,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="@string/silicon"
+                android:text="@string/silicone"
                 android:textColor="@color/text_color"
                 android:textSize="14sp"
                 android:layout_marginTop="5dp"

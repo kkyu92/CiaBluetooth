@@ -126,7 +126,9 @@ public class SharedPreferencesPackage {
         editor.putInt(deviceSN + "Fual", deviceFual);
         editor.putInt(deviceSN + "Run", Integer.parseInt(deviceRun, 16));
         editor.putInt(deviceSN + "Cnt", Integer.parseInt(deviceCnt, 16));
-        editor.putInt(deviceSN + "HeadType", headType);
+        if (headType != 0) {
+            editor.putInt(deviceSN + "HeadType", headType);
+        }
         editor.putString(Constants.BRUSH_SN, brushSN);
         editor.putInt(brushSN + "RunTotal", Integer.parseInt(brushRun, 16));
         editor.putInt(brushSN + "Run" + year + month, Integer.parseInt(brushRun, 16) - brushRunTM);

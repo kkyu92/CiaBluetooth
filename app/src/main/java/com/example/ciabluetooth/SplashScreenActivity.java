@@ -314,7 +314,7 @@ public class SplashScreenActivity extends BleProfileServiceReadyActivity<UARTSer
                 Toast.makeText(this, "새로운 기기 연결", Toast.LENGTH_SHORT).show();
             }
         } else {
-            Toast.makeText(this, " mine 디바이스를 연결해주세요. ", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, " AU 디바이스를 연결해주세요. ", Toast.LENGTH_LONG).show();
         }
         Log.e(TAG, device + " + " + name);
     }

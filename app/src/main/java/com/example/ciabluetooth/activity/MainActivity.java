@@ -2,7 +2,9 @@ package com.example.ciabluetooth.activity;
 
 import android.app.Activity;
 import android.bluetooth.BluetoothDevice;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -204,7 +206,7 @@ public class MainActivity extends BleProfileServiceReadyActivity<UARTService.UAR
                 headStartActivity("Puff", puffRun, puffCnt);
                 break;
             case R.id.silicon_container:
-                headStartActivity("Silicon", siliconRun, siliconCnt);
+                headStartActivity("Silicone", siliconRun, siliconCnt);
                 break;
             case R.id.info_btn:
                 startActivity(CiaInfoActivity.class, Constants.INTENT_REQUEST_INFO);

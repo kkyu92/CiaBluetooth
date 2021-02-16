@@ -48,7 +48,7 @@ public class HeadActivity extends BaseActivity {
             fffff = "쿨러";
         } else if (headName.equals("Puff")) {
             fffff = "퍼프";
-        } else if (headName.equals("Silicon")) {
+        } else if (headName.equals("Silicone")) {
             fffff = "실리콘";
         } else {
             fffff = "ffffffffffffffff";
@@ -72,9 +72,9 @@ public class HeadActivity extends BaseActivity {
         });
 
         // ad viewpager
-//        viewPager = findViewById(R.id.ad);
-//        adapter = new AdViewPagerAdapter(this);
-//        viewPager.setAdapter(adapter);
+        viewPager = findViewById(R.id.ad);
+        adapter = new AdViewPagerAdapter(this);
+        viewPager.setAdapter(adapter);
     }
 
     @Override
@@ -88,10 +88,10 @@ public class HeadActivity extends BaseActivity {
             case R.id.back_btn:
                 onBackPressed();
                 break;
-//            case R.id.ad:
-//                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.hosiden.co.kr/"));
-//                startActivity(intent);
-//                break;
+            case R.id.ad:
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.hosiden.co.kr/"));
+                startActivity(intent);
+                break;
         }
     }
 
@@ -124,7 +124,7 @@ public class HeadActivity extends BaseActivity {
             mBinding.headChangeNotify.setVisibility(View.VISIBLE);
         } else if (timeNum >= 180 && (headName.equals("Brush"))) {
             mBinding.headChangeNotify.setVisibility(View.VISIBLE);
-        } else if (timeNum >= 90 && (headName.equals("Puff") || headName.equals("Silicon"))) {
+        } else if (timeNum >= 90 && (headName.equals("Puff") || headName.equals("Silicone"))) {
             mBinding.headChangeNotify.setVisibility(View.VISIBLE);
         } else {
             mBinding.headChangeNotify.setVisibility(View.INVISIBLE);
@@ -160,7 +160,7 @@ public class HeadActivity extends BaseActivity {
                 setGuideText(getString(R.string.puff_step1), getString(R.string.puff_step2), getString(R.string.puff_step3), getString(R.string.puff_step4));
                 mBinding.headNum.setText("   " + SharedPreferencesPackage.getPuffID(this));
                 break;
-            case "Silicon":
+            case "Silicone":
                 // step img, text change
                 mBinding.headImg.setBackgroundResource(R.drawable.img_head_silicon_big);
                 mBinding.step1Img.setBackgroundResource(R.drawable.img_brush_guide1);

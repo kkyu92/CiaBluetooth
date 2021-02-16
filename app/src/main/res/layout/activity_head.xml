@@ -709,15 +709,15 @@
                     android:textStyle="bold" />
             </LinearLayout>
 
-<!--            <androidx.viewpager.widget.ViewPager-->
-<!--                android:id="@+id/ad"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="117dp"-->
-<!--                android:layout_marginTop="25dp"-->
-<!--                app:layout_constraintBottom_toBottomOf="parent"-->
-<!--                app:layout_constraintEnd_toEndOf="parent"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toBottomOf="@+id/device_num" />-->
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/ad"
+                android:layout_width="match_parent"
+                android:layout_height="117dp"
+                android:layout_marginTop="25dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/device_num" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

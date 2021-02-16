@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ Copyright (c) 2018, Nordic Semiconductor
   ~ All rights reserved.
   ~
@@ -23,63 +22,67 @@
 
 <resources>
 
-	<!-- Base theme colors -->
-	<color name="colorPrimary">@color/pink</color>
-	<color name="colorOnPrimary">@color/white</color>
-	<color name="colorAccentOnPrimary">@color/white</color>
-	<color name="colorSecondary">@color/pink</color>
-	<color name="colorStatusBar">@color/white</color>
+    <!-- Base theme colors -->
+    <color name="colorPrimary">@color/pink</color>
+    <color name="colorOnPrimary">@color/white</color>
+    <color name="colorAccentOnPrimary">@color/white</color>
+    <color name="colorSecondary">@color/pink</color>
+    <color name="colorStatusBar">@color/white</color>
 
-	<color name="colorBackground">@color/lightGray</color>
-	<color name="colorOnBackground">@color/black</color>
+    <color name="colorBackground">@color/lightGray</color>
+    <color name="colorOnBackground">@color/black</color>
 
-	//////////////////////////////////////////////////////////////////////////////////////////////
-	<color name="transparent">#00ff0000</color>
-	<color name="white">#FFFFFF</color>
-	<color name="black">#000000</color>
-	<color name="percentLine">#FFC300</color>
-	<color name="percentLineNo">#B7950B</color> //#9C640C
-<!--	<color name="pink">#FF9E98</color>-->
-	<color name="pink">#F41217</color>
-	<color name="pink_50">#80F41217</color>
-	<color name="pink_25">#40F41217</color>
-	<color name="pink_10">#1AF41217</color>
-	<color name="lightGray">#FFD9E1E2</color>
-	<color name="darkGray">#FF333F48</color>
-	<color name="gray">#AFB2B3</color>
+    //////////////////////////////////////////////////////////////////////////////////////////////
+    <color name="transparent">#00ff0000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="percentLine">#FFC300</color>
+    <color name="percentLineNo">#B7950B</color>
+    //#9C640C
+    <color name="pink">#FF9E98</color>
+    <color name="pink_50">#80FF9E98</color>
+    <color name="pink_25">#40FF9E98</color>
+    <color name="pink_10">#1AFF9E98</color>
+    <!--	<color name="pink">#F41217</color>-->
+    <!--	<color name="pink_50">#80F41217</color>-->
+    <!--	<color name="pink_25">#40F41217</color>-->
+    <!--	<color name="pink_10">#1AF41217</color>-->
+    <color name="lightGray">#FFD9E1E2</color>
+    <color name="darkGray">#FF333F48</color>
+    <color name="gray">#AFB2B3</color>
 
-	<color name="graph_start">#f7b500</color>
-	<color name="graph_start_mid">#E19B70</color>
-	<color name="graph_center">#cb80e0</color>
-	<color name="graph_end_mid">#7FA3F0</color>
-	<color name="graph_end">#32c5ff</color>
-	<color name="reddish">#cc3e3e</color>
-	<color name="brownish_grey">#666666</color>
-	<color name="light_grey">#999999</color>
+    <color name="graph_start">#f7b500</color>
+    <color name="graph_start_mid">#E19B70</color>
+    <color name="graph_center">#cb80e0</color>
+    <color name="graph_end_mid">#7FA3F0</color>
+    <color name="graph_end">#32c5ff</color>
+    <color name="reddish">#cc3e3e</color>
+    <color name="brownish_grey">#666666</color>
+    <color name="light_grey">#999999</color>
 
-	<color name="opacity_50">#80000000</color>
+    <color name="opacity_50">#80000000</color>
 
-	<color name="text_title">#202020</color>
-	<color name="text_title_50">#80202020</color>
-	<color name="text_color">#3E3E3E</color>
-	<color name="text_color_50">#803E3E3E</color>
-<!--	<color name="text_gray_50">#80717171</color>-->
-	<color name="text_gray_50">#000000</color>
-<!--	<color name="text_gray_opacity">#7A717171</color>-->
-	<color name="text_gray_opacity">#000000</color>
-	<color name="text_gray">#717171</color>
-	<color name="text_serial">#80202020</color>
-<!--	<color name="text_percent">#7A717171</color>-->
-	<color name="text_percent">#000000</color>
+    <color name="text_title">#202020</color>
+    <color name="text_title_50">#80202020</color>
+    <color name="text_color">#3E3E3E</color>
+    <color name="text_color_50">#803E3E3E</color>
+    <color name="text_gray_50">#80717171</color>
+    <!--	<color name="text_gray_50">#000000</color>-->
+    <color name="text_gray_opacity">#7A717171</color>
+    <!--	<color name="text_gray_opacity">#000000</color>-->
+    <color name="text_gray">#717171</color>
+    <color name="text_serial">#80202020</color>
+    <color name="text_percent">#7A717171</color>
+    <!--	<color name="text_percent">#000000</color>-->
 
-	<color name="background_gray">#F8F9FA</color>
+    <color name="background_gray">#F8F9FA</color>
 
-	<color name="view_line">#D0D0D0</color>
+    <color name="view_line">#D0D0D0</color>
 
-	<color name="gradation_pink">#FF9E989D</color>
-	<color name="gradation_end">#FF9E9800</color>
+    <color name="gradation_pink">#FF9E989D</color>
+    <color name="gradation_end">#FF9E9800</color>
 
-	<color name="percent_back">#EBEBEB</color>
-	<color name="last_week_color">#E3E3E3</color>
-	<color name="download_color">#217FFF</color>
+    <color name="percent_back">#EBEBEB</color>
+    <color name="last_week_color">#E3E3E3</color>
+    <color name="download_color">#217FFF</color>
 </resources>

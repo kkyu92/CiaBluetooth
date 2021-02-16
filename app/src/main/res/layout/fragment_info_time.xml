@@ -272,7 +272,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="5dp"
-                                android:text="@string/silicon"
+                                android:text="@string/silicone"
                                 android:textColor="@color/text_gray_opacity"
                                 android:textSize="12sp"
                                 app:layout_constraintEnd_toEndOf="@+id/silicon_img"

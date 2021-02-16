@@ -64,21 +64,21 @@ public class CiaInfoActivity extends AppCompatActivity {
         View viewFirst = getLayoutInflater().inflate(R.layout.custom_tab_left, null);
         ImageView imgFirst = viewFirst.findViewById(R.id.img_tab);
         TextView txtFirst = viewFirst.findViewById(R.id.txt_tab);
-        imgFirst.setImageResource(R.drawable.ic_img_tri_black);
+        imgFirst.setImageResource(R.drawable.ic_img_tri_gray);
         txtFirst.setText(R.string.device_info);
         mBinding.tabLayout.getTabAt(0).setCustomView(viewFirst);
 
         View viewSecond = getLayoutInflater().inflate(R.layout.custom_tab, null);
         ImageView imgSecond = viewSecond.findViewById(R.id.img_tab);
         TextView txtSecond = viewSecond.findViewById(R.id.txt_tab);
-        imgSecond.setImageResource(R.drawable.ic_img_tri_black);
+        imgSecond.setImageResource(R.drawable.ic_img_tri_gray);
         txtSecond.setText(R.string.battery);
         mBinding.tabLayout.getTabAt(1).setCustomView(viewSecond);
 
         View viewThird = getLayoutInflater().inflate(R.layout.custom_tab_right, null);
         ImageView imgThird = viewThird.findViewById(R.id.img_tab);
         TextView txtThird = viewThird.findViewById(R.id.txt_tab);
-        imgThird.setImageResource(R.drawable.ic_img_tri_black);
+        imgThird.setImageResource(R.drawable.ic_img_tri_gray);
         txtThird.setText(R.string.usage_time);
         mBinding.tabLayout.getTabAt(2).setCustomView(viewThird);
 

@@ -21,7 +21,7 @@
   -->
 
 <resources>
-    <string name="app_name">mine</string>
+    <string name="app_name">AU</string>
     <string name="feature_name">CIA</string>
 
     <string name="menu_filter">Filter</string>
@@ -80,11 +80,11 @@ Blinky가 광고 중이고 여기에 표시되지 않는 경우 아래 버튼을
     <string name="connect_explain">제품 사용 관련 문의사항 발생시 0000-0000을 통해 신속한 상담을 받으실 수 있습니다.</string>
     <string name="connect">연결</string>
 
-    <string name="main_title">mine</string>
+    <string name="main_title">AU</string>
     <string name="brush">Brush</string>
     <string name="cooler">Cooler</string>
     <string name="puff">Puff</string>
-    <string name="silicon">Silicon</string>
+    <string name="silicone">Silicone</string>
 
     <string name="bottom_info">Info</string>
     <string name="bottom_manual">Manual</string>
@@ -108,7 +108,7 @@ Blinky가 광고 중이고 여기에 표시되지 않는 경우 아래 버튼을
     // pattern tab
     <string name="monthly_pattern">월간패턴</string>
     <string name="monthly_pattern_title">월간 사용 패턴</string>
-    <string name="usage_time">사용시간</string>
+    <string name="usage_time">헤드관리</string>
     <string name="usage_time_title">헤드 사용시간 패턴</string>
     <string name="usage_time_total">총 사용시간</string>
 
@@ -130,92 +130,98 @@ Blinky가 광고 중이고 여기에 표시되지 않는 경우 아래 버튼을
     <string name="last_week">지난달</string>
     <string name="this_week">이번달</string>
 
-<!--    <string name="how_to_use"><b>1. 클렌징 모드</b>\n(브러시 헤드는 딥클렌징에 효과적입니다.)-->
-<!--        \n① 얼굴에 적당한 물기가 있는 상태에서 클렌징 제품으로 거품을 내줍니다.-->
-<!--        \n② 피부 컨디션에 맞게 브러시/실리콘 헤드를 본체에 장착해줍니다.-->
-<!--        \n③ 전원 버튼을 길게 눌러 전원을 켜고, 앞면의 LED를 통해 원하는 프로그램 단계를 확인합니다.-->
-<!--        \n④ 거품이 충분히 생길 수 있도록 얼굴 구석구석을 클렌징해줍니다.-->
-<!--        \n⑤ 관리가 끝나면 전원 버튼을 길게 눌러 전원을 끕니다.-->
-<!--        \n\n<b>2. 쿨러 모드</b>-->
-<!--        \n① 얼굴 피부에 미온수나 화장수를 충분히 발라줍니다.-->
-<!--        \n② 본체에 냉장보관한 쿨러 헤드를 장착해줍니다.-->
-<!--        \n③ 전원 버튼을 길게 눌러 전원을 켜고, 앞면의 LED를 통해 원하는 프로그램 단계를 확인합니다.-->
-<!--        \n④ 쿨러를 얼굴 피부에 두고 붓기가 빠질 때까지 천천히 밀면서 마사지합니다.-->
-<!--        \n⑤ 2-3분 후 관리가 끝나면 전원 버튼을 길게 눌러 전원을 끕니다.-->
-<!--        \n\n<b>3. 메이크업 모드</b>-->
-<!--        \n① 세안을 한 뒤 메이크업 제품을 얼굴에 도포합니다.-->
-<!--        \n② 본체에 퍼프 헤드를 장착해줍니다.-->
-<!--        \n③ 전원 버튼을 길게 눌러 전원을 켜고, 앞면의 LED를 통해 원하는 프로그램 단계를 확인합니다.-->
-<!--        \n④ 진동을 통해 메이크업 제품이 얼굴에 골고루 퍼 발라질 수 있도록 얼굴 전체에 걸쳐 사용해 줍니다.-->
-<!--        \n⑤ 관리가 끝나면 전원 버튼을 길게 눌러 전원을 끕니다.-->
-<!--        \n\n<b>※ 타이머 기능</b>-->
-<!--        \n사용 기본 시간 7분-->
-<!--        \n(7분이 경과할 경우 자동으로 전원이 종료됩니다.)-->
-<!--        \n모든 모드에서 원하는 프로그램 3단계가 조절 가능합니다.</string>-->
+    <!--    <string name="how_to_use"><b>1. 클렌징 모드</b>\n(브러시 헤드는 딥클렌징에 효과적입니다.)-->
+    <!--        \n① 얼굴에 적당한 물기가 있는 상태에서 클렌징 제품으로 거품을 내줍니다.-->
+    <!--        \n② 피부 컨디션에 맞게 브러시/실리콘 헤드를 본체에 장착해줍니다.-->
+    <!--        \n③ 전원 버튼을 길게 눌러 전원을 켜고, 앞면의 LED를 통해 원하는 프로그램 단계를 확인합니다.-->
+    <!--        \n④ 거품이 충분히 생길 수 있도록 얼굴 구석구석을 클렌징해줍니다.-->
+    <!--        \n⑤ 관리가 끝나면 전원 버튼을 길게 눌러 전원을 끕니다.-->
+    <!--        \n\n<b>2. 쿨러 모드</b>-->
+    <!--        \n① 얼굴 피부에 미온수나 화장수를 충분히 발라줍니다.-->
+    <!--        \n② 본체에 냉장보관한 쿨러 헤드를 장착해줍니다.-->
+    <!--        \n③ 전원 버튼을 길게 눌러 전원을 켜고, 앞면의 LED를 통해 원하는 프로그램 단계를 확인합니다.-->
+    <!--        \n④ 쿨러를 얼굴 피부에 두고 붓기가 빠질 때까지 천천히 밀면서 마사지합니다.-->
+    <!--        \n⑤ 2-3분 후 관리가 끝나면 전원 버튼을 길게 눌러 전원을 끕니다.-->
+    <!--        \n\n<b>3. 메이크업 모드</b>-->
+    <!--        \n① 세안을 한 뒤 메이크업 제품을 얼굴에 도포합니다.-->
+    <!--        \n② 본체에 퍼프 헤드를 장착해줍니다.-->
+    <!--        \n③ 전원 버튼을 길게 눌러 전원을 켜고, 앞면의 LED를 통해 원하는 프로그램 단계를 확인합니다.-->
+    <!--        \n④ 진동을 통해 메이크업 제품이 얼굴에 골고루 퍼 발라질 수 있도록 얼굴 전체에 걸쳐 사용해 줍니다.-->
+    <!--        \n⑤ 관리가 끝나면 전원 버튼을 길게 눌러 전원을 끕니다.-->
+    <!--        \n\n<b>※ 타이머 기능</b>-->
+    <!--        \n사용 기본 시간 7분-->
+    <!--        \n(7분이 경과할 경우 자동으로 전원이 종료됩니다.)-->
+    <!--        \n모든 모드에서 원하는 프로그램 3단계가 조절 가능합니다.</string>-->
     <string name="num1">① </string>
     <string name="num2">② </string>
     <string name="num3">③ </string>
     <string name="num4">④ </string>
     <string name="num5">⑤ </string>
-    <string name="how_to_use1"><b>1. 클렌징 모드</b>\n(브러시 헤드는 딥클렌징에 효과적입니다.)</string>
-    <string name="how_to_use1_1">얼굴에 적당한 물기가 있는 상태에서 클렌징 제품으로 거품을 내줍니다.</string>
-    <string name="how_to_use1_2">피부 컨디션에 맞게 브러시/실리콘 헤드를 본체에 장착해줍니다.</string>
-    <string name="how_to_use1_3">전원 버튼을 길게 눌러 전원을 켜고, 앞면의 LED를 통해 원하는 프로그램 단계를 확인합니다.</string>
-    <string name="how_to_use1_4">거품이 충분히 생길 수 있도록 얼굴 구석구석을 클렌징해줍니다</string>
+    <string name="how_to_use1"><b>1. 클렌징 모드 (브러시헤드, 실리콘헤드)</b></string>
+    <string name="how_to_use1_1">얼굴에 적당한 물기가 있는 상태에서 클렌징 제품으로 거품을 냅니다.</string>
+    <string name="how_to_use1_2">피부 컨디션에 맞게 브러시/실리콘 헤드를 본체에 장착합니다.\n - 브러시 헤드는 딥클렌징에 효과적입니다. (블랙헤드, 각질제거)\n - 실리콘 헤드는 데일리 클렌징을 해 줄 경우, 민감한 피부에 효과적입니다. (저자극)</string>
+    <string name="how_to_use1_3">전원 버튼을 길게 눌러 전원을 켜고, 앞면의 LED를 통해 원하는 진동모드 단계를 확인합니다.</string>
+    <string name="how_to_use1_4">거품이 충분히 생길 수 있도록 얼굴 구석구석을 클렌징합니다</string>
     <string name="how_to_use1_5">관리가 끝나면 전원 버튼을 길게 눌러 전원을 끕니다.</string>
-    <string name="how_to_use2">\n\n<b>2. 쿨러 모드</b></string>
-    <string name="how_to_use2_1">얼굴 피부에 미온수나 화장수를 충분히 발라줍니다.</string>
-    <string name="how_to_use2_2">본체에 냉장보관한 쿨러 헤드를 장착해줍니다.</string>
-    <string name="how_to_use2_3">전원 버튼을 길게 눌러 전원을 켜고, 앞면의 LED를 통해 원하는 프로그램 단계를 확인합니다.</string>
-    <string name="how_to_use2_4">쿨러를 얼굴 피부에 두고 붓기가 빠질 때까지 천천히 밀면서 마사지합니다.</string>
-    <string name="how_to_use2_5">2-3분 후 관리가 끝나면 전원 버튼을 길게 눌러 전원을 끕니다.</string>
-    <string name="how_to_use3">\n\n<b>3. 메이크업 모드</b></string>
+    <string name="how_to_use2">\n\n<b>2. 마사지 모드 (쿨러헤드)</b></string>
+    <string name="how_to_use2_1">얼굴에 미온수나 화장수를 충분히 발라주세요.</string>
+    <string name="how_to_use2_2">클렌징 후 쿨러헤드를 본체에 장착합니다.\n * 쿨러헤드는 냉장 보관 후 차갑게 사용하면 피부진정에 효과적입니다.</string>
+    <string name="how_to_use2_3">전원 버튼을 길게 눌러 전원을 켜고, 앞면의 LED를 통해 원하는 진동 모드 단계를 확인합니다.</string>
+    <string name="how_to_use2_4">쿨러를 얼굴에 두고 부기가 빠질 때까지 천천히 밀면서 마사지합니다.</string>
+    <string name="how_to_use2_5">마사지가 끝나면 전원 버튼을 길게 눌러 전원을 끕니다.</string>
+    <string name="how_to_use3">\n\n<b>3. 메이크업 모드 (퍼프헤드)</b></string>
     <string name="how_to_use3_1">세안을 한 뒤 메이크업 제품을 얼굴에 도포합니다.</string>
-    <string name="how_to_use3_2">본체에 퍼프 헤드를 장착해줍니다.</string>
-    <string name="how_to_use3_3">전원 버튼을 길게 눌러 전원을 켜고, 앞면의 LED를 통해 원하는 프로그램 단계를 확인합니다.</string>
+    <string name="how_to_use3_2">퍼프 헤드를 본체에 장착해줍니다.</string>
+    <string name="how_to_use3_3">전원 버튼을 길게 눌러 전원을 켜고, 앞면의 LED를 통해 원하는 진동 모드 단계를 확인합니다.</string>
     <string name="how_to_use3_4">진동을 통해 메이크업 제품이 얼굴에 골고루 퍼 발라질 수 있도록 얼굴 전체에 걸쳐 사용해 줍니다.</string>
     <string name="how_to_use3_5">관리가 끝나면 전원 버튼을 길게 눌러 전원을 끕니다.</string>
     <string name="how_to_use4">\n\n<b>※ 타이머 기능</b>
-        \n사용 기본 시간 7분
-        \n(7분이 경과할 경우 자동으로 전원이 종료됩니다.)
-        \n모든 모드에서 원하는 프로그램 3단계가 조절 가능합니다.</string>
+        \n사용 기본 시간 10분
+        \n(10분이 경과할 경우 자동으로 전원이 종료됩니다.)
+        \n모든 모드에서 원하는 진동모드 3단계 조절 가능합니다.</string>
 
-    <string name="manual_head_1">기기의 고정축과 브러시의 고정홈을 맞춰 고정축의 끝까지 수직으로 가볍게 밀어 장착합니다.\n(브러시를 기기에서 빼낼 경우 기기와 브러시를 각각 잡고 반대 방향으로 수직으로 당겨 빼냅니다.)</string>
-    <string name="manual_head_2_1">① 사용이 끝난 즉시 살균 충전 크래들의 커버를 분리한 다음, UV LED 향하도록 사용한 헤드를 장착해 줍니다\n(브러시 헤드는 전용위치에 장착)</string>
-    <string name="manual_head_2_2">② 살균충전 커버를 닫으면 UV LED 불빛이 켜지면서 10분간 자동살균 모드가 시작되며 상단 인디케이터를 통해 살균동작을 확인할수 있습니다.</string>
-    <string name="manual_head_2_3">③ 살균 모드가 끝난면 자동 OFF 되며, 작동 중 살균충전 커버가 오픈된 상태에선 제품이 작동하지 않습니다.</string>
-    <string name="manual_head_2_4">④ 장시간 미사용 헤드의 경우 세균 증식을 막기 위해 자체적으로 크래들의 자동 살균 기능이 작동됩니다.</string>
-    <string name="manual_head_2_5">⑤ 부피가 작은 화장붓, 귀금속, 악세서리, 네일용품, 손톱깍기, 쪽가위, 귀이개 등 소형물품들의 살균이 가능합니다.</string>
+    <string name="manual_head_1">본체의 고정축과 각 헤드의 고정홈을 맞춰 고정축의 끝까지 수직으로 가볍게 밀어 장착합니다.\n장착 시 헤드별 인식기능으로 부저음과 함께 사용할 헤드가 인식됩니다.</string>
+    <string name="manual_head_2_1">① 사용이 끝난 즉시 무선충전 살균크래들의 커버를 분리한 다음, UV LED 향하도록 사용한 헤드를 장착해 줍니다\n(브러시 헤드는 전용위치에 넣어줍니다.)</string>
+    <string name="manual_head_2_2">② 살균 커버와 살균 케이스를 결합 시 UV LED가 켜지면서 10분간 자동 살균 모드가 시작되며, 상단 인디케이터를 통해 살균동작을 확인할수 있습니다.</string>
+    <string name="manual_head_2_3">③ 살균 모드가 끝난면 자동 OFF 되며, 살균 케이스가 오픈 된 상태에서는 제품이 작동하지 않습니다.</string>
+    <string name="manual_head_2_4">④ 장시간 미사용 헤드의 경우 세균 증식을 막기 위해 자체적으로 크래들의 자동 살균 기능이 작동됩니다.\n *10분 살균모드 종료 후, 1시간 간격 자동살균</string>
+    <string name="manual_head_2_5">⑤ 부피가 작은 화장붓, 귀금속, 악세서리, 네일용품, 손톱깎이, 쪽가위, 귀이개 등 소형물품들의 살균도 가능합니다.</string>
     <string name="manual_precautions_title">※ 주의사항</string>
-    <string name="manual_precautions_txt">제품 내부의 자외선 살균 LED는 눈에 안좋은 영향을 줄수 있으므로 직접보는 것을 삼가해 주세요.</string>
+    <string name="manual_precautions_txt">제품 내부의 자외선 살균 LED는 눈에 안좋은 영향을 줄수 있음으로 직접보는 것을 삼가해 주세요.</string>
 
-    <string name="terms">보증기간 내에 사용설명서 등 주의사항에 따라 정상적으로 사용한 상태에서 고장이 난 경우에는 보증 규정에 의해 무료로 A/S해드리며, 보증 규정의 유상 서비스에 해당하는 경우에는 유로로 A/S 해드립니다.A/S를 원하실 경우 보증서와 보증 규정 내용을 확인한 후 고객서비스센터로 연락하여 주십시오.
-        \n\n<b>고객 서비스 센터 : 070-0000-0000</b>
-        \n\n<b>[보증규정]</b> 보증 대상물은 기기 본체입니다.
+    <string name="terms">보증기간 내에 사용설명서 등 주의사항에 따라 정상적으로 사용한 상태에서 고장이 난 경우에는 보증 규정에 의해 무료로 A/S해드리며, 보증 규정의 유상 서비스에 해당하는 경우에는 유로로 A/S 해드립니다. A/S를 원하실 경우 보증서와 보증 규정 내용을 확인한 후 고객서비스센터로 연락하여 주십시오.
+        \n\n<b>[보증규정]</b> 보증 대상물은 제품본체와 무선충전 살균 크래들입니다.
         \n\n<b>[무상 서비스]</b> 구입 후 1년[보증기간]이내에 정상적인 사용 상태에서 발생한 고장의 경우 무상서비스를 받을 수 있습니다.\n이 제품을 영업 용도로 전환하여 사용할 경우에는 무상 서비스에 해당되지 않습니다.
         \n\n<b>[유상 서비스]</b> 보증기간 중이라도 다음의 경우는 유상 서비스가 됩니다.
-        \n\n1. 소비자의 취급 부주의(구입 후 낙하,침수,파손,손상)로 고장이 발생한 경우\n2. 소모품(브러시 등)의 교환, 사용 중에 일어난 외관상의 변화(긁힘,변형,변색 등)의 경우\n3. 소비자가 임의로 분해, 개조한 경우\n4. 본 상품에서 제공한 소모품 외의 부품을 사용하거나, ‘주의사항’을 지키지 않아 고장난 경우\n5. 소모품(건전지.브러시 등)의 수명이 다하거나 분실한 경우\n6. 본 보증서를 제시하지 않거나, 본 보증서에 구입날짜 기재가 없는 경우 또는 내용을 임의로 변경한 경우</string>
-    <string name="faq">ㆍ 사용하기 전 사용설명서를 반드시 읽어보시고, 정확한 사용방법을 숙지하신 후 사용하여 주십시오.
-        \n\nㆍ 피부에 부상이나 상처가 있는 경우에는 절대 사용하지 마십시오.\n(피부 트러블, 통증을 느낄 우려)
-        \n\nㆍ 고장, 손상 상태인 채로 사용하지 마십시오.\n(피부 트러블, 통증을 느낄 우려)
-        \n\nㆍ 자극, 어지러움, 전기 충격이나 열감을 느낄 시 즉시 사용을 중지하십시오.
-        \n\nㆍ 사용 중 피부나 신체에 이상을 느끼는 경우 즉시 사용을 중지해 주십시오.\n(전문의와 상담 후 지시를 따라 주십시오)
-        \n\nㆍ 회전 속도가 느려지거나 끊김 현상이 발생할 경우 배터리를 충전해 주십시오.
-        \n\nㆍ 가급적 건조, 서늘한 곳에 보관하여 주시고 직사광선은 피해주십시오.
-        \n\nㆍ 기기를 장시간 사용할 경우 피부를 민감하게 만들 수 있습니다.
-        \n\nㆍ 어린이의 손이 닿지 않는 곳에 보관하여 주십시오.
-        \n\nㆍ 타사의 소모품은 사용하지 마십시오.
-        \n\nㆍ 소비자의 과실로 고장이 난 경우 교환이나 환불이 불가합니다.</string>
-    <string name="as">시제품의 문제가 발생한 경우, 본 보증서와 보증 규정 내용을 확인한 후 고객서비스 센터로 연락하여 주십시오.
-        \n고객서비스 센터 070-0000-0000
-        \n\n<b>[무상 서비스]</b>
-        \n구입 후 1년[보증기간]이내에 정상적인 사용 상태에서 발생한 고장의 경우
+        \n\n1. 소비자의 취급 부주의(구입 후 낙하,침수,파손,손상)로 고장이 발생한 경우\n2. 소모품(헤드)의 교환, 사용 중에 일어난 외관상의 변화(긁힘,변형,변색 등)의 경우\n3. 소비자가 임의로 분해, 개조한 경우\n4. 본 상품에서 제공한 소모품 외의 부품을 사용하거나, ‘주의사항’을 지키지 않아 고장난 경우\n5. 소모품(건전지.브러시 등)의 수명이 다하거나 분실한 경우\n6. 본 보증서를 제시하지 않거나, 본 보증서에 구입날짜 기재가 없는 경우 또는 내용을 임의로 변경한 경우</string>
+    <string name="faq">· 사용하기 전 사용설명서를 반드시 읽어보시고, 정확한 사용방법을 숙지하신 후 사용하여 주십시오.
+        \n· 피부에 부상이나 상처가 있는 경우에는 절대 사용하지 마십시오. (피부 트러블, 통증을 느낄 우려)
+        \n· 고장, 손상 상태인 채로 사용하지 마십시오. (피부 트러블, 통증을 느낄 우려)
+        \n· 자극, 어지러움, 전기 충격이나 열감을 느낄 시 즉시 사용을 중지하십시오.
+        \n· 사용 중 피부나 신체에 이상을 느끼는 경우 즉시 사용을 중지해 주십시오. (전문의와 상담 후 지시를 따라 주십시오)
+        \n· 가급적 건조, 서늘한 곳에 보관하여 주시고 직사광선은 피해주십시오.
+        \n· 제품을 장시간 사용할 경우 피부를 민감하게 만들 수 있습니다.
+        \n· 어린이의 손이 닿지 않는 곳에 보관하여 주십시오.
+        \n· 타사의 소모품은 사용하지 마십시오.
+        \n· 무선충전 크래들 위에 제품 외에는 올려 놓지 마십시오.(주의: 동전 및 금속물 등)
+        \n· 배터리 방전후 충전완료까지 3시간 이상 소요되며, 제품 놓는 위치에 따라 충전시간이 늘어날 수 있습니다.
+        \n· 소비자의 과실로 고장이 난 경우 교환이나 환불이 불가합니다.
+        \n· 구매 후 1년(보증기간) 내에 무상서비스를 받으실 수 있습니다.
+        \n\n 소비자 과실
+        \n· 사용자의 잘못 또는 취급 주주의로 인한 고장(낙하, 침수, 충격, 파손, 무리한 동작 등)
+        \n· 당사의 서비스 기사 및 지정협력사 기사가 아닌 다른 사람이 수리하여 고장이 발생한 경우
+        \n· 소비자의 고의 또는 과실로 인한 고장인 경우
+        \n· 정품 이외의 부품이나 부족물 사용에 의한 고장이나 제품 파손의 경우</string>
+
+    <string name="as">본 제품이 이상이 있을 경우 공정거래위원회 고시에 의거 보상해 드립니다.
+        \n본 보증서와 보증 규정 내용을 확인한 후 고객서비스 센터로 연락하여 주십시오.
+        \n고객서비스 센터 : 055-290-5945
     </string>
 
     // nordic
-<!--    mine 로 최종변경 해야함 -->
-    <string name="cia_id">mine</string>
-<!--    <string name="cia_id">"a"</string>-->
+    <!--    AU_ 로 최종변경 해야함 -->
+    <string name="cia_id">AU_</string>
+    <!--    <string name="cia_id">"a"</string>-->
     <string name="scanner_action_scan">찾기</string>
     <string name="scanner_action_cancel">중지</string>
     <string name="scanner_subtitle_bonded">등록된 디바이스</string>
@@ -230,7 +236,7 @@ Blinky가 광고 중이고 여기에 표시되지 않는 경우 아래 버튼을
 
     <string name="not_available">n/a</string>
     <string name="scanner_empty">찾을 수 있는 디바이스가 없습니다.</string>
-    <string name="scanner_title">mine 디바이스를 연결해주세요.</string>
+    <string name="scanner_title">AU 디바이스를 연결해주세요.</string>
     <string name="no_required_permission">Permission denied.</string>
     <string name="scanner_permission_rationale">Since Android 6.0 Marshmallow system requires granting access to device\'s location in order to scan for Bluetooth LE devices. Bluetooth beacons may be used to determine the phone\'s and user\'s location.</string>
     <string name="not_supported">The device does not have required services.</string>
@@ -270,22 +276,25 @@ Blinky가 광고 중이고 여기에 표시되지 않는 경우 아래 버튼을
     <string name="step_2">STEP 2</string>
     <string name="step_3">STEP 3</string>
     <string name="step_4">STEP 4</string>
-    <string name="brush_step1">메이크업 상태의 얼굴에 물을 적셔줍니다.</string>
-    <string name="brush_step2">클렌징 제품을 적당량 도포하고\n가볍게 거품을 내줍니다.</string>
-    <string name="brush_step3">브러시헤드를 기계에\n장착하고 전원을 켜줍니다.</string>
-    <string name="brush_step4">화살표 방향으로 움직이면서 거품을\n만들어줍니다. 클렌징이 끝난 뒤\n세안으로 마무리 합니다.</string>
-    <string name="cooler_step1">세안 후 피부를 깨끗이 정돈해줍니다.</string>
-    <string name="cooler_step2">마사지 제품을 적당량 도포하고\n가볍게 문질러 내줍니다.</string>
-    <string name="cooler_step3">쿨러헤드를 기계에\n장착하고 전원을 켜줍니다.</string>
-    <string name="cooler_step4">얼굴 안쪽에서 바깥 방향으로\n기기를 이용하여 마사지 해줍니다.</string>
-    <string name="puff_step1">깨끗이 세안한 뒤 토너로 피부결을 정돈해줍니다.</string>
-    <string name="puff_step2">메이크업 제품을 얼굴에 적당량\n도포한 뒤 가볍게 발라줍니다.</string>
-    <string name="puff_step3">퍼프헤드를 기계에\n장착하고 전원을 켜줍니다.</string>
-    <string name="puff_step4">피부결을 따라 움직이면서 메이크업\n제품이 피부에 흡수될 때 까지\n부드럽게 마사지 해줍니다.</string>
-    <string name="silicon_step1">메이크업 상태의 얼굴에 물을 적셔줍니다.</string>
-    <string name="silicon_step2">클렌징 제품을 적당량 도포하고\n가볍게 거품을 내줍니다.</string>
-    <string name="silicon_step3">실리콘헤드를 기계에\n장착하고 전원을 켜줍니다.</string>
-    <string name="silicon_step4">화살표 방향으로 움직이면서 거품을\n만들어줍니다. 클렌징이 끝난 뒤\n세안으로 마무리합니다.</string>
+
+    <string name="brush_step1">세안이 필요한 얼굴에\n물을 적셔주세요.</string>
+    <string name="brush_step2">클렌징 제품을 적당량 도포하고\n가볍게 거품을 내주세요.</string>
+    <string name="brush_step3">브러시헤드를 본체에\n장착하고 전원을 켜주세요.</string>
+    <string name="brush_step4">화살표 방향으로 움직이면서\n거품을 만들며 클렌징 합니다.\n클렌징이 끝난 뒤 세안으로\n마무리합니다.</string>
+
+    <string name="cooler_step1">세안 후 피부를 깨끗이\n정돈해주세요.</string>
+    <string name="cooler_step2">마사지 제품을 적당량 도포하고\n가볍게 문질러줍니다.</string>
+    <string name="cooler_step3">냉장 보관한 쿨러헤드를 본체에\n장착하고 전원을 켜주세요.</string>
+    <string name="cooler_step4">화살표 방향으로 움직이면서\n가볍게 마사지한 뒤 마무리 합니다.</string>
+
+    <string name="puff_step1">깨끗이 세안한 뒤 토너로\n피부결을 정돈 시켜주세요.</string>
+    <string name="puff_step2">메이크업 제품을 얼굴에\n적당량 도포한 뒤 가볍게\n발라주세요.</string>
+    <string name="puff_step3">퍼프헤드를 본체에\n장착하고 전원을 켜주세요.</string>
+    <string name="puff_step4">피부결을 따라 움직이면서 메이크업\n제품이 피부에 흡수될 때까지 부드럽게\n마사지 해주세요.</string>
+    <string name="silicon_step1">세안이 필요한 얼굴에\n물을 적셔줍니다.</string>
+    <string name="silicon_step2">클렌징 제품을 적당량 도포하고\n가볍게 거품을 내주세요.</string>
+    <string name="silicon_step3">실리콘헤드를 본체에\n장착하고 전원을 켜주세요.</string>
+    <string name="silicon_step4">화살표 방향으로 움직이면서\n거품을 만들며 클렌징 합니다.\n클렌징이 끝난 뒤 세안으로\n마무리합니다.</string>
 
     <string name="manual_step1">용도에 맞는 헤드를 장착해줍니다.</string>
     <string name="manual_step2">옆면에 위치한 전원 버튼을 켜서 작동시킵니다.</string>
@@ -299,18 +308,18 @@ Blinky가 광고 중이고 여기에 표시되지 않는 경우 아래 버튼을
     </string>
 
     <string name="device_name">상품명</string>
-    <string name="device_name_contents">mine</string>
+    <string name="device_name_contents">AU 스마트 뷰티 클렌징 시스템</string>
     <string name="components_txt">구성품</string>
-    <string name="components_contents_txt">본체, 살균 충전크래들, 실리콘헤드,\n브러시헤드, 쿨러헤드, 퍼프헤드,\nUSB케이블, 매뉴얼</string>
+    <string name="components_contents_txt">본체, 무선충전 살균 크래들, 실리콘헤드,\n브러시헤드, 쿨러헤드, 퍼프헤드,\nUSB케이블, 매뉴얼</string>
     <string name="warranty_text">보증기간</string>
     <string name="warranty_contents_txt">구입일로부터 1년</string>
     <string name="precautions_txt">주의사항</string>
     <string name="precautions_contents_txt">사용시간, 충전시간 및 베터리 잔량은\n실제 사용 환경과 제품사용시간에\n따라 달라질 수 있습니다.</string>
     <string name="block_usage_title">기기 총 사용시간</string>
     <string name="head_usage_time">헤드 사용시간</string>
-    <string name="head1_title">1.헤드 교체</string>
+    <string name="head1_title">1.헤드 교체 및 교체하기</string>
     <string name="head2_title">2.헤드 살균</string>
-    <string name="pdf_text">mine 제품 사용 매뉴얼.pdf</string>
+    <string name="pdf_text">AU 제품 사용 매뉴얼.pdf</string>
     <string name="view">"'PDF 뷰어'에서 열기"</string>
     <string name="download">다운로드</string>
     <string name="bluetooth_connect">블루투스 켜기</string>
@@ -320,7 +329,7 @@ Blinky가 광고 중이고 여기에 표시되지 않는 경우 아래 버튼을
     <string name="head_change_txt">"ㆍ Brush Head : 6개월
         \nㆍ Cooler Head : 1년
         \nㆍ Puff Head : 3개월
-        \nㆍ Silicon Head : 3개월"</string>
+        \nㆍ Silicone Head : 3개월"</string>
     <string name="get_data">데이터를 불러오는중입니다....</string>
 
 </resources>

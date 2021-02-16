@@ -38,7 +38,7 @@ public class PatternActivity extends BaseActivity {
             @Override
             public void run() {
                 viewPagerAdapter.addFragment(PatternMonthlyFragment.getInstance(stringData), "월간패턴");
-                viewPagerAdapter.addFragment(PatternTimeFragment.getInstance(time), "사용시간");
+                viewPagerAdapter.addFragment(PatternTimeFragment.getInstance(time), "헤드관리");
 
                 mBinding.viewPager.setAdapter(viewPagerAdapter);
                 mBinding.tabLayout.setupWithViewPager(mBinding.viewPager);
@@ -54,14 +54,14 @@ public class PatternActivity extends BaseActivity {
         View viewFirst = getLayoutInflater().inflate(R.layout.custom_tab_left, null);
         ImageView imgFirst = viewFirst.findViewById(R.id.img_tab);
         TextView txtFirst = viewFirst.findViewById(R.id.txt_tab);
-        imgFirst.setImageResource(R.drawable.ic_img_tri_black);
+        imgFirst.setImageResource(R.drawable.ic_img_tri_gray);
         txtFirst.setText(R.string.monthly_pattern);
         mBinding.tabLayout.getTabAt(0).setCustomView(viewFirst);
 
         View viewThird = getLayoutInflater().inflate(R.layout.custom_tab_right, null);
         ImageView imgThird = viewThird.findViewById(R.id.img_tab);
         TextView txtThird = viewThird.findViewById(R.id.txt_tab);
-        imgThird.setImageResource(R.drawable.ic_img_tri_black);
+        imgThird.setImageResource(R.drawable.ic_img_tri_gray);
         txtThird.setText(R.string.usage_time);
         mBinding.tabLayout.getTabAt(1).setCustomView(viewThird);
 
