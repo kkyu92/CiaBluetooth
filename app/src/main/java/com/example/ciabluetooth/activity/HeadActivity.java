@@ -145,7 +145,7 @@ public class HeadActivity extends BaseActivity {
                 mBinding.headImg.setBackgroundResource(R.drawable.img_head_cooler_big);
                 mBinding.step1Img.setBackgroundResource(R.drawable.ic_img_cooler_step1);
                 mBinding.step2Img.setBackgroundResource(R.drawable.img_brush_guide1);
-                mBinding.step3Img.setBackgroundResource(R.drawable.img_brush_guide3);
+                mBinding.step3Img.setBackgroundResource(R.drawable.img_cooler_guide3);
                 mBinding.step4Img.setBackgroundResource(R.drawable.ic_img_cooler_step4);
                 setGuideText(getString(R.string.cooler_step1), getString(R.string.cooler_step2), getString(R.string.cooler_step3), getString(R.string.cooler_step4));
                 mBinding.headNum.setText("   " + SharedPreferencesPackage.getCoolerID(this));
@@ -155,7 +155,7 @@ public class HeadActivity extends BaseActivity {
                 mBinding.headImg.setBackgroundResource(R.drawable.img_head_puff_big);
                 mBinding.step1Img.setBackgroundResource(R.drawable.ic_img_cooler_step1);
                 mBinding.step2Img.setBackgroundResource(R.drawable.img_brush_guide1);
-                mBinding.step3Img.setBackgroundResource(R.drawable.img_brush_guide3);
+                mBinding.step3Img.setBackgroundResource(R.drawable.img_cooler_guide3);
                 mBinding.step4Img.setBackgroundResource(R.drawable.ic_img_cooler_step1);
                 setGuideText(getString(R.string.puff_step1), getString(R.string.puff_step2), getString(R.string.puff_step3), getString(R.string.puff_step4));
                 mBinding.headNum.setText("   " + SharedPreferencesPackage.getPuffID(this));

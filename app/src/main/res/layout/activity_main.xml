@@ -28,7 +28,7 @@
                 android:layout_height="wrap_content"
                 android:contentDescription="mine"
                 android:layout_marginTop="40dp"
-                android:background="@drawable/logo_mine"
+                android:background="@drawable/logo_au"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -47,9 +47,9 @@
 
             <ImageView
                 android:id="@+id/img"
-                android:layout_width="wrap_content"
+                android:layout_width="130dp"
                 android:layout_height="0dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="20dp"
                 android:src="@drawable/img_splash_device_big"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -230,8 +230,8 @@
 
                     <ImageView
                         android:id="@+id/brush_img"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
                         android:layout_marginVertical="10dp"
                         android:layout_marginStart="15dp"
                         android:background="@drawable/img_head_brush"
@@ -309,8 +309,8 @@
 
                     <ImageView
                         android:id="@+id/cooler_img"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
                         android:layout_marginVertical="10dp"
                         android:layout_marginStart="20dp"
                         android:background="@drawable/img_head_cooler"
@@ -388,8 +388,8 @@
 
                     <ImageView
                         android:id="@+id/puff_img"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
                         android:layout_marginVertical="10dp"
                         android:layout_marginStart="20dp"
                         android:background="@drawable/img_head_puff"
@@ -467,8 +467,8 @@
 
                     <ImageView
                         android:id="@+id/silicon_img"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
                         android:layout_marginVertical="10dp"
                         android:layout_marginStart="20dp"
                         android:background="@drawable/img_head_sillicon"

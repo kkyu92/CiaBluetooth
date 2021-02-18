@@ -25,9 +25,9 @@
         android:allowBackup="false"
         android:fullBackupContent="false"
         android:fullBackupOnly="false"
-        android:icon="@mipmap/ic_mine"
+        android:icon="@mipmap/ic_au"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_mine"
+        android:roundIcon="@mipmap/ic_au"
         android:supportsRtl="true"
         android:name=".nordic.ToolboxApplication"
         android:theme="@style/AppTheme">

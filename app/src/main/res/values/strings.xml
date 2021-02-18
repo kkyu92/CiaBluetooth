@@ -22,7 +22,7 @@
 
 <resources>
     <string name="app_name">AU</string>
-    <string name="feature_name">CIA</string>
+<!--    <string name="feature_name">CIA</string>-->
 
     <string name="menu_filter">Filter</string>
     <string name="menu_filter_uuid">LBS UUID를 광고하는 장치 만</string>
@@ -69,7 +69,7 @@ Blinky가 광고 중이고 여기에 표시되지 않는 경우 아래 버튼을
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     <string name="permission_text">접근권한 이용 안내</string>
-    <string name="permission_content_text">Cia 이용을 위해 아래 기능을 사용합니다.</string>
+    <string name="permission_content_text">AU 이용을 위해 아래 기능을 사용합니다.</string>
     <string name="cancel">거절</string>
     <string name="permit">동의</string>
     <string name="not_permission">모든 권한의 승인이 필요합니다.</string>
@@ -181,11 +181,11 @@ Blinky가 광고 중이고 여기에 표시되지 않는 경우 아래 버튼을
         \n모든 모드에서 원하는 진동모드 3단계 조절 가능합니다.</string>
 
     <string name="manual_head_1">본체의 고정축과 각 헤드의 고정홈을 맞춰 고정축의 끝까지 수직으로 가볍게 밀어 장착합니다.\n장착 시 헤드별 인식기능으로 부저음과 함께 사용할 헤드가 인식됩니다.</string>
-    <string name="manual_head_2_1">① 사용이 끝난 즉시 무선충전 살균크래들의 커버를 분리한 다음, UV LED 향하도록 사용한 헤드를 장착해 줍니다\n(브러시 헤드는 전용위치에 넣어줍니다.)</string>
-    <string name="manual_head_2_2">② 살균 커버와 살균 케이스를 결합 시 UV LED가 켜지면서 10분간 자동 살균 모드가 시작되며, 상단 인디케이터를 통해 살균동작을 확인할수 있습니다.</string>
-    <string name="manual_head_2_3">③ 살균 모드가 끝난면 자동 OFF 되며, 살균 케이스가 오픈 된 상태에서는 제품이 작동하지 않습니다.</string>
-    <string name="manual_head_2_4">④ 장시간 미사용 헤드의 경우 세균 증식을 막기 위해 자체적으로 크래들의 자동 살균 기능이 작동됩니다.\n *10분 살균모드 종료 후, 1시간 간격 자동살균</string>
-    <string name="manual_head_2_5">⑤ 부피가 작은 화장붓, 귀금속, 악세서리, 네일용품, 손톱깎이, 쪽가위, 귀이개 등 소형물품들의 살균도 가능합니다.</string>
+    <string name="manual_head_2_1"> 사용이 끝난 즉시 무선충전 살균크래들의 커버를 분리한 다음, UV LED 향하도록 사용한 헤드를 장착해 줍니다\n(브러시 헤드는 전용위치에 넣어줍니다.)</string>
+    <string name="manual_head_2_2"> 살균 커버와 살균 케이스를 결합 시 UV LED가 켜지면서 10분간 자동 살균 모드가 시작되며, 상단 인디케이터를 통해 살균동작을 확인할수 있습니다.</string>
+    <string name="manual_head_2_3"> 살균 모드가 끝난면 자동 OFF 되며, 살균 케이스가 오픈 된 상태에서는 제품이 작동하지 않습니다.</string>
+    <string name="manual_head_2_4"> 장시간 미사용 헤드의 경우 세균 증식을 막기 위해 자체적으로 크래들의 자동 살균 기능이 작동됩니다.\n(10분 살균모드 종료 후, 1시간 간격 자동살균)</string>
+    <string name="manual_head_2_5"> 부피가 작은 화장붓, 귀금속, 악세서리, 네일용품, 손톱깎이, 쪽가위, 귀이개 등 소형물품들의 살균도 가능합니다.</string>
     <string name="manual_precautions_title">※ 주의사항</string>
     <string name="manual_precautions_txt">제품 내부의 자외선 살균 LED는 눈에 안좋은 영향을 줄수 있음으로 직접보는 것을 삼가해 주세요.</string>
 
@@ -221,7 +221,7 @@ Blinky가 광고 중이고 여기에 표시되지 않는 경우 아래 버튼을
     // nordic
     <!--    AU_ 로 최종변경 해야함 -->
     <string name="cia_id">AU_</string>
-    <!--    <string name="cia_id">"a"</string>-->
+<!--        <string name="cia_id">"a"</string>-->
     <string name="scanner_action_scan">찾기</string>
     <string name="scanner_action_cancel">중지</string>
     <string name="scanner_subtitle_bonded">등록된 디바이스</string>
@@ -291,7 +291,8 @@ Blinky가 광고 중이고 여기에 표시되지 않는 경우 아래 버튼을
     <string name="puff_step2">메이크업 제품을 얼굴에\n적당량 도포한 뒤 가볍게\n발라주세요.</string>
     <string name="puff_step3">퍼프헤드를 본체에\n장착하고 전원을 켜주세요.</string>
     <string name="puff_step4">피부결을 따라 움직이면서 메이크업\n제품이 피부에 흡수될 때까지 부드럽게\n마사지 해주세요.</string>
-    <string name="silicon_step1">세안이 필요한 얼굴에\n물을 적셔줍니다.</string>
+
+    <string name="silicon_step1">세안이 필요한 얼굴에\n물을 적셔주세요.</string>
     <string name="silicon_step2">클렌징 제품을 적당량 도포하고\n가볍게 거품을 내주세요.</string>
     <string name="silicon_step3">실리콘헤드를 본체에\n장착하고 전원을 켜주세요.</string>
     <string name="silicon_step4">화살표 방향으로 움직이면서\n거품을 만들며 클렌징 합니다.\n클렌징이 끝난 뒤 세안으로\n마무리합니다.</string>

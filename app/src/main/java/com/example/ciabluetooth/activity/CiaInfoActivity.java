@@ -111,7 +111,7 @@ public class CiaInfoActivity extends AppCompatActivity {
                     mBinding.deviceImg.setImageDrawable(getResources().getDrawable(R.drawable.img_splash_device_left));
                     setupTabIcons(0);
                 } else if (tab.getPosition() == 1) {
-                    mBinding.deviceImg.setImageDrawable(getResources().getDrawable(R.drawable.img_splash_device));
+                    mBinding.deviceImg.setImageDrawable(getResources().getDrawable(R.drawable.img_splash_device_big));
                     setupTabIcons(1);
                 } else {
                     mBinding.deviceImg.setImageDrawable(getResources().getDrawable(R.drawable.img_splash_device_right));

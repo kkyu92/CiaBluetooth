@@ -36,6 +36,7 @@
             android:text="@string/num1"
             android:textColor="@color/text_color"
             android:textSize="16sp"
+            android:layout_marginTop="15dp"
             app:layout_constraintStart_toStartOf="@+id/how_to_use1"
             app:layout_constraintTop_toBottomOf="@+id/how_to_use1"/>
 
@@ -153,6 +154,7 @@
             android:textColor="@color/text_color"
             android:textSize="16sp"
             android:text="@string/num1"
+            android:layout_marginTop="15dp"
             app:layout_constraintStart_toStartOf="@+id/how_to_use2"
             app:layout_constraintTop_toBottomOf="@+id/how_to_use2"/>
 
@@ -270,6 +272,7 @@
             android:textColor="@color/text_color"
             android:textSize="16sp"
             android:text="@string/num1"
+            android:layout_marginTop="15dp"
             app:layout_constraintStart_toStartOf="@+id/how_to_use3"
             app:layout_constraintTop_toBottomOf="@+id/how_to_use3"/>
 

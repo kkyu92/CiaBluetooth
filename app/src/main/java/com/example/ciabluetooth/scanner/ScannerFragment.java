@@ -88,7 +88,7 @@ public class ScannerFragment extends DialogFragment {
     private final static String PARAM_UUID = "param_uuid";
     private final static long SCAN_DURATION = 5000;
     private final static long SCAN_NULL = 3500;
-//    private final static long SCAN_MAIN = 2500;
+    //    private final static long SCAN_MAIN = 2500;
     private final static long SCAN_MAIN = 500;
 
     private final static int REQUEST_PERMISSION_REQ_CODE = 34; // any 8-bit number
@@ -140,6 +140,7 @@ public class ScannerFragment extends DialogFragment {
          * Fired when scanner dialog has been cancelled without selecting a device.
          */
         void onDialogCanceled();
+
         void onUnConnected();
     }
 
@@ -202,7 +203,7 @@ public class ScannerFragment extends DialogFragment {
             builder.setCustomTitle(dialogTitleView);
 //            builder.setTitle("");
         } else {
-            builder.setTitle("mine 디바이스를 찾는중입니다...");
+            builder.setTitle(getString(R.string.app_name) + " 디바이스를 찾는중입니다...");
         }
         dialog = builder.setView(dialogView).create();
 
@@ -213,7 +214,7 @@ public class ScannerFragment extends DialogFragment {
             // getString(R.string.cia_id)
             // "CIA_IOT"
             if (!d.name.contains(getString(R.string.cia_id))) {
-                Toast.makeText(getContext(), " mine 디바이스를 연결해주세요. ", Toast.LENGTH_LONG).show();
+                Toast.makeText(getContext(), getString(R.string.app_name) + " 디바이스를 연결해주세요. ", Toast.LENGTH_LONG).show();
             } else {
                 dialog.dismiss();
             }
@@ -387,7 +388,7 @@ public class ScannerFragment extends DialogFragment {
             switch (msg.what) {
                 // ---- [ Scan ] 스캔 종료 첫 등록
                 case Constants.MESSAGE_SCAN_SHOW_LIST:
-                    Toast.makeText(getActivity(), "mine 디바이스를 등록해 주세요.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), getString(R.string.app_name) + " 디바이스를 등록해 주세요.", Toast.LENGTH_SHORT).show();
                     break;
                 // ---- [ Scan ] 스캔 종료 --> Main
                 case Constants.MESSAGE_SCAN_START_MAIN:
