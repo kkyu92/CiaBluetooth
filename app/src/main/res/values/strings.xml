@@ -77,7 +77,7 @@ Blinky가 광고 중이고 여기에 표시되지 않는 경우 아래 버튼을
     <string name="permit_bluetooth_explain">앱은 다음중 하나 이상의 작업을 할 수 있습니다.\n\nㆍ민감한 로그 데이터 읽기\nㆍ시스템 내부 상태 검색\nㆍ웹 북마크 및 기록 읽기\nㆍ실행 중인 앱 검색</string>
     <string name="permit_access">기기 및 앱기록</string>
     <string name="permit_access_explain">앱이 주변 블루투스 기기로 송신하거나 이에 대한 정보를 수집하는 등의 방식으로 블루투스를 제어할 수 있습니다.</string>
-    <string name="connect_explain">제품 사용 관련 문의사항 발생시 0000-0000을 통해 신속한 상담을 받으실 수 있습니다.</string>
+    <string name="connect_explain">제품 사용 관련 문의사항 발생시 055-290-5945을 통해 신속한 상담을 받으실 수 있습니다.</string>
     <string name="connect">연결</string>
 
     <string name="main_title">AU</string>

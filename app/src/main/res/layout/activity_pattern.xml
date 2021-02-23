@@ -7,7 +7,7 @@
 
         <variable
             name="view"
-            type="com.example.ciabluetooth.activity.PatternActivity" />
+            type="com.withmind.ciabluetooth.activity.PatternActivity" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

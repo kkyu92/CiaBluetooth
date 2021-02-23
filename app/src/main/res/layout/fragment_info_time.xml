@@ -7,7 +7,7 @@
 
         <variable
             name="view"
-            type="com.example.ciabluetooth.fragment.info.InfoTimeFragment" />
+            type="com.withmind.ciabluetooth.fragment.info.InfoTimeFragment" />
     </data>
 
     <ScrollView

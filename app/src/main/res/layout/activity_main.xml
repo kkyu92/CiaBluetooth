@@ -7,7 +7,7 @@
 
         <variable
             name="view"
-            type="com.example.ciabluetooth.activity.MainActivity" />
+            type="com.withmind.ciabluetooth.activity.MainActivity" />
     </data>
 
     <ScrollView

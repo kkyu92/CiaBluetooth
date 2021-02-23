@@ -7,7 +7,7 @@
 
         <variable
             name="view"
-            type="com.example.ciabluetooth.activity.ManualActivity" />
+            type="com.withmind.ciabluetooth.activity.ManualActivity" />
     </data>
 
     <androidx.drawerlayout.widget.DrawerLayout

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.ciabluetooth">
+    package="com.withmind.ciabluetooth">
     <!-- <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> -->
 <!--    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />-->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -11,7 +11,6 @@
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.Manifest.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
@@ -29,14 +28,14 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_au"
         android:supportsRtl="true"
-        android:name=".nordic.ToolboxApplication"
+        android:name="com.withmind.ciabluetooth.nordic.ToolboxApplication"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.DrawerActivity"/>
-        <activity android:name=".activity.ManualActivity" />
-        <activity android:name=".activity.PatternActivity" />
-        <activity android:name=".activity.HeadActivity" />
-        <activity android:name=".activity.CiaInfoActivity" />
-        <activity android:name=".SplashScreenActivity">
+        <activity android:name="com.withmind.ciabluetooth.activity.DrawerActivity"/>
+        <activity android:name="com.withmind.ciabluetooth.activity.ManualActivity" />
+        <activity android:name="com.withmind.ciabluetooth.activity.PatternActivity" />
+        <activity android:name="com.withmind.ciabluetooth.activity.HeadActivity" />
+        <activity android:name="com.withmind.ciabluetooth.activity.CiaInfoActivity" />
+        <activity android:name="com.withmind.ciabluetooth.SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -44,11 +43,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.MainActivity"
+            android:name="com.withmind.ciabluetooth.activity.MainActivity"
             android:launchMode="singleTask">
         </activity>
 
-        <activity android:name="com.example.ciabluetooth.uart.UARTActivity">
+        <activity android:name="com.withmind.ciabluetooth.uart.UARTActivity">
 <!--            <intent-filter>-->
 <!--                <action android:name="android.intent.action.MAIN" />-->
 
@@ -57,11 +56,11 @@
         </activity>
 
         <service
-            android:name="com.example.ciabluetooth.uart.UARTService"
+            android:name="com.withmind.ciabluetooth.uart.UARTService"
             android:label="@string/uart_feature_title" />
 
-        <provider android:name="com.example.ciabluetooth.uart.UARTLocalLogContentProvider"
-            android:authorities="com.example.ciabluetooth.uart.log"
+        <provider android:name="com.withmind.ciabluetooth.uart.UARTLocalLogContentProvider"
+            android:authorities="com.withmind.ciabluetooth.uart.log"
             android:exported="true"/>
     </application>
 
