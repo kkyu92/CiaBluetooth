@@ -63,7 +63,7 @@
                 android:layout_width="170dp"
                 android:layout_height="170dp"
                 android:layout_marginTop="35dp"
-                android:background="@drawable/img_head_brush_big"
+                android:background="@drawable/img_head_brush"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/title"

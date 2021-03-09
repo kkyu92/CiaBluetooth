@@ -140,7 +140,7 @@ public class HeadActivity extends BaseActivity {
                 break;
             case "Cooler":
                 // step img, text change
-                mBinding.headImg.setBackgroundResource(R.drawable.img_head_cooler_big);
+                mBinding.headImg.setBackgroundResource(R.drawable.img_head_cooler);
                 mBinding.step1Img.setBackgroundResource(R.drawable.ic_img_cooler_step1);
                 mBinding.step2Img.setBackgroundResource(R.drawable.img_brush_guide1);
                 mBinding.step3Img.setBackgroundResource(R.drawable.img_cooler_guide3);
@@ -150,7 +150,7 @@ public class HeadActivity extends BaseActivity {
                 break;
             case "Puff":
                 // step img, text change
-                mBinding.headImg.setBackgroundResource(R.drawable.img_head_puff_big);
+                mBinding.headImg.setBackgroundResource(R.drawable.img_head_puff);
                 mBinding.step1Img.setBackgroundResource(R.drawable.ic_img_cooler_step1);
                 mBinding.step2Img.setBackgroundResource(R.drawable.img_brush_guide1);
                 mBinding.step3Img.setBackgroundResource(R.drawable.img_cooler_guide3);
@@ -160,7 +160,7 @@ public class HeadActivity extends BaseActivity {
                 break;
             case "Silicone":
                 // step img, text change
-                mBinding.headImg.setBackgroundResource(R.drawable.img_head_sillicon_big);
+                mBinding.headImg.setBackgroundResource(R.drawable.img_head_sillicon);
                 mBinding.step1Img.setBackgroundResource(R.drawable.img_brush_guide1);
                 mBinding.step2Img.setBackgroundResource(R.drawable.img_brush_guide2);
                 mBinding.step3Img.setBackgroundResource(R.drawable.img_silicon_guide3);
