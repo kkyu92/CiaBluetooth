@@ -38,16 +38,6 @@
             app:layout_constraintTop_toBottomOf="@id/head1_title" />
 
         <TextView
-            android:id="@+id/head1_num"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="@string/num1"
-            android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="@id/head1_title"
-            app:layout_constraintTop_toBottomOf="@id/head1_img" />
-
-        <TextView
             android:id="@+id/head1_contents"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -56,9 +46,10 @@
             android:text="@string/manual_head_1"
             android:textColor="@color/text_color"
             android:textSize="16sp"
+            android:layout_marginTop="20dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/head1_num"
-            app:layout_constraintTop_toTopOf="@+id/head1_num" />
+            app:layout_constraintStart_toStartOf="@+id/head1_title"
+            app:layout_constraintTop_toBottomOf="@+id/head1_img"/>
 
         <TextView
             android:id="@+id/head2_title"
@@ -69,7 +60,7 @@
             android:textColor="@color/text_color"
             android:textSize="16sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="@+id/head1_num"
+            app:layout_constraintStart_toStartOf="@+id/head1_title"
             app:layout_constraintTop_toBottomOf="@id/head1_contents" />
 
         <ImageView

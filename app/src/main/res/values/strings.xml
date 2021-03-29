@@ -101,6 +101,7 @@ Blinky가 광고 중이고 여기에 표시되지 않는 경우 아래 버튼을
     // info tab
     <string name="device_info">기기정보</string>
     <string name="battery">Battery</string>
+    <string name="info_time">사용시간</string>
     // manual tab
     <string name="manual_start">시작하기</string>
     <string name="manual_usage">사용방법</string>
@@ -130,10 +131,10 @@ Blinky가 광고 중이고 여기에 표시되지 않는 경우 아래 버튼을
     <string name="last_week">지난달</string>
     <string name="this_week">이번달</string>
 
-    <string name="manual_start_1">1. 용도에 맞는 헤드를 장착 해주세요.</string>
-    <string name="manual_start_2">2. 옆면에 위치한 전원버튼을 길게 눌러 작동시킵니다.</string>
-    <string name="manual_start_3">3. 본 제품은 무선 충전 제품으로, 구성품에 포함된 USB 케이블로 연결된 크래들에 올려 충전하며 크래들의 중심과 본체의 중심이 일치하도록 올려 충전합니다.</string>
-    <string name="manual_start_4">4. 배터리 20%이하일 경우 전원버튼LED가 깜박깜박 점멸되며 완충시 전원버튼 LED가 지속 점등됩니다.</string>
+    <string name="manual_start_1">용도에 맞는 헤드를 장착 해주세요.</string>
+    <string name="manual_start_2">옆면에 위치한 전원버튼을 길게 눌러 작동시킵니다.</string>
+    <string name="manual_start_3">본 제품은 무선 충전 제품으로, 구성품에 포함된 USB 케이블로 연결된 크래들에 올려 충전하며 크래들의 중심과 본체의 중심이 일치하도록 올려 충전합니다.</string>
+    <string name="manual_start_4">배터리 20%이하일 경우 전원버튼LED가 깜박깜박 점멸되며 완충시 전원버튼 LED가 지속 점등됩니다.</string>
     <string name="manual_start_end">※ 배터리 방전후 충전완료까지 3시간 이상 소요되며, 제품 놓는 위치에따라 충전 시간이 늘어날 수 있습니다.</string>
     <!--    <string name="how_to_use"><b>1. 클렌징 모드</b>\n(브러시 헤드는 딥클렌징에 효과적입니다.)-->
     <!--        \n① 얼굴에 적당한 물기가 있는 상태에서 클렌징 제품으로 거품을 내줍니다.-->
@@ -178,7 +179,7 @@ Blinky가 광고 중이고 여기에 표시되지 않는 경우 아래 버튼을
     <string name="how_to_use3_1">세안을 한 뒤 메이크업 제품을 얼굴에 도포합니다.</string>
     <string name="how_to_use3_2">퍼프 헤드를 본체에 장착해줍니다.</string>
     <string name="how_to_use3_3">전원 버튼을 길게 눌러 전원을 켜고, 앞면의 LED를 통해 원하는 진동 모드 단계를 확인합니다.</string>
-    <string name="how_to_use3_4">진동을 통해 메이크업 제품이 얼굴에 골고루 퍼 발라질 수 있도록 얼굴 전체에 걸쳐 사용해 줍니다.</string>
+    <string name="how_to_use3_4">진동을 통해 메이크업 제품이 얼굴에 골고루 도포 될 수 있도록 얼굴 전체에 걸쳐 사용해 줍니다.</string>
     <string name="how_to_use3_5">관리가 끝나면 전원 버튼을 길게 눌러 전원을 끕니다.</string>
     <string name="how_to_use4">\n\n<b>※ 타이머 기능</b>
         \n사용 기본 시간 10분
@@ -186,9 +187,9 @@ Blinky가 광고 중이고 여기에 표시되지 않는 경우 아래 버튼을
         \n모든 모드에서 원하는 진동모드 3단계 조절 가능합니다.</string>
 
     <string name="manual_head_1">본체의 고정축과 각 헤드의 고정홈을 맞춰 고정축의 끝까지 수직으로 가볍게 밀어 장착합니다.\n장착 시 헤드별 인식기능으로 부저음과 함께 사용할 헤드가 인식됩니다.</string>
-    <string name="manual_head_2_1"> 사용이 끝난 즉시 무선충전 살균크래들의 커버를 분리한 다음, UV LED 향하도록 사용한 헤드를 장착해 줍니다\n(브러시 헤드는 전용위치에 넣어줍니다.)</string>
+    <string name="manual_head_2_1"> 사용이 끝난 즉시 무선충전 살균크래들의 커버를 분리한 다음, UV LED 향하도록 사용한 헤드를 넣어 줍니다\n(브러시 헤드는 전용위치에 넣어줍니다.)</string>
     <string name="manual_head_2_2"> 살균 커버와 살균 케이스를 결합 시 UV LED가 켜지면서 10분간 자동 살균 모드가 시작되며, 상단 인디케이터를 통해 살균동작을 확인할수 있습니다.</string>
-    <string name="manual_head_2_3"> 살균 모드가 끝난면 자동 OFF 되며, 살균 케이스가 오픈 된 상태에서는 제품이 작동하지 않습니다.</string>
+    <string name="manual_head_2_3"> 살균 모드가 끝나면 자동 OFF 되며, 살균 케이스가 오픈 된 상태에서는 제품이 작동하지 않습니다.</string>
     <string name="manual_head_2_4"> 장시간 미사용 헤드의 경우 세균 증식을 막기 위해 자체적으로 크래들의 자동 살균 기능이 작동됩니다.\n(10분 살균모드 종료 후, 1시간 간격 자동살균)</string>
     <string name="manual_head_2_5"> 부피가 작은 화장붓, 귀금속, 악세서리, 네일용품, 손톱깎이, 쪽가위, 귀이개 등 소형물품들의 살균도 가능합니다.</string>
     <string name="manual_precautions_title">※ 주의사항</string>
@@ -199,24 +200,25 @@ Blinky가 광고 중이고 여기에 표시되지 않는 경우 아래 버튼을
         \n\n<b>[무상 서비스]</b> 구입 후 1년[보증기간]이내에 정상적인 사용 상태에서 발생한 고장의 경우 무상서비스를 받을 수 있습니다.\n이 제품을 영업 용도로 전환하여 사용할 경우에는 무상 서비스에 해당되지 않습니다.
         \n\n<b>[유상 서비스]</b> 보증기간 중이라도 다음의 경우는 유상 서비스가 됩니다.
         \n\n1. 소비자의 취급 부주의(구입 후 낙하,침수,파손,손상)로 고장이 발생한 경우\n2. 소모품(헤드)의 교환, 사용 중에 일어난 외관상의 변화(긁힘,변형,변색 등)의 경우\n3. 소비자가 임의로 분해, 개조한 경우\n4. 본 상품에서 제공한 소모품 외의 부품을 사용하거나, ‘주의사항’을 지키지 않아 고장난 경우\n5. 소모품(건전지.브러시 등)의 수명이 다하거나 분실한 경우\n6. 본 보증서를 제시하지 않거나, 본 보증서에 구입날짜 기재가 없는 경우 또는 내용을 임의로 변경한 경우</string>
-    <string name="faq">· 사용하기 전 사용설명서를 반드시 읽어보시고, 정확한 사용방법을 숙지하신 후 사용하여 주십시오.
-        \n· 피부에 부상이나 상처가 있는 경우에는 절대 사용하지 마십시오. (피부 트러블, 통증을 느낄 우려)
-        \n· 고장, 손상 상태인 채로 사용하지 마십시오. (피부 트러블, 통증을 느낄 우려)
-        \n· 자극, 어지러움, 전기 충격이나 열감을 느낄 시 즉시 사용을 중지하십시오.
-        \n· 사용 중 피부나 신체에 이상을 느끼는 경우 즉시 사용을 중지해 주십시오. (전문의와 상담 후 지시를 따라 주십시오)
-        \n· 가급적 건조, 서늘한 곳에 보관하여 주시고 직사광선은 피해주십시오.
-        \n· 제품을 장시간 사용할 경우 피부를 민감하게 만들 수 있습니다.
-        \n· 어린이의 손이 닿지 않는 곳에 보관하여 주십시오.
-        \n· 타사의 소모품은 사용하지 마십시오.
-        \n· 무선충전 크래들 위에 제품 외에는 올려 놓지 마십시오.(주의: 동전 및 금속물 등)
-        \n· 배터리 방전후 충전완료까지 3시간 이상 소요되며, 제품 놓는 위치에 따라 충전시간이 늘어날 수 있습니다.
-        \n· 소비자의 과실로 고장이 난 경우 교환이나 환불이 불가합니다.
-        \n· 구매 후 1년(보증기간) 내에 무상서비스를 받으실 수 있습니다.
-        \n\n 소비자 과실
-        \n· 사용자의 잘못 또는 취급 부주의로 인한 고장(낙하, 침수, 충격, 파손, 무리한 동작 등)
-        \n· 당사의 서비스 기사 및 지정협력사 기사가 아닌 다른 사람이 수리하여 고장이 발생한 경우
-        \n· 소비자의 고의 또는 과실로 인한 고장인 경우
-        \n· 정품 이외의 부품이나 부속물 사용에 의한 고장이나 제품 파손의 경우</string>
+    <string name="zum">· </string>
+    <string name="faq1">사용하기 전 사용설명서를 반드시 읽어보시고, 정확한 사용방법을 숙지하신 후 사용하여 주십시오.</string>
+    <string name="faq2">피부에 부상이나 상처가 있는 경우에는 절대 사용하지 마십시오. (피부 트러블, 통증을 느낄 우려)</string>
+    <string name="faq3">고장, 손상 상태인 채로 사용하지 마십시오. (피부 트러블, 통증을 느낄 우려)</string>
+    <string name="faq4">자극, 어지러움, 전기 충격이나 열감을 느낄 시 즉시 사용을 중지하십시오.</string>
+    <string name="faq5">사용 중 피부나 신체에 이상을 느끼는 경우 즉시 사용을 중지해 주십시오. (전문의와 상담 후 지시를 따라 주십시오)</string>
+    <string name="faq6">가급적 건조, 서늘한 곳에 보관하여 주시고 직사광선은 피해주십시오.</string>
+    <string name="faq7">제품을 장시간 사용할 경우 피부를 민감하게 만들 수 있습니다.</string>
+    <string name="faq8">어린이의 손이 닿지 않는 곳에 보관하여 주십시오.</string>
+    <string name="faq9">타사의 소모품은 사용하지 마십시오.</string>
+    <string name="faq10">무선충전 크래들 위에 제품 외에는 올려 놓지 마십시오.(주의: 동전 및 금속물 등)</string>
+    <string name="faq11">배터리 방전후 충전완료까지 3시간 이상 소요되며, 제품 놓는 위치에 따라 충전시간이 늘어날 수 있습니다.</string>
+    <string name="faq12">소비자의 과실로 고장이 난 경우 교환이나 환불이 불가합니다.</string>
+    <string name="faq13">구매 후 1년(보증기간) 내에 무상서비스를 받으실 수 있습니다.</string>
+    <string name="faq14">소비자 과실</string>
+    <string name="faq15">사용자의 잘못 또는 취급 부주의로 인한 고장(낙하, 침수, 충격, 파손, 무리한 동작 등)</string>
+    <string name="faq16">당사의 서비스 기사 및 지정협력사 기사가 아닌 다른 사람이 수리하여 고장이 발생한 경우</string>
+    <string name="faq17">소비자의 고의 또는 과실로 인한 고장인 경우</string>
+    <string name="faq18">정품 이외의 부품이나 부속물 사용에 의한 고장이나 제품 파손의 경우</string>
 
     <string name="as">본 제품이 이상이 있을 경우 공정거래위원회 고시에 의거 보상해 드립니다.
         \n본 보증서와 보증 규정 내용을 확인한 후 고객서비스 센터로 연락하여 주십시오.
@@ -226,7 +228,7 @@ Blinky가 광고 중이고 여기에 표시되지 않는 경우 아래 버튼을
     // nordic
     <!--    AU_ 로 최종변경 해야함 -->
     <string name="cia_id">AU_</string>
-<!--        <string name="cia_id">"a"</string>-->
+<!--        <string name="cia_id">"s"</string>-->
     <string name="scanner_action_scan">찾기</string>
     <string name="scanner_action_cancel">중지</string>
     <string name="scanner_subtitle_bonded">등록된 디바이스</string>
@@ -295,7 +297,7 @@ Blinky가 광고 중이고 여기에 표시되지 않는 경우 아래 버튼을
     <string name="puff_step1">깨끗이 세안한 뒤 토너로\n피부결을 정돈 시켜주세요.</string>
     <string name="puff_step2">메이크업 제품을 얼굴에\n적당량 도포한 뒤 가볍게\n발라주세요.</string>
     <string name="puff_step3">퍼프헤드를 본체에\n장착하고 전원을 켜주세요.</string>
-    <string name="puff_step4">피부결을 따라 움직이면서 메이크업\n제품이 피부에 흡수될 때까지 부드럽게\n마사지 해주세요.</string>
+    <string name="puff_step4">피부결을 따라 움직이면서 메이크업\n제품이 피부에 흡수될 때까지\n부드럽게 마사지 해주세요.</string>
 
     <string name="silicon_step1">세안이 필요한 얼굴에\n물을 적셔주세요.</string>
     <string name="silicon_step2">클렌징 제품을 적당량 도포하고\n가볍게 거품을 내주세요.</string>
@@ -321,7 +323,7 @@ Blinky가 광고 중이고 여기에 표시되지 않는 경우 아래 버튼을
     <string name="warranty_contents_txt">구입일로부터 1년</string>
     <string name="precautions_txt">주의사항</string>
     <string name="precautions_contents_txt">사용시간, 충전시간 및 베터리 잔량은\n실제 사용 환경과 제품사용시간에\n따라 달라질 수 있습니다.</string>
-    <string name="block_usage_title">기기 총 사용시간</string>
+    <string name="block_usage_title">본체 총 사용시간</string>
     <string name="head_usage_time">헤드 사용시간</string>
     <string name="head1_title">1.헤드 교체 및 교체하기</string>
     <string name="head2_title">2.헤드 살균</string>

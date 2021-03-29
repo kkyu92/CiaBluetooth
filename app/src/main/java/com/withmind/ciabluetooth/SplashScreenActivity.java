@@ -187,10 +187,10 @@ public class SplashScreenActivity extends BleProfileServiceReadyActivity<UARTSer
         }, 2500);
     }
 
-    @Override
-    public void onBackPressed() {
-        // We don't want the splash screen to be interrupted
-    }
+//    @Override
+//    public void onBackPressed() {
+//        // We don't want the splash screen to be interrupted
+//    }
 
 
     @Override

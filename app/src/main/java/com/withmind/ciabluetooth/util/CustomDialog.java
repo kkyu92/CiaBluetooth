@@ -103,7 +103,7 @@ public class CustomDialog extends DialogFragment {
         Button ok = view.findViewById(R.id.ok_btn);
         Button cancel = view.findViewById(R.id.cancel_btn);
 
-        title.setText("CIA 앱을 종료하시겠습니까?");
+        title.setText("AU 앱을 종료하시겠습니까?");
         contents.setVisibility(View.GONE);
         ok.setOnClickListener(mOnClickListener);
         cancel.setOnClickListener(mOnClickListener);

@@ -109,12 +109,6 @@ public class MainActivity extends BleProfileServiceReadyActivity<UARTService.UAR
         }
         // 끼워진 헤드 표시
         switch (head) {
-            case 0:
-                mBinding.brushPoint.setVisibility(View.INVISIBLE);
-                mBinding.coolerPoint.setVisibility(View.INVISIBLE);
-                mBinding.puffPoint.setVisibility(View.INVISIBLE);
-                mBinding.siliconPoint.setVisibility(View.INVISIBLE);
-                break;
             case 1:
                 mBinding.brushPoint.setVisibility(View.VISIBLE);
                 mBinding.coolerPoint.setVisibility(View.INVISIBLE);
@@ -138,6 +132,12 @@ public class MainActivity extends BleProfileServiceReadyActivity<UARTService.UAR
                 mBinding.coolerPoint.setVisibility(View.INVISIBLE);
                 mBinding.puffPoint.setVisibility(View.INVISIBLE);
                 mBinding.siliconPoint.setVisibility(View.VISIBLE);
+                break;
+            default:
+                mBinding.brushPoint.setVisibility(View.INVISIBLE);
+                mBinding.coolerPoint.setVisibility(View.INVISIBLE);
+                mBinding.puffPoint.setVisibility(View.INVISIBLE);
+                mBinding.siliconPoint.setVisibility(View.INVISIBLE);
                 break;
         }
         Log.e(TAG, "refreshData : end");

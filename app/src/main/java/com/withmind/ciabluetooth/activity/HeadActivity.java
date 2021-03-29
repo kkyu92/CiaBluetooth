@@ -53,6 +53,7 @@ public class HeadActivity extends BaseActivity {
         }
         mBinding.headUse.setText(fffff + " 사용율");
         mBinding.guideTitle.setText(fffff + getString(R.string.guide_head));
+        mBinding.totalHeadText.setText("(" + headName + " 총 사용시간)");
 
         // TODO 헤드기기 교체 알림 기준
 

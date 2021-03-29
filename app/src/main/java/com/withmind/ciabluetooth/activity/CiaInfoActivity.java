@@ -47,7 +47,7 @@ public class CiaInfoActivity extends AppCompatActivity {
             public void run() {
                 viewPagerAdapter.addFragment(InfoDeviceFragment.getInstance(), getString(R.string.device_info));
                 viewPagerAdapter.addFragment(InfoBatteryFragment.getInstance(SharedPreferencesPackage.getDeviceBattery(CiaInfoActivity.this)), getString(R.string.battery));
-                viewPagerAdapter.addFragment(InfoTimeFragment.getInstance(), getString(R.string.usage_time));
+                viewPagerAdapter.addFragment(InfoTimeFragment.getInstance(), getString(R.string.info_time));
 
                 mBinding.viewPager.setAdapter(viewPagerAdapter);
                 mBinding.tabLayout.setupWithViewPager(mBinding.viewPager);
