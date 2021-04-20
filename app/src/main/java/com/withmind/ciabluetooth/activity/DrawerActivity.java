@@ -57,14 +57,11 @@ public class DrawerActivity extends BaseActivity {
                 mBinding.faq.setVisibility(View.GONE);
                 mBinding.pdf.setVisibility(View.GONE);
                 break;
-            case "매뉴얼 다운로드":
-                mBinding.terms.setVisibility(View.GONE);
-                mBinding.as.setVisibility(View.GONE);
-                mBinding.faq.setVisibility(View.GONE);
-//                downloadPDF("http://maven.Apache.org/maven-1.x/maven");
-//                download();
-//                view();
-                break;
+//            case "매뉴얼 다운로드":
+//                mBinding.terms.setVisibility(View.GONE);
+//                mBinding.as.setVisibility(View.GONE);
+//                mBinding.faq.setVisibility(View.GONE);
+//                break;
         }
     }
 

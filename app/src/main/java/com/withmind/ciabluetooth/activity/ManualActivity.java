@@ -114,9 +114,9 @@ public class ManualActivity extends BaseActivity implements NavigationView.OnNav
             case R.id.menu3:
                 startActivity(DrawerActivity.class, getString(R.string.menu3));
                 break;
-            case R.id.menu4:
-                startActivity(DrawerActivity.class, getString(R.string.menu4));
-                break;
+//            case R.id.menu4:
+//                startActivity(DrawerActivity.class, getString(R.string.menu4));
+//                break;
         }
         return false;
     }

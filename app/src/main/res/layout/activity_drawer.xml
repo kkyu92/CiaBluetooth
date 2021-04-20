@@ -127,6 +127,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
                             android:text="@string/faq1"
                             android:textColor="@color/text_title"
                             android:textSize="16sp" />
@@ -149,6 +150,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/faq2"
+                            android:layout_marginStart="5dp"
                             android:textColor="@color/text_title"
                             android:textSize="16sp" />
                     </LinearLayout>
@@ -170,6 +172,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/faq3"
+                            android:layout_marginStart="5dp"
                             android:textColor="@color/text_title"
                             android:textSize="16sp" />
                     </LinearLayout>
@@ -191,6 +194,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/faq4"
+                            android:layout_marginStart="5dp"
                             android:textColor="@color/text_title"
                             android:textSize="16sp" />
                     </LinearLayout>
@@ -212,6 +216,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/faq5"
+                            android:layout_marginStart="5dp"
                             android:textColor="@color/text_title"
                             android:textSize="16sp" />
                     </LinearLayout>
@@ -233,6 +238,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/faq6"
+                            android:layout_marginStart="5dp"
                             android:textColor="@color/text_title"
                             android:textSize="16sp" />
                     </LinearLayout>
@@ -254,6 +260,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/faq7"
+                            android:layout_marginStart="5dp"
                             android:textColor="@color/text_title"
                             android:textSize="16sp" />
                     </LinearLayout>
@@ -275,6 +282,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/faq8"
+                            android:layout_marginStart="5dp"
                             android:textColor="@color/text_title"
                             android:textSize="16sp" />
                     </LinearLayout>
@@ -296,6 +304,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/faq9"
+                            android:layout_marginStart="5dp"
                             android:textColor="@color/text_title"
                             android:textSize="16sp" />
                     </LinearLayout>
@@ -317,6 +326,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/faq10"
+                            android:layout_marginStart="5dp"
                             android:textColor="@color/text_title"
                             android:textSize="16sp" />
                     </LinearLayout>
@@ -338,6 +348,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/faq11"
+                            android:layout_marginStart="5dp"
                             android:textColor="@color/text_title"
                             android:textSize="16sp" />
                     </LinearLayout>
@@ -359,6 +370,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/faq12"
+                            android:layout_marginStart="5dp"
                             android:textColor="@color/text_title"
                             android:textSize="16sp" />
                     </LinearLayout>
@@ -380,6 +392,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/faq13"
+                            android:layout_marginStart="5dp"
                             android:textColor="@color/text_title"
                             android:textSize="16sp" />
                     </LinearLayout>
@@ -394,6 +407,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/faq14"
+                            android:layout_marginStart="5dp"
                             android:textColor="@color/text_title"
                             android:textSize="16sp"
                             android:textStyle="bold" />
@@ -416,6 +430,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/faq15"
+                            android:layout_marginStart="5dp"
                             android:textColor="@color/text_title"
                             android:textSize="16sp" />
                     </LinearLayout>
@@ -437,6 +452,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/faq16"
+                            android:layout_marginStart="5dp"
                             android:textColor="@color/text_title"
                             android:textSize="16sp" />
                     </LinearLayout>
@@ -458,6 +474,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/faq17"
+                            android:layout_marginStart="5dp"
                             android:textColor="@color/text_title"
                             android:textSize="16sp" />
                     </LinearLayout>
@@ -479,6 +496,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/faq18"
+                            android:layout_marginStart="5dp"
                             android:textColor="@color/text_title"
                             android:textSize="16sp" />
                     </LinearLayout>
@@ -490,6 +508,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="30dp"
+                    android:visibility="gone"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"

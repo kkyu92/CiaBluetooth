@@ -79,7 +79,7 @@ public class CiaInfoActivity extends AppCompatActivity {
         ImageView imgThird = viewThird.findViewById(R.id.img_tab);
         TextView txtThird = viewThird.findViewById(R.id.txt_tab);
         imgThird.setImageResource(R.drawable.ic_img_tri_gray);
-        txtThird.setText(R.string.usage_time);
+        txtThird.setText(R.string.info_time);
         mBinding.tabLayout.getTabAt(2).setCustomView(viewThird);
 
         if (tabIndex == 0) {
